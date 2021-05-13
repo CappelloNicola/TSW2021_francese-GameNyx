@@ -1,0 +1,56 @@
+@charset "ISO-8859-1";
+
+body
+{
+	margin-top:5%;
+	margin-left: 30%
+}
+
+table 
+{
+  font-family: Arial, Helvetica, sans-serif;
+  width:50%
+}
+
+td, th 
+{
+  border: 2px solid #ddd;
+  padding: 8px;
+}
+
+#FirstRow
+{
+	line-height: 1px;
+	background-color: #B9B9B9
+}
+
+#dettagli
+{
+	line-height: 1px;
+	width:150px;
+	
+}
+
+.button
+{
+	height:30px;
+	width:150px;
+	background-color: #4CAF50;
+	border-color: grey;
+	font-weight: bold;
+	color: #263B27
+	
+}
+
+#buttonCarrello
+{	
+	text-decoration:none;
+	float:right;
+    background-color: #F5B041;
+    border-color: grey;
+    font-weight: bold;
+    color: #263B27;
+    padding: 5px;
+    border: solid;
+}
+

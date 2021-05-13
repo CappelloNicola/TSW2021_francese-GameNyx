@@ -1,0 +1,45 @@
+@charset "ISO-8859-1";
+
+h1
+{
+	margin-left:43%;
+	
+}
+.container {
+    margin: 50px 20px 0 0;  
+    border: 5px #333;
+    overflow: auto;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+.copertina {
+    float: left;
+    width: 15%;
+}
+.copertina img {
+    display: block;
+    width:100%
+}
+.info {
+	margin-top:20px;
+    margin-left: 22%
+}
+
+
+td
+{
+  font-size: 18px;
+  padding-left: 40px;
+  padding-top: 5px;
+}
+
+.button
+{
+	height:30px;
+	width:150px;
+	background-color: #4CAF50;
+	border-color: grey;
+	font-weight: bold;
+	color: #263B27
+	
+}
