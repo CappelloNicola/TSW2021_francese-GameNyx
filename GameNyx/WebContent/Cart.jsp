@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<%
+<% 
 	Cart carrello=null;
 	ProductBeanCart product=null;
 	int size=0;
