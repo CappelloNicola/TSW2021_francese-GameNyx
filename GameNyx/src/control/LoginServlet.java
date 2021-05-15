@@ -19,54 +19,34 @@ import model.UserDAO;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-   
-    public LoginServlet() {
-        super();
-
-    }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		
-			HttpSession sessione=request.getSession();
-		
-			//Diverso dall'esempio di LoginExample.zip
-			
-			/*UserBean user = dao.doRetrieveByKey(request.getParameter("email"));
-			
-			//controllo password corrispondente all'utente
-			if(user.getPassword().equals(request.getParameter("password")))
-			{
-				sessione.setAttribute("utente", user);
-				response.sendRedirect("Cart.jsp");
-			}
-			else
-			{
-				
-			}*/
-			
-			//come nell'esempio di LoginExample.zip
-			UserBean user = new UserBean();
-			user.setUsername(request.getParameter("username"));
-			user.setPassword(request.getParameter("password"));
-			
-			user = UserDAO.doRetrieve(user);
-			
-			if(user.getIsValid())
-			{
-				sessione.setAttribute("currentUserSession", user);
-				response.sendRedirect("Cart.jsp");		//problema : quando vai indietro nella pagina non si aggiorna in automatico la pagina
-			}
-			else
-				response.sendRedirect("Registrazione.jsp"); //da implementare
-		 
-	
+		doPost(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		doGet(request, response);
+		HttpSession sessione=request.getSession();
+
+		UserBean user = new UserBean();
+		user.setUsername(request.getParameter("username"));
+		user.setPasswordUtente(request.getParameter("password"));
+		
+		user = UserDAO.doRetrieve(user);
+		
+		if(user.getIsValid())
+		{
+			sessione.setAttribute("currentUserSession", user);
+			response.sendRedirect(getServletContext().getContextPath());	
+			//problema: se fai un login dopo aver provato il checkout, bisogna fare il checkout in automatico
+		}
+		else
+		{
+			response.sendRedirect("Registrazione.jsp"); //da implementare
+		}
+		
 	}
 
 }

@@ -7,13 +7,13 @@
 <title>Login</title>
 </head>
 <body>
-<form method="get" action="LoginServlet">
-Username<br>
-<input type="text" name="username">
-<br>Password<br>
-<input type="text" name="password">
-<br>
-<input type="submit">
-</form>
+	<form method="post" action="LoginServlet">
+	Username<br>
+	<input type="text" name="username">
+	<br>Password<br>
+	<input type="password" name="password">
+	<br>
+	<input type="submit" value="Accedi">
+	</form>
 </body>
 </html>

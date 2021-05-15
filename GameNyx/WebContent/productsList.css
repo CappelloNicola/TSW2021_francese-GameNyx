@@ -42,15 +42,17 @@ td, th
 	
 }
 
-#buttonCarrello
+.buttonTwo
 {	
 	text-decoration:none;
+	border:solid;
+	height:30px;
+	width:150px;
+	background-color: #4CAF50;
+	border-color: grey;
+	font-weight: bold;
+	color: #263B27
 	float:right;
-    background-color: #F5B041;
-    border-color: grey;
-    font-weight: bold;
-    color: #263B27;
-    padding: 5px;
-    border: solid;
+	clear:right;
 }
 

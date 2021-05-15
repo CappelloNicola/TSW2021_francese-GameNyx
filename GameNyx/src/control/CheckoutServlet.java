@@ -32,6 +32,10 @@ public class CheckoutServlet extends HttpServlet {
 		}
 		else if(carrello!=null)
 		{
+			/*
+			 * Aggiungo l'acquisto nel DB*/
+			
+			
 			carrello.resetCart();
 			sessione.removeAttribute("carrello");
 			response.sendRedirect("Cart.jsp");

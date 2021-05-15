@@ -7,12 +7,11 @@ public class UserBean
 	private Boolean isValid;
 	private String email; 
 	private String username;//primary key
-	private String password;
+	private String passwordUtente;
 	private String nome;
 	private String cognome;
 	private Date dataNascita;
 	private String telefono;
-	private int livello;
 	
 	
 	//SETS
@@ -25,8 +24,8 @@ public class UserBean
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPasswordUtente(String password) {
+		this.passwordUtente = password;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -40,12 +39,6 @@ public class UserBean
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public void setLivello(int livello) {
-		this.livello = livello;
-	}
-	
-	//da implementare livelli esperienza che incrementano il livello??
-	
 	
 	//GETS
 	public Boolean getIsValid() {
@@ -54,8 +47,8 @@ public class UserBean
 	public String getEmail() {
 		return email;
 	}
-	public String getPassword() {
-		return password;
+	public String getPasswordUtente() {
+		return passwordUtente;
 	}
 	public String getUsername() {
 		return username;
@@ -68,9 +61,6 @@ public class UserBean
 	}
 	public Date getDataNascita() {
 		return dataNascita;
-	}
-	public int getLivello() {
-		return livello;
 	}
 	public String getTelefono() {
 		return telefono;

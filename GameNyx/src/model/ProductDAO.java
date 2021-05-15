@@ -56,7 +56,6 @@ public class ProductDAO
 			
 			preparedStatement.executeUpdate();
 
-			connection.commit();
 		} finally {
 			try {
 				if (preparedStatement != null)

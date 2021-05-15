@@ -37,14 +37,11 @@ public class UserDAO
 	      PreparedStatement preparedStatement = null;
 		
 	      String username = beanInput.getUsername();    
-	      String password = beanInput.getPassword();   
+	      String passwordUtente = beanInput.getPasswordUtente();   
 		    
 	      String searchQuery =
-	            "select * from "+TABLE_NAME+" where username='"
-	                     + username
-	                     + "' AND password='"
-	                     + password
-	                     + "'";
+	            "select * from "+TABLE_NAME+" where username=? and passwordUtente=?";
+	               
 		  
 	   
 	   UserBean bean = new UserBean();
@@ -53,6 +50,8 @@ public class UserDAO
 	   {
 		   connection=ds.getConnection();
 		   preparedStatement=connection.prepareStatement(searchQuery);
+		   preparedStatement.setString(1, username);
+		   preparedStatement.setString(2, passwordUtente);
 		   
 		   ResultSet rs = preparedStatement.executeQuery();
 		   
@@ -62,16 +61,18 @@ public class UserDAO
 			    bean.setIsValid(true);
 			    bean.setEmail(rs.getString("email"));
 				bean.setUsername(rs.getString("username"));
-				bean.setPassword(rs.getString("password"));
+				bean.setPasswordUtente(rs.getString("passwordUtente"));
 				bean.setNome(rs.getString("nome"));
 				bean.setCognome(rs.getString("cognome"));
 				bean.setTelefono(rs.getString("telefono"));
 				bean.setData(rs.getDate("dataDiNascita"));
-				bean.setLivello(rs.getInt("livello"));
 		   }
 		   else
-			    bean.setIsValid(false);
-	   }  
+		   {
+			   bean.setIsValid(false);
+		   }	   
+			  
+		}  
 
 	   catch (Exception ex) 
 	   {
@@ -82,15 +83,16 @@ public class UserDAO
 	}
 
 
-	public synchronized void doSave(UserBean user) throws SQLException, Exception {
+	public synchronized void doSave(UserBean user) throws SQLException, Exception 
+	{
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
 				+ " (email, nome, cognome, username,"
-				+ "  password, dataDiNascita, telefono, livello) "
-				+ "  VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				+ "  passwordUtente, dataDiNascita, telefono) "
+				+ "  VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			connection = ds.getConnection();
@@ -99,33 +101,41 @@ public class UserDAO
 			preparedStatement.setString(2, user.getNome());
 			preparedStatement.setString(3, user.getCognome());
 			preparedStatement.setString(4, user.getUsername());
-			preparedStatement.setString(5, user.getPassword());
+			preparedStatement.setString(5, user.getPasswordUtente());
 			preparedStatement.setDate(6, user.getDataNascita());
 			preparedStatement.setString(7, user.getTelefono());
-			preparedStatement.setInt(8, user.getLivello());
 
 			
 			preparedStatement.executeUpdate();
 
-			connection.commit();
-		} finally {
-			try {
-				if (preparedStatement != null)
-					preparedStatement.close();
-			} finally {
-				if (connection != null)
-					connection.close();
+			
+			} 
+			finally 
+			{
+				try 
+				{
+					if (preparedStatement != null)
+						preparedStatement.close();
+				} 
+				finally 
+				{
+					if (connection != null)
+						connection.close();
+				}
 			}
-		}
-	}
+	}	
 
+	
+	/*
+	 * Ritorna l'UserBean se esiste, altrimenti null
+	 * */
 	public synchronized UserBean doRetrieveByKey(String username) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		UserBean bean = new UserBean();
 
-		String selectSQL = "SELECT * FROM " +TABLE_NAME + " WHERE email = ?";
+		String selectSQL = "SELECT * FROM " +TABLE_NAME + " WHERE username = ?";
 
 		try {
 			connection = ds.getConnection();
@@ -134,15 +144,18 @@ public class UserDAO
 
 			ResultSet rs = preparedStatement.executeQuery();
 
-			while (rs.next()) {
+			if (rs.next()) {
 				bean.setEmail(rs.getString("email"));
 				bean.setUsername(rs.getString("username"));
-				bean.setPassword(rs.getString("password"));
+				bean.setPasswordUtente(rs.getString("passwordUtente"));
 				bean.setNome(rs.getString("nome"));
 				bean.setCognome(rs.getString("cognome"));
 				bean.setTelefono(rs.getString("telefono"));
 				bean.setData(rs.getDate("dataDiNascita"));
-				bean.setLivello(rs.getInt("livello"));
+			}
+			else
+			{
+				return null;
 			}
 
 		} finally {
@@ -157,6 +170,47 @@ public class UserDAO
 		return bean;
 	}
 
+	public synchronized UserBean doRetrieveByEmail(String email) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		UserBean bean = new UserBean();
+
+		String selectSQL = "SELECT * FROM " +TABLE_NAME + " WHERE email = ?";
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setString(1, email);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			if (rs.next()) {
+				bean.setEmail(rs.getString("email"));
+				bean.setUsername(rs.getString("username"));
+				bean.setPasswordUtente(rs.getString("passwordUtente"));
+				bean.setNome(rs.getString("nome"));
+				bean.setCognome(rs.getString("cognome"));
+				bean.setTelefono(rs.getString("telefono"));
+				bean.setData(rs.getDate("dataDiNascita"));
+			}
+			else
+			{
+				return null;
+			}
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return bean;
+	}
+	
 	public synchronized boolean doDelete(String username) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -208,12 +262,12 @@ public class UserDAO
 
 				bean.setEmail(rs.getString("email"));
 				bean.setUsername(rs.getString("username"));
-				bean.setPassword(rs.getString("password"));
+				bean.setPasswordUtente(rs.getString("passwordUtente"));
 				bean.setNome(rs.getString("nome"));
 				bean.setCognome(rs.getString("cognome"));
 				bean.setTelefono(rs.getString("telefono"));
 				bean.setData(rs.getDate("dataDiNascita"));
-				bean.setLivello(rs.getInt("livello"));
+				
 				
 				users.add(bean);
 			}

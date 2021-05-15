@@ -26,10 +26,25 @@
 	}
 %>
 	
-<a id="buttonCarrello" href="Cart.jsp" target="_blank">Mostra carrello</a> 
+<a href="Cart.jsp" target="_blank">Mostra carrello</a> 
+<%
+	if(session.getAttribute("currentUserSession")!=null)
+	{
+%>		<a href="GetOrdersServlet">Ordini</a>
+		<a href="LogoutServlet">Logout</a>
+<%
+	}
+	else
+	{
+%>
+		<a href="Login.jsp">Login</a>
+<%
+	}
+%>
 
 <table>
 	<tr>
+	
 		<td id="FirstRow"><h2>Titolo</h2></td>
 		<td id="FirstRow"><h2>Descrizione</h2></td>
 	</tr>
