@@ -28,7 +28,7 @@
 	else
 	{	
 %>
-		<h1>Carrelo vuoto</h1>
+		<h1>Carrello vuoto</h1>
 <% 
 		return;
 	}
@@ -39,9 +39,11 @@
 	<br>
 
 	<% 
+			double prezzoTotale=0;
 			for(int i=0; i<size; i++)
 			{
 				product=carrello.getProduct(i);	
+				
 			
 	%>	
 	
@@ -63,8 +65,8 @@
 				    <td><%=product.getPiattaforma()%></td>
 				  </tr>
 				  <tr>
-				    <td><h3>Prezzo</h3></td>
-				    <td><font color="green"><%=product.getPrezzo()*product.getCartQuantity()%> euro </font></td>
+				    <td><h3>Prezzo (IVA inclusa)</h3></td>
+				    <td><font color="green"><%=product.getPrezzoTotale()*product.getCartQuantity()%> euro </font></td>
 				  </tr>
 				  <tr>
 				    <td><h3>Quantit&agrave;</h3></td>
@@ -85,15 +87,19 @@
 				 	</div>
 </div>
 	<% 
+			prezzoTotale=prezzoTotale+(product.getPrezzoTotale()*product.getCartQuantity());
+			
 			} 
 	
 	%>
 	
+	<h2>Prezzo Totale: <%=prezzoTotale %> </h2>
 	<!-- Checkout che annulla il carrello  -->
 	<form method="get" action="CheckoutServlet">
+	<p> <input type="text" name="indirizzo" placeholder="indirizzo di consegna"> </p>
 	<h1><input class="button" type="submit" name="checkout" value="Checkout"></h1>
 	</form>
-
+	
 
 
 

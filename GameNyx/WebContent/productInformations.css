@@ -1,5 +1,12 @@
 @charset "ISO-8859-1";
 
+
+p, h2
+{
+	
+	text-align: center;
+}
+
 h1
 {
 	margin-left:43%;
@@ -43,3 +50,5 @@ td
 	color: #263B27
 	
 }
+
+

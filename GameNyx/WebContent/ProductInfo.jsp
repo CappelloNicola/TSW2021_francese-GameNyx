@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="productInformations.css">
+<link rel="stylesheet" type="text/css" href="./productInformations.css"/>
 <meta charset="ISO-8859-1">
 
 <% ProductBean product =(ProductBean) request.getAttribute("product"); %>
@@ -68,8 +68,16 @@
 		    <td><%=product.getSottotitoli()%></td>
 		  </tr>
 		  <tr>
-		    <td><h3>Prezzo</h3></td>
+		    <td><b>Prezzo</b></td>
 		    <td><%=product.getPrezzo()%> euro</td>
+		  </tr>
+		  <tr>
+		    <td><b>Iva</b></td>
+		    <td><%=product.getIva()%>%</td>
+		  </tr>
+		  <tr>
+		    <td><h3>Prezzo Totale:</h3></td>
+		    <td><%=product.getPrezzoTotale()%></td>
 		  </tr>
 		  <tr>
 		  	<td>

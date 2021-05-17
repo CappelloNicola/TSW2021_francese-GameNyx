@@ -3,8 +3,6 @@
 <%@ page import ="java.util.ArrayList, model.ProductBean"%>
 <%@ page import ="java.util.List"%>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>

@@ -19,6 +19,13 @@ public class ProductBean
 	double mediaValutazioni; //compreso tra 0 e 5 stelle
 	int numeroVendite;
 	
+	public double getPrezzoTotale()
+	{
+		double prezzoIva=prezzo + ((prezzo*iva)/100);
+		double val=Math.floor(prezzo * 100) / 100;
+		return val;
+	}
+	
 	public int getId()
 	{
 		return id;

@@ -42,6 +42,11 @@ public class Cart
 		return null;
 	}
 	
+	public ArrayList<ProductBeanCart> getProducts()
+	{
+		return productsCart;
+	}
+	
 	public int getSize()
 	{
 		return productsCart.size();

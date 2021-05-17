@@ -1,5 +1,6 @@
 package control;
 
+import java.sql.Date;
 import java.io.IOException;
 import model.*;
 
@@ -12,14 +13,14 @@ import javax.servlet.http.HttpSession;
 
 
 /*
- * Questa Servlet fornisce tutti i prodotti in catalogo
+ * Questa Servlet compie il checkout del carrello. Salva l'ordine nel DB
  */
 
 @WebServlet("/CheckoutServlet")
 public class CheckoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		
 		HttpSession sessione=request.getSession();
@@ -34,6 +35,24 @@ public class CheckoutServlet extends HttpServlet {
 		{
 			/*
 			 * Aggiungo l'acquisto nel DB*/
+			
+			AcquistoBean acquisto=new AcquistoBean();
+			acquisto.setStato("ordinato");
+			acquisto.setIndirizzo(request.getParameter("indirizzo"));	
+			acquisto.setDataOrdine(new Date(System.currentTimeMillis())); //restituisce la data odierna
+			acquisto.setUtente(utente.getUsername());
+			acquisto.setVideogiochi(carrello.getProducts());
+			acquisto.setPrezzoAuto();
+			
+			AcquistoDAO acquistoDao=new AcquistoDAO();
+			try
+			{
+				acquistoDao.doSave(acquisto);
+			}
+			catch(Exception e)
+			{
+				System.out.println("doSave acquisto non riuscito: "+e);
+			}
 			
 			
 			carrello.resetCart();

@@ -18,9 +18,20 @@ public class AcquistoBean {
 		numeroOrdine=num;
 	}
 	
-	public void setPrezzo(double num)
+	//questo setter setta il prezzo in base ai videogiochi acquistati
+	public void setPrezzoAuto()
 	{
-		prezzo=num;
+		prezzo=0;
+		for(int i=0; i<videogiochi.size(); i++)
+		{
+			ProductBeanCart v=videogiochi.get(i);
+			prezzo=prezzo+(v.getPrezzoTotale()*v.getCartQuantity());
+		}
+	}
+	
+	public void setPrezzo(double prezzo)
+	{
+		this.prezzo=prezzo;
 	}
 	
 	public void setStato(String stato)
