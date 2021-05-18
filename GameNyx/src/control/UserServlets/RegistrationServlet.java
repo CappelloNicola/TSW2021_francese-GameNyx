@@ -3,7 +3,6 @@ package control.UserServlets;
 import java.io.IOException;
 import java.sql.Date;
 
-import javax.jms.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

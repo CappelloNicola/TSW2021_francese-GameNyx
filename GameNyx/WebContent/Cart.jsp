@@ -89,6 +89,7 @@
 </div>
 	<% 
 			prezzoTotale=prezzoTotale+(product.getPrezzoTotale()*product.getCartQuantity());
+			prezzoTotale=Math.floor(prezzoTotale * 100) / 100;
 			
 			} 
 	

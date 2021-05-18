@@ -22,7 +22,7 @@ public class ProductBean
 	public double getPrezzoTotale()
 	{
 		double prezzoIva=prezzo + ((prezzo*iva)/100);
-		double val=Math.floor(prezzo * 100) / 100;
+		double val=Math.floor(prezzoIva * 100) / 100;
 		return val;
 	}
 	
