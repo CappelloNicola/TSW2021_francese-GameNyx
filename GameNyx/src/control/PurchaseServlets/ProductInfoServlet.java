@@ -1,4 +1,4 @@
-package control;
+package control.PurchaseServlets;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.ProductBean;
-import model.ProductDAO;
+import model.PurchaseModels.ProductBean;
+import model.PurchaseModels.ProductDAO;
 
 @WebServlet("/ProductInfoServlet")
 public class ProductInfoServlet extends HttpServlet {

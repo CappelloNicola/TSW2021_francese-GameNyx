@@ -1,5 +1,6 @@
-package control;
-import model.*;
+package control.PurchaseServlets;
+import model.PurchaseModels.ProductBean;
+import model.PurchaseModels.ProductDAO;
 
 import java.io.IOException;
 

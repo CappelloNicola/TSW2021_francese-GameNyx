@@ -1,8 +1,12 @@
-package control;
+package control.PurchaseServlets;
 
 import java.sql.Date;
 import java.io.IOException;
-import model.*;
+
+import model.PurchaseModels.AcquistoBean;
+import model.PurchaseModels.AcquistoDAO;
+import model.PurchaseModels.Cart;
+import model.UserModels.UserBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

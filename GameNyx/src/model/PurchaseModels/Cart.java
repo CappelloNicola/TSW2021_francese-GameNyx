@@ -1,4 +1,4 @@
-package model;
+package model.PurchaseModels;
 
 import java.util.ArrayList;
 
@@ -57,7 +57,7 @@ public class Cart
 		ProductBeanCart toAdd=ProductCartConverter(e);
 		
 			
-		//Cerca prodotto già presente nel carrello; Se presente aggiorna la quantità a +1
+		//Cerca prodotto giï¿½ presente nel carrello; Se presente aggiorna la quantitï¿½ a +1
 			for(int i=0; i<productsCart.size(); i++)
 			{
 				if(productsCart.get(i).getId()==toAdd.getId())

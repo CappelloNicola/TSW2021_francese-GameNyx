@@ -1,4 +1,4 @@
-package model;
+package model.PurchaseModels;
 
 public class ProductBeanCart extends ProductBean{
 	

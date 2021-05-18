@@ -1,11 +1,11 @@
-<%@page import="model.ProductBean"%>
-<%@page import="model.Cart"%>
+<%@page import="model.PurchaseModels.ProductBean"%>
+<%@page import="model.PurchaseModels.Cart"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="./productInformations.css"/>
+<link rel="stylesheet" type="text/css" href="css/productInformations.css"/>
 <meta charset="ISO-8859-1">
 
 <% ProductBean product =(ProductBean) request.getAttribute("product"); %>
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-	<jsp:useBean id="cart" class="model.Cart" scope="session" />
+	<jsp:useBean id="cart" class="model.PurchaseModels.Cart" scope="session" />
 
 
 <%

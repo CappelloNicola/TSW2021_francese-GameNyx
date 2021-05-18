@@ -1,7 +1,8 @@
-package control;
+package control.PurchaseServlets;
 
 import java.io.IOException;
-import model.*;
+
+import model.PurchaseModels.Cart;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,8 +28,14 @@ public class ModifyQuantityServlet extends HttpServlet {
 		Cart carrello=(Cart)sessione.getAttribute("carrello");
 	
 		int id = Integer.parseInt(request.getParameter("productID"));
-			
-		if(request.getParameter("setQuantity")!=null)
+
+		//cancella il prodotto dal carrelo settando la quantità a 0
+		if(request.getParameter("remove")!=null)
+		{
+			carrello.modifyQuantity(id,0);
+		}
+		//modifica la quantità del prodotto nel carrello
+		else if(request.getParameter("setQuantity")!=null)
 		{
 			int quantity = Integer.parseInt(request.getParameter("setQuantity"));
 			carrello.modifyQuantity(id,quantity);
@@ -39,7 +46,7 @@ public class ModifyQuantityServlet extends HttpServlet {
 		/*RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
 		dispatcher.forward(request, response);*/
 		
-		/*se in seguito alla modifica della quantit� vengono rimossi tutti i prodotti, bisogna rimuovere
+		/*se in seguito alla modifica della quantit� vengono rimossi tutti i prodotti, bisogna rimuovere
 		 * dalla sessione l'attributo carrello*/
 		if(carrello.getSize()==0)
 		{

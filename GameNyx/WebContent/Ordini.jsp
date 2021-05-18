@@ -1,15 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import ="java.util.ArrayList, model.AcquistoBean"%>    
+<%@ page import ="java.util.ArrayList, model.PurchaseModels.AcquistoBean"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <style>
-	table, tr, td {
-  border: 1px solid black;
-}
+	table
+	{
+		width:30%;
+		margin-left: 30%;
+	}
+	td
+	{
+		border: 1px solid black;
+		padding: 10px 10px 10px;
+		text-align: center;
+	}
+	tr:nth-child(even)
+	{
+		background: #EEEEEE;
+	}
 
 </style>
 
@@ -19,6 +31,7 @@
 	
 	<%
 		ArrayList<AcquistoBean> ordini=(ArrayList<AcquistoBean>)request.getAttribute("ordini");
+
 		if(ordini==null)
 		{
 		
@@ -28,11 +41,9 @@
 			return;
 		}
 	%>
-	
+
 <table>
-	<tr>
-	
-		<td><h2>Numero Ordine</h2></td>
+	<tr style="background: rgba(94,93,93,0.85)">
 		<td><h2>Data</h2></td>
 		<td><h2>Prezzo</h2></td>
 		<td><h2>Dettagli</h2></td>
@@ -40,10 +51,6 @@
 		<% for(AcquistoBean e :ordini) { %>
 		
 	<tr>
-		<td>
-			<%= e.getNumeroOrdine() %>
-		</td>
-		
 		<td>
 			<%= e.getDataOrdine() %>
 		</td>

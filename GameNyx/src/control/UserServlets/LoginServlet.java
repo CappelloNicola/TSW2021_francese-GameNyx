@@ -1,4 +1,4 @@
-package control;
+package control.UserServlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-import model.UserBean;
-import model.UserDAO;
+import model.UserModels.UserBean;
+import model.UserModels.UserDAO;
 
 /**
  * Servlet che effettua il login dell'utente
@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		else
 		{
-			response.sendRedirect("Registrazione.jsp"); //da implementare
+			response.sendRedirect("Registrazione.jsp");
 		}
 		
 	}

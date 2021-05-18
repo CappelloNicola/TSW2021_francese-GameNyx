@@ -1,4 +1,4 @@
-package model;
+package model.PurchaseModels;
 import java.sql.Date;
 
 

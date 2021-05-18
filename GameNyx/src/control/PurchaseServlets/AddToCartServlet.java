@@ -1,7 +1,10 @@
-package control;
+package control.PurchaseServlets;
 
 import java.io.IOException;
-import model.*;
+
+import model.PurchaseModels.Cart;
+import model.PurchaseModels.ProductBean;
+import model.PurchaseModels.ProductDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

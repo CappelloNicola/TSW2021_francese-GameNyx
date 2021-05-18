@@ -1,4 +1,4 @@
-package model;
+package model.UserModels;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,7 +29,7 @@ public class UserDAO
 
 	private static final String TABLE_NAME = "utente";
 	
-	//Metodo per verificare il login dell'utente --> output: user.isvalid(true) + user info se l'accesso è valido
+	//Metodo per verificare il login dell'utente --> output: user.isvalid(true) + user info se l'accesso ï¿½ valido
 	public static UserBean doRetrieve(UserBean beanInput) 
 	{
 		
@@ -83,7 +83,7 @@ public class UserDAO
 	}
 
 
-	public synchronized void doSave(UserBean user) throws SQLException, Exception 
+	public synchronized void doSave(UserBean user) throws SQLException, Exception
 	{
 
 		Connection connection = null;
@@ -108,7 +108,7 @@ public class UserDAO
 			
 			preparedStatement.executeUpdate();
 
-			
+
 			} 
 			finally 
 			{

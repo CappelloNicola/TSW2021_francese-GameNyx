@@ -1,13 +1,13 @@
-<%@page import="model.ProductBean"%>
-<%@page import="model.Cart"%>
-<%@page import="model.ProductBeanCart"%>
+<%@page import="model.PurchaseModels.ProductBean"%>
+<%@page import="model.PurchaseModels.Cart"%>
+<%@page import="model.PurchaseModels.ProductBeanCart"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="productInformations.css">
+<link rel="stylesheet" type="text/css" href="css/productInformations.css">
 <meta charset="ISO-8859-1">
 <title>Carrello</title>
 </head>
@@ -74,7 +74,8 @@
 				    <form method="get" action="ModifyQuantityServlet"> <!-- form che invia alla servlet la nuova quantità e il prodotto -->
 				    	<input type="hidden" name="productID" value="<%= product.getId() %>">
 				    	<input style="width:35px" type="number" name="setQuantity" value="<%=product.getCartQuantity()%>">
-				    	<input type="submit" name="sendQuantity" value="aggiorna"> <!-- se si aggiorna la pagina si aggiunge +1 quantity!? -->
+				    	<input type="submit" name="sendQuantity" value="aggiorna">
+						<input type="submit" name="remove" value="rimuovi">
 				    </form>
 				    </td>
 				  </tr>

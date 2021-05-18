@@ -5,11 +5,14 @@
     <welcome-file>Products.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-  <servlet-name>ProductInfoServlet</servlet-name>
-  <servlet-class>control.ProductInfoServlet </servlet-class>
-  </servlet>
-  <servlet>
-  <servlet-name>LoginServlet</servlet-name>
-  <servlet-class>control.LoginServlet </servlet-class>
+    <servlet-name>ProductInfoServlet</servlet-name>
+    <servlet-class>control.PurchaseServlets.ProductInfoServlet</servlet-class>
+
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>control.UserServlets.LoginServlet</servlet-class>
+
+    <servlet-name>OrderInfo</servlet-name>
+    <servlet-class>control.UserServlets.OrderInfoServlet</servlet-class>
+
   </servlet>
 </web-app>
