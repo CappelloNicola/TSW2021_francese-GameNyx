@@ -43,13 +43,13 @@
     }
 
     .button {
-        height: 30px;
-        width: 150px;
+        height: 25px;
+        width: 100px;
         background-color: #4CAF50;
         border-color: grey;
         font-weight: bold;
         color: #263B27;
-        margin-left:20%
+        margin-left:0%
 
     }
 }
@@ -95,15 +95,14 @@
 
     .button
     {
-        position:absolute;
-        height:50px;
-        width:220px;
+        position:relative;
+        height:40px;
+        width:120px;
         font-size:18px;
         background-color: #4CAF50;
         border-color: grey;
         font-weight: bold;
         color: #263B27;
-        margin-left:30%;
 
 
     }
@@ -146,19 +145,20 @@
     {
         font-size: 18px;
         padding-left: 40px;
-        padding-top: 10px;
+        padding-top: 20px;
     }
 
     .button
     {
-        position:absolute;
+        position:relative;
         height:30px;
-        width:180px;
+        width:120px;
         background-color: #4CAF50;
         border-color: grey;
         font-weight: bold;
         color: #263B27;
-        margin-left:20%;
+        margin-top:3px;
+
 
 
     }

@@ -27,7 +27,7 @@ public class ProductsServlet extends HttpServlet {
 		{
 			ArrayList<ProductBean> products=dao.doRetrieveAll("id");  //prende tutti i prodotti dal DB secondo l'ordine del parametro
 			request.setAttribute("products", products);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Products.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
 			dispatcher.forward(request, response);
 		}
 		catch(Exception e)

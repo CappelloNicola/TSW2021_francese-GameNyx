@@ -2,7 +2,7 @@
 <web-app>
   <display-name>GameNyx</display-name>
   <welcome-file-list>
-    <welcome-file>Products.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>ProductInfoServlet</servlet-name>
@@ -13,6 +13,9 @@
 
     <servlet-name>OrderInfo</servlet-name>
     <servlet-class>control.UserServlets.OrderInfoServlet</servlet-class>
-
   </servlet>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error404.jsp</location>
+  </error-page>
 </web-app>

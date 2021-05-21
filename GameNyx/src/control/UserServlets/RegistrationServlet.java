@@ -57,7 +57,7 @@ public class RegistrationServlet extends HttpServlet {
 		{
 			HttpSession sessione=request.getSession();
 			sessione.setAttribute("currentUserSession", user);
-			response.sendRedirect("Products.jsp");
+			response.sendRedirect("index.jsp");
 		}
 
 

@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/productInformations.css"/>
 <meta charset="ISO-8859-1">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <% ProductBean product =(ProductBean) request.getAttribute("product"); %>
 
 <title><%=product.getTitolo() %></title>
@@ -79,17 +79,12 @@
 		    <td><h3>Prezzo Totale:</h3></td>
 		    <td><%=product.getPrezzoTotale()%></td>
 		  </tr>
-		  <tr>
-		  	<td>
-		  	 <form action="AddToCartServlet" method="get" target="_self"><!-- invia i dati alla stessa pagina -->
-		 	 	 <!-- reinserisce nell'url l'id del prodotto per non perderlo -->
-		  	 	<input class="button" type="hidden" value="<%=product.getId() %>" name="productID">
-		  	 	<input class="button" type="submit" name="addToCart" value="aggiungi al carrello">
-		  	 </form>
-		  	 </td>
-		  
-		  </tr>
 		 </table>
+		<form action="AddToCartServlet" method="get" target="_self"><!-- invia i dati alla stessa pagina -->
+			<!-- reinserisce nell'url l'id del prodotto per non perderlo -->
+			<input class="button" type="hidden" value="<%=product.getId() %>" name="productID">
+			<input class="button" type="submit" name="addToCart" value="aggiungi al carrello">
+		</form>
 	</div>
 </div>
 </body>

@@ -7,8 +7,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/productInformations.css">
+<link rel="stylesheet" type="text/css" href="css/cartProducts.css">
 <meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carrello</title>
 </head>
 <body>
@@ -74,8 +75,8 @@
 				    <form method="get" action="ModifyQuantityServlet"> <!-- form che invia alla servlet la nuova quantità e il prodotto -->
 				    	<input type="hidden" name="productID" value="<%= product.getId() %>">
 				    	<input style="width:35px" type="number" name="setQuantity" value="<%=product.getCartQuantity()%>">
-				    	<input type="submit" name="sendQuantity" value="aggiorna">
-						<input type="submit" name="remove" value="rimuovi">
+				    	<input class="button" type="submit" name="sendQuantity" value="aggiorna">
+						<input class="button" type="submit" name="remove" value="rimuovi">
 				    </form>
 				    </td>
 				  </tr>
