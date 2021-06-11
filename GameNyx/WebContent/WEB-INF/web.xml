@@ -16,6 +16,6 @@
   </servlet>
   <error-page>
     <error-code>404</error-code>
-    <location>/error404.jsp</location>
+    <location>/errors/error404.jsp</location>
   </error-page>
 </web-app>

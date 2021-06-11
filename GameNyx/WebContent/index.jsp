@@ -11,13 +11,13 @@
     <title>GameNyx</title>
 </head>
 <body>
-<%@ include file="header.jsp"%>
+<%@ include file="fragments/header.jsp"%>
 
-<%@ include file="menu.jsp"%>
+<%@ include file="fragments/menu.jsp"%>
 
-<%@ include file="GenereBarAnimation.jsp"%>
+<%@ include file="fragments/GenereBarAnimation.jsp"%>
 
-<%@ include file="footer.jsp"%>
+<%@ include file="fragments/footer.jsp"%>
 
 </body>
 </html>
