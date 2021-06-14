@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/cartProducts.css">
+<link rel="stylesheet" type="text/css" href="css/MyCss.css">
 <meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carrello</title>
@@ -36,7 +36,8 @@
 
 %>
 	
-	<h1>Carrello</h1>
+	<!-- Aggiungere JavaScript: se il carrello è vuoto, l'innerHTML diventa "Carrello vuoto" -->
+	<h1 id="cartTitle">Carrello</h1>
 	<br>
 
 	<% 
@@ -49,13 +50,13 @@
 	%>	
 	
 		
-		<div class="container">	
-				<div class="copertina">
+		<div id="productContainer">
+				<div id="cartImageContainer">
 					<% String copertina="./images/"+product.getTitolo()+"/copertina.jpg"; %>
-					<img src="<%= copertina %>">
+					<img id="cartImage" src="<%= copertina %>">
 				</div>
 			
-				<div class="info">
+				<div id="CartInformationDiv">
 				<table>
 				  <tr>
 				    <td><b>Titolo</b></td>
@@ -96,11 +97,11 @@
 	
 	%>
 	
-	<h2>Prezzo Totale: <%=prezzoTotale %> </h2>
+	<h2 id="prezzoTotale">Prezzo Totale: <%=prezzoTotale %> </h2>
 	<!-- Checkout che annulla il carrello  -->
 	<form method="get" action="CheckoutServlet">
-	<p> <input type="text" name="indirizzo" placeholder="indirizzo di consegna"> </p>
-	<h1><input class="button" type="submit" name="checkout" value="Checkout"></h1>
+	<p id="indirizzoConsegna"> <input type="text" name="indirizzo" placeholder="indirizzo di consegna"> </p>
+	<h1 id="checkout"><input class="button" type="submit" name="checkout" value="Checkout"></h1>
 	</form>
 	
 

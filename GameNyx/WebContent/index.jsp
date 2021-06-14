@@ -7,10 +7,10 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/MyCss.css">
     <title>GameNyx</title>
 </head>
-<body>
+<body id="indexBody">
 <%@ include file="fragments/header.jsp"%>
 
 <%@ include file="fragments/menu.jsp"%>

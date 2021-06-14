@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/productInformations.css"/>
+<link rel="stylesheet" type="text/css" href="css/MyCss.css"/>
 <meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <% ProductBean product =(ProductBean) request.getAttribute("product"); %>
@@ -28,8 +28,8 @@
 
 
 
-<div class="container">
-	<div class="copertina">
+<div id="productInformationDiv">
+	<div id="productInfoImage">
 		<% String copertina="./images/"+product.getTitolo()+"/copertina.jpg"; %>
 		<img src="<%= copertina %>">
 	</div>

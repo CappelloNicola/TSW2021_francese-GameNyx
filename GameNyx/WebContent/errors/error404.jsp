@@ -6,7 +6,7 @@
 
 <body>
     <p style="margin: auto;width: 30%;font-size:100px;color: #2980B9">ERROR 404</p>
-    <p style="margin: auto;width: 23%;font-size:30px;color: green">Scusami, ma lei dove sta andando?</p>
+    <p style="margin: auto;width: 23%;font-size:30px;color: green">Mi scusi, dove sta andando?</p>
     <!-- implementare immagine di errore casuale -->
     <!-- 70% "game over.png" -->
     <!-- 20% "based.png" -->

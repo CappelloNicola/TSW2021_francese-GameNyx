@@ -1,1 +1,583 @@
 @charset "ISO-8859-1";
+
+#indexBody
+{
+    margin: 0;
+}
+
+
+/*
+	Desktop CSS
+	-------------------------------------------------------
+	Desktop CSS
+	-------------------------------------------------------
+	Desktop CSS
+	-------------------------------------------------------
+	Desktop CSS
+	-------------------------------------------------------
+	Desktop CSS
+	-------------------------------------------------------
+*/
+
+@media screen and (min-width: 769px) /*desktop*/
+{
+    #productInformationDiv {
+        margin: 50px 20px 0 0;
+        border: 5px #333;
+        overflow: auto;
+        margin-left: 25%;
+        margin-top: 5%;
+    }
+
+    #productInfoImage {
+        float: left;
+        width: 15%;
+    }
+
+    #productInfoImage img {
+        display: block;
+        width: 100%
+    }
+
+    #productInformationDiv td {
+        font-size: 18px;
+        padding-left: 40px;
+        padding-top: 5px;
+    }
+
+    #productInformationDiv .button {
+        height: 30px;
+        width: 150px;
+        background-color: #4CAF50;
+        border-color: grey;
+        font-weight: bold;
+        color: #263B27;
+        margin-left:20%
+
+    }
+    
+     #prezzoTotale, #indirizzoConsegna {
+
+        text-align: center;
+    }
+    
+    #checkout, #cartTitle {
+        margin-left: 43%;
+    }
+    
+    #productContainer {
+        margin: 50px 20px 0 0;
+        border: 5px #333;
+        overflow: auto;
+        margin-left: 25%;
+        margin-top: 5%;
+    }
+    
+    #cartImageContainer {
+        float: left;
+        width: 15%;
+    }
+    
+    #cartImage {
+        display: block;
+        width: 100%
+    }
+    
+    #CartInformationDiv {
+        margin-top: 20px;
+        margin-left: 22%
+    }
+    
+    #CartInformationDiv td {
+        font-size: 18px;
+        padding-left: 40px;
+        padding-top: 5px;
+    }
+    
+    #CartInformationDiv .button {
+        height: 25px;
+        width: 100px;
+        background-color: #4CAF50;
+        border-color: grey;
+        font-weight: bold;
+        color: #263B27;
+        margin-left:0%
+
+    }
+    
+    footer {
+        position: relative;
+        margin-top: 100px;
+        bottom: 0;
+        width: 100%;
+        background-color: #2980B9;
+        height: 200px;
+    }
+    
+    #informazioniFooter {
+        background: #4CAF50;
+        height: 50px;
+        width: 100%;
+    }
+   
+   	#informazioniFooter	p {
+        display: inline-block;
+        margin-left: 20%;
+    }
+    
+    #header
+    {
+        height: 80px;
+        background: #2980B9;
+        box-shadow: 1px 2px 10px 1px #333333;
+        left: 0;
+        right: 0;
+    }
+    #logo
+    {
+        display: inline-block;
+        font-size: 1.5em;
+        margin-top: 25px;
+        margin-left: 30px;
+        color: white;
+    }
+
+    #headerbuttons
+    {
+        display: inline-block;
+        background-color: #239bf3;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        float: right;
+        margin-top: 20px;
+        margin-right: 5px;
+        border-radius: 50px;
+        line-height: 25px;
+        width: 100px;
+        height: 25px;
+    }
+
+    #signup
+    {
+        display: inline-block;
+        background-color: #f3235e;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        float: right;
+        margin-top: 20px;
+        margin-right: 20px;
+        border-radius: 50px;
+        line-height: 25px;
+        width: 100px;
+        height: 25px;
+
+
+    }
+
+    #user
+    {
+        display: inline-block;
+        color: white;
+        font-size: 1.4em;
+        color: #F5B041;
+        float: right;
+        margin-top: 25px;
+        margin-right: 30px;
+        border-radius: 50px;
+
+    }
+    
+   	#header a:hover, #header a:active {
+        background-color: rgba(35, 155, 243, 0.64);
+    }
+}
+
+/*
+	Tablet CSS
+	-------------------------------------------------------
+	Tablet CSS
+	-------------------------------------------------------
+	Tablet CSS
+	-------------------------------------------------------
+	Tablet CSS
+	-------------------------------------------------------
+	Tablet CSS
+	-------------------------------------------------------
+*/
+
+@media screen and (min-width: 600px) and  (max-width: 768px) /*tablet*/
+{
+    #productInformationDiv {
+        margin: 50px 20px 0 0;
+        border: 5px #333;
+        overflow: auto;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+    #productInfoImage {
+        width: 45%;
+        margin-left:30%
+    }
+    #productInfoImage img {
+        display: block;
+        width:100%
+    }
+
+   #productInformationDiv table
+    {
+        padding-top:10%;
+    }
+    #productInformationDiv td
+    {
+        font-size: 20px;
+        padding-left: 80px;
+        padding-top: 10px;
+    }
+
+   #productInformationDiv .button
+    {
+        position:absolute;
+        height:50px;
+        width:220px;
+        font-size:18px;
+        background-color: #4CAF50;
+        border-color: grey;
+        font-weight: bold;
+        color: #263B27;
+        margin-left:30%;
+    }
+    
+    #prezzoTotale, #indirizzoConsegna {
+
+        text-align: center;
+    }
+    
+    #checkout, #cartTitle {
+        margin-left: 43%;
+    }
+    
+    #productContainer {
+        margin: 50px 20px 0 0;
+        border: 5px #333;
+        overflow: auto;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+    
+    #cartImageContainer {
+        width: 45%;
+        margin-left:30%
+    }
+    
+    #cartImage {
+        display: block;
+        width:100%
+    }
+    
+     #CartInformationDiv > table 
+    {
+        padding-top:10%;
+    }
+    
+    #CartInformationDiv td  {
+        font-size: 20px;
+        padding-left: 80px;
+        padding-top: 10px;
+    }
+    
+    #CartInformationDiv .button
+    {
+        position:relative;
+        height:40px;
+        width:120px;
+        font-size:18px;
+        background-color: #4CAF50;
+        border-color: grey;
+        font-weight: bold;
+        color: #263B27;
+
+
+    }
+    
+    footer {
+        position: relative;
+        margin-top: 100px;
+        bottom: 0;
+        width: 100%;
+        background-color: #2980B9;
+        height: 200px;
+    }
+    
+    #informazioniFooter {
+        background: #4CAF50;
+        height: 50px;
+        width: 100%;
+    }
+   
+   	#informazioniFooter	p {
+        display: inline-block;
+        margin-left: 20%;
+    }
+    
+    #header
+    {
+        height: 80px;
+        background: #2980B9;
+        box-shadow: 1px 2px 10px 1px #333333;
+        left: 0;
+        right: 0;
+    }
+    #logo
+    {
+        display: inline-block;
+        font-size: 1.5em;
+        margin-top: 25px;
+        margin-left: 30px;
+        color: white;
+    }
+
+    #headerbuttons
+    {
+        display: inline-block;
+        background-color: #239bf3;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        float: right;
+        margin-top: 20px;
+        margin-right: 5px;
+        border-radius: 50px;
+        line-height: 20px;
+        width: 100px;
+        height: 20px;
+    }
+
+    #signup
+    {
+        display: inline-block;
+        background-color: #f3235e;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        float: right;
+        margin-top: 20px;
+        margin-right: 20px;
+        border-radius: 50px;
+        line-height: 25px;
+        width: 100px;
+        height: 25px;
+
+
+    }
+
+    #user
+    {
+        display: inline-block;
+        color: white;
+        font-size: 1.4em;
+        color: #F5B041;
+        float: right;
+        margin-top: 25px;
+        margin-right: 30px;
+        border-radius: 50px;
+
+    }
+    
+   	#header a:hover, #header a:active {
+        background-color: rgba(35, 155, 243, 0.64);
+    }
+    
+}
+
+/*
+	Phone CSS
+	-------------------------------------------------------
+	Phone CSS
+	-------------------------------------------------------
+	Phone CSS
+	-------------------------------------------------------
+	Phone CSS
+	-------------------------------------------------------
+	Phone CSS
+	-------------------------------------------------------
+*/
+
+@media screen and (min-width: 320px) and  (max-width: 599px)/*phone*/
+{
+
+  #productInformationDiv {
+        margin: 50px 20px 0 0;
+        border: 5px #333;
+        overflow: auto;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+    #productInfoImage {
+        width: 55%;
+        margin-left:30%
+    }
+    #productInfoImage img {
+        display: block;
+        width:100%
+    }
+
+    #productInformationDiv table
+    {
+        padding-top:10%;
+    }
+    #productInformationDiv td
+    {
+        font-size: 18px;
+        padding-left: 40px;
+        padding-top: 10px;
+    }
+
+    #productInformationDiv .button
+    {
+        position:absolute;
+        height:30px;
+        width:180px;
+        background-color: #4CAF50;
+        border-color: grey;
+        font-weight: bold;
+        color: #263B27;
+        margin-left:20%;
+    }
+    
+     #prezzoTotale, #indirizzoConsegna {
+
+        text-align: center;
+    }
+    
+    #checkout, #cartTitle {
+        margin-left: 43%;
+    }
+    
+    #productContainer {
+        margin: 50px 20px 0 0;
+        border: 5px #333;
+        overflow: auto;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+    
+    #cartImageContainer {
+        width: 55%;
+        margin-left:30%
+    }
+    
+    #cartImage {
+        display: block;
+        width:100%
+    }
+    
+     #CartInformationDiv > table 
+   {
+        padding-top:10%;
+    }
+    
+    #CartInformationDiv td   {
+        font-size: 18px;
+        padding-left: 40px;
+        padding-top: 20px;
+    }
+    
+    #CartInformationDiv .button
+    {
+        position:relative;
+        height:30px;
+        width:120px;
+        background-color: #4CAF50;
+        border-color: grey;
+        font-weight: bold;
+        color: #263B27;
+        margin-top:3px;
+
+    }
+    
+    footer {
+        position: relative;
+        margin-top: 100px;
+        bottom: 0;
+        width: 100%;
+        background-color: #2980B9;
+        height: 200px;
+        
+    }
+    
+    #informazioniFooter {
+        background: #4CAF50;
+        height: 50px;
+        width: auto;
+    }
+   
+   	#informazioniFooter	p {
+        display: inline-block;
+        margin-left: 20%;
+        width: 50%;
+
+    }
+    
+    #header
+    {
+        height: 80px;
+        background: #2980B9;
+        box-shadow: 1px 2px 10px 1px #333333;
+        left: 0;
+        right: 0;
+        top: 0;
+        position: fixed;
+
+    }
+    #logo
+    {
+        display: inline-block;
+        font-size: 1.5em;
+        margin-top: 25px;
+        margin-left: 30px;
+        color: white;
+    }
+
+    #headerbuttons
+    {
+        display: inline-block;
+        background-color: #239bf3;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+        text-decoration: none;
+        float: right;
+        margin-top: 20px;
+        margin-right: 5px;
+        border-radius: 50px;
+        width: 90px;
+        height: 40px;
+    }
+
+    #signup
+    {
+        display: inline-block;
+        background-color: #f3235e;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+        text-decoration: none;
+        float: right;
+        margin-top: 20px;
+        margin-right: 10px;
+        border-radius: 50px;
+        width: 90px;
+        height: 40px;
+    }
+
+    #user
+    {
+        display: none;
+    }
+    
+   	#header a:hover, #header a:active {
+        background-color: rgba(35, 155, 243, 0.64);
+    }
+}
