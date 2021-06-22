@@ -39,8 +39,19 @@ public class LoginServlet extends HttpServlet {
 		if(user.getIsValid())
 		{
 			sessione.setAttribute("currentUserSession", user);
-			response.sendRedirect(getServletContext().getContextPath());	
-			//problema: se fai un login dopo aver provato il checkout, bisogna fare il checkout in automatico
+			
+			if(user.getAdmin())
+			{
+				response.sendRedirect(getServletContext().getContextPath()+"/adminPages/Catalogo.jsp");
+			}
+			else
+			{
+				response.sendRedirect(getServletContext().getContextPath());	
+				//problema: se fai un login dopo aver provato il checkout, bisogna fare il checkout in automatico
+				//Nicola: non per forza: facendo così l'utente si ritrova il carrello vuoto senza sapere se l'acquisto è andato a buon fine o meno
+				//io lo rimarrei così.
+			}
+			
 		}
 		else
 		{

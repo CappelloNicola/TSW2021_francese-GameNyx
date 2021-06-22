@@ -13,17 +13,18 @@
     <!-- 10% "wicked.png" -->
 
     <% int rand = (int) (Math.random()*11)+1;
+    
 
        if(rand>=1 && rand<=9)
        {
     %>
-         <img style="margin-left: 35%;margin-top: 5%" src="images/GenreBar%20icons/WICKED.png" width="512px">
+         <img style="margin-left: 35%;margin-top: 5%" src="${pageContext.request.contextPath}/images/GenreBar%20icons/WICKED.png" width="512px">
     <%
        }
        else
        {
     %>
-        <img style="margin-left: 38%;margin-top: 5%" src="images/GenreBar%20icons/based.png" width="412px">
+        <img style="margin-left: 38%;margin-top: 5%" src="${pageContext.request.contextPath}/images/GenreBar%20icons/based.png" width="412px">
     <%
        }
     %>

@@ -8,9 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.PurchaseModels.ProductBean;
 import model.PurchaseModels.ProductDAO;
+import model.UserModels.UserBean;
 
 @WebServlet("/ProductInfoServlet")
 public class ProductInfoServlet extends HttpServlet {
@@ -27,6 +29,21 @@ public class ProductInfoServlet extends HttpServlet {
 			
 			request.setAttribute("product", product);
 			
+			HttpSession sessione=request.getSession();
+			
+			//se l'utente loggato è un admin bisogna ridirezionarlo ad una pagina diversa
+			UserBean user=(UserBean)sessione.getAttribute("currentUserSession");
+			if(user!=null)
+			{
+				if (user.getAdmin())
+				{
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/adminPages/ProdottoAdmin.jsp");
+					dispatcher.forward(request, response);
+					return;
+				}
+			}
+			
+					
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ProductInfo.jsp");
 			dispatcher.forward(request, response);
 		}

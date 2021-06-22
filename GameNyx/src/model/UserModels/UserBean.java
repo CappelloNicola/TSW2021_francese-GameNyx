@@ -12,6 +12,7 @@ public class UserBean
 	private String cognome;
 	private Date dataNascita;
 	private String telefono;
+	private boolean isadmin;
 	
 	
 	//SETS
@@ -39,6 +40,11 @@ public class UserBean
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	public void setAdmin(boolean admin)
+	{
+		isadmin=admin;
+	}
+	
 	
 	//GETS
 	public Boolean getIsValid() {
@@ -64,5 +70,9 @@ public class UserBean
 	}
 	public String getTelefono() {
 		return telefono;
+	}
+	public boolean getAdmin()
+	{
+		return isadmin;
 	}
 }

@@ -1,26 +1,236 @@
-@charset "ISO-8859-1";
+@charset "UTF-8";
 
-#indexBody
-{
-    margin: 0;
-}
+	
+	/*
+		Desktop CSS
+	*/
+	
+	#tableCatalogo
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        height: auto;
+        width:35%;
+        border-collapse: collapse;
+        text-align: center;
+        margin-left:auto;
+        margin-right:auto;
+            
+    }
+    
+   
+	
+	#indexBody
+	{
+    	margin: 0;
+	}
+
+	#adminNav{
+		margin-bottom:10px;
+		font-family: verdana;
+		font-style: italic;
+	}
+	
+	#adminNav ul {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  background:black /*#2980B9*/;
+ 	  width: 100%
+	}
+	
+	#adminNav li {
+	  float: left;
+	}
+	
+	#adminNav li a {
+	  display: block;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	}
+	
+	#adminNav li a:hover:not(.active) {
+	  background-color:red /*#111*/;
+	}
+	
+	.active {
+	  background-color: red /*#04AA6D*/;
+	}
+	
+	/*#divCatalogo
+	{
+		margin-top: 10%;
+        margin-left: 10%;
+        text-align:center;
+        border:1px solid black;
+	}*/
+	
+	#gameTitle
+	{
+		font-family: arial;
+		font-style: oblique;
+		font-weight:bold;	
+		display:block;
+		width:100%; 
+		text-align:center; 
+		margin-left:auto; 
+		margin-right:auto;
+	}
+	
+	.dettagliButton {
+        width: 50%;
+        padding:5%;
+        border-radius: 25px;
+        border-width:4px;
+        border-color: red;
+        font-family: arial;
+		font-style: oblique;
+        font-weight: 600;
+        font-size: 100%; 
+    }
+    
+    #gameImage
+    {
+    	width:50%;
+    }
+
+	 #productInformationDivAdmin {
+       /* margin: 50px 20px 0 0;*/
+        border: 5px #333;
+        overflow: auto;
+        margin-left: 25%;
+        margin-top: 5%;
+    }
+
+    #productInfoImageAdmin {
+        float: left;
+        width: 15%;
+    }
+    
+    #productInfoImageAdmin img {
+        display: block;
+        width: 100%
+    }
+
+    #productInformationDivAdmin td {
+        font-size: 18px;
+        padding-left: 40px;
+        padding-top: 5px;
+    }
+    
+    
+
+    #productInformationDivAdmin .button {
+        height: 30px;
+        width: 150px;
+        background-color: #4CAF50;
+        border-color: grey;
+        font-weight: bold;
+        color: #263B27;
+        margin-left:20%
+
+    }
+	
+    .titoloGioco
+    {
+        text-align: center;
+        margin-left: 35%;
+        margin-top: 20%;
+        height: 200px;
+    }
+
+    #tdSx
+    {
+
+        width: 50%;
+
+    }
+    #tdDx
+    {
+        width: 50%;
+
+    }
+
+    #dettagliform
+    {
+        display: inline;
+    }
+    
+    .copertina
+    {
+        float: left;
+        margin-left: 5%;
+        margin-top: 10%;
+        margin-bottom: 2%;
+    }
+    .FirstRow {
+        line-height: 1px;
+        background-color:  #2980B9;
+    }
 
 
-/*
-	Desktop CSS
-	-------------------------------------------------------
-	Desktop CSS
-	-------------------------------------------------------
-	Desktop CSS
-	-------------------------------------------------------
-	Desktop CSS
-	-------------------------------------------------------
-	Desktop CSS
-	-------------------------------------------------------
-*/
+ /*   a:link, a:visited {
+        background-color: #239bf3;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }*/
 
-@media screen and (min-width: 769px) /*desktop*/
-{
+    a:hover, a:active {
+        background-color: rgba(35, 155, 243, 0.64);
+    }
+
+   
+   
+    .button {
+        height: 40px;
+        width: 200px;
+        border-radius: 25px;
+        background-color: #04AA6D;
+        border-color: #04AA6D;
+        font-weight: bold;
+    }
+    
+    #InsertForm 
+    {
+    	display: block;
+  		text-align: center;
+    }
+    
+    
+    #InsertForm form
+	{
+	    display: inline-block;
+	    margin-left:auto;
+	    margin-right:auto;
+	    width:30%;
+	    text-align: center;
+	}
+	
+	textarea{
+		resize:none;
+	}
+	
+	#InsertForm form input,#InsertForm form textarea, #InsertForm form select
+	{
+		
+		width:100%;
+		display:inline;
+		text-align:center;
+		border-color: #04AA6D;
+		padding:8px;
+		margin-bottom:10px;
+		box-sizing:border-box;
+	}
+	
+	td span{
+		float:left;
+	}
+
     #productInformationDiv {
         margin: 50px 20px 0 0;
         border: 5px #333;
@@ -192,27 +402,14 @@
    	#header a:hover, #header a:active {
         background-color: rgba(35, 155, 243, 0.64);
     }
-}
-
-/*
-	Tablet CSS
-	-------------------------------------------------------
-	Tablet CSS
-	-------------------------------------------------------
-	Tablet CSS
-	-------------------------------------------------------
-	Tablet CSS
-	-------------------------------------------------------
-	Tablet CSS
-	-------------------------------------------------------
-*/
-
+    
+   
+    
+    
+   
 @media screen and (min-width: 600px) and  (max-width: 768px) /*tablet*/
 {
     #productInformationDiv {
-        margin: 50px 20px 0 0;
-        border: 5px #333;
-        overflow: auto;
         margin-left: 5%;
         margin-top: 10%;
     }
@@ -220,11 +417,7 @@
         width: 45%;
         margin-left:30%
     }
-    #productInfoImage img {
-        display: block;
-        width:100%
-    }
-
+   
    #productInformationDiv table
     {
         padding-top:10%;
@@ -249,15 +442,6 @@
         margin-left:30%;
     }
     
-    #prezzoTotale, #indirizzoConsegna {
-
-        text-align: center;
-    }
-    
-    #checkout, #cartTitle {
-        margin-left: 43%;
-    }
-    
     #productContainer {
         margin: 50px 20px 0 0;
         border: 5px #333;
@@ -270,12 +454,7 @@
         width: 45%;
         margin-left:30%
     }
-    
-    #cartImage {
-        display: block;
-        width:100%
-    }
-    
+     
      #CartInformationDiv > table 
     {
         padding-top:10%;
@@ -301,94 +480,12 @@
 
     }
     
-    footer {
-        position: relative;
-        margin-top: 100px;
-        bottom: 0;
-        width: 100%;
-        background-color: #2980B9;
-        height: 200px;
-    }
-    
-    #informazioniFooter {
-        background: #4CAF50;
-        height: 50px;
-        width: 100%;
-    }
    
-   	#informazioniFooter	p {
-        display: inline-block;
-        margin-left: 20%;
-    }
-    
-    #header
-    {
-        height: 80px;
-        background: #2980B9;
-        box-shadow: 1px 2px 10px 1px #333333;
-        left: 0;
-        right: 0;
-    }
-    #logo
-    {
-        display: inline-block;
-        font-size: 1.5em;
-        margin-top: 25px;
-        margin-left: 30px;
-        color: white;
-    }
-
     #headerbuttons
     {
-        display: inline-block;
-        background-color: #239bf3;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        float: right;
-        margin-top: 20px;
-        margin-right: 5px;
-        border-radius: 50px;
-        line-height: 20px;
-        width: 100px;
+        
         height: 20px;
-    }
-
-    #signup
-    {
-        display: inline-block;
-        background-color: #f3235e;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        float: right;
-        margin-top: 20px;
-        margin-right: 20px;
-        border-radius: 50px;
-        line-height: 25px;
-        width: 100px;
-        height: 25px;
-
-
-    }
-
-    #user
-    {
-        display: inline-block;
-        color: white;
-        font-size: 1.4em;
-        color: #F5B041;
-        float: right;
-        margin-top: 25px;
-        margin-right: 30px;
-        border-radius: 50px;
-
-    }
-    
-   	#header a:hover, #header a:active {
-        background-color: rgba(35, 155, 243, 0.64);
-    }
-    
+    } 
 }
 
 /*
@@ -408,9 +505,6 @@
 {
 
   #productInformationDiv {
-        margin: 50px 20px 0 0;
-        border: 5px #333;
-        overflow: auto;
         margin-left: 5%;
         margin-top: 10%;
     }
@@ -418,47 +512,24 @@
         width: 55%;
         margin-left:30%
     }
-    #productInfoImage img {
-        display: block;
-        width:100%
-    }
-
+ 
     #productInformationDiv table
     {
         padding-top:10%;
     }
     #productInformationDiv td
     {
-        font-size: 18px;
-        padding-left: 40px;
         padding-top: 10px;
     }
 
     #productInformationDiv .button
     {
         position:absolute;
-        height:30px;
         width:180px;
-        background-color: #4CAF50;
-        border-color: grey;
-        font-weight: bold;
-        color: #263B27;
-        margin-left:20%;
-    }
-    
-     #prezzoTotale, #indirizzoConsegna {
-
-        text-align: center;
-    }
-    
-    #checkout, #cartTitle {
-        margin-left: 43%;
+   
     }
     
     #productContainer {
-        margin: 50px 20px 0 0;
-        border: 5px #333;
-        overflow: auto;
         margin-left: 5%;
         margin-top: 10%;
     }
@@ -468,19 +539,13 @@
         margin-left:30%
     }
     
-    #cartImage {
-        display: block;
-        width:100%
-    }
     
-     #CartInformationDiv > table 
-   {
+    #CartInformationDiv > table 
+   	{
         padding-top:10%;
     }
     
     #CartInformationDiv td   {
-        font-size: 18px;
-        padding-left: 40px;
         padding-top: 20px;
     }
     
@@ -489,85 +554,37 @@
         position:relative;
         height:30px;
         width:120px;
-        background-color: #4CAF50;
-        border-color: grey;
-        font-weight: bold;
-        color: #263B27;
         margin-top:3px;
 
     }
     
-    footer {
-        position: relative;
-        margin-top: 100px;
-        bottom: 0;
-        width: 100%;
-        background-color: #2980B9;
-        height: 200px;
-        
-    }
     
     #informazioniFooter {
-        background: #4CAF50;
-        height: 50px;
         width: auto;
     }
    
    	#informazioniFooter	p {
-        display: inline-block;
-        margin-left: 20%;
         width: 50%;
-
     }
     
     #header
     {
-        height: 80px;
-        background: #2980B9;
-        box-shadow: 1px 2px 10px 1px #333333;
-        left: 0;
-        right: 0;
         top: 0;
         position: fixed;
 
     }
-    #logo
-    {
-        display: inline-block;
-        font-size: 1.5em;
-        margin-top: 25px;
-        margin-left: 30px;
-        color: white;
-    }
-
+    
     #headerbuttons
     {
-        display: inline-block;
-        background-color: #239bf3;
-        color: white;
-        text-align: center;
         line-height: 40px;
-        text-decoration: none;
-        float: right;
-        margin-top: 20px;
-        margin-right: 5px;
-        border-radius: 50px;
         width: 90px;
         height: 40px;
     }
 
     #signup
     {
-        display: inline-block;
-        background-color: #f3235e;
-        color: white;
-        text-align: center;
         line-height: 40px;
-        text-decoration: none;
-        float: right;
-        margin-top: 20px;
         margin-right: 10px;
-        border-radius: 50px;
         width: 90px;
         height: 40px;
     }
@@ -577,7 +594,4 @@
         display: none;
     }
     
-   	#header a:hover, #header a:active {
-        background-color: rgba(35, 155, 243, 0.64);
-    }
 }

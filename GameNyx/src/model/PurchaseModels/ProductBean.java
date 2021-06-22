@@ -18,6 +18,7 @@ public class ProductBean
 	int numeroValutazioni;
 	double mediaValutazioni; //compreso tra 0 e 5 stelle
 	int numeroVendite;
+	int quantitaNegozio;
 	
 	public double getPrezzoTotale()
 	{
@@ -96,6 +97,11 @@ public class ProductBean
 		return numeroVendite;
 	}
 	
+	public int getQuantitaNegozio()
+	{
+		return quantitaNegozio;
+	}
+	
 	public void setId(int newId)
 	{
 		id=newId;
@@ -164,6 +170,11 @@ public class ProductBean
 	public void setNumeroVendite(int newNumeroVendite) 
 	{
 		numeroVendite=newNumeroVendite;
+	}
+	
+	public void setQuantitaNegozio(int newQuantity)
+	{
+		quantitaNegozio=newQuantity;
 	}
 	
 }

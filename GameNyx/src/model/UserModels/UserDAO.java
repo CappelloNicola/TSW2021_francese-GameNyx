@@ -66,6 +66,7 @@ public class UserDAO
 				bean.setCognome(rs.getString("cognome"));
 				bean.setTelefono(rs.getString("telefono"));
 				bean.setData(rs.getDate("dataDiNascita"));
+				bean.setAdmin(rs.getBoolean("isadmin"));
 		   }
 		   else
 		   {
@@ -91,7 +92,7 @@ public class UserDAO
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
 				+ " (email, nome, cognome, username,"
-				+ "  passwordUtente, dataDiNascita, telefono) "
+				+ "  passwordUtente, dataDiNascita, telefono, isadmin) "
 				+ "  VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 		try {
@@ -104,6 +105,7 @@ public class UserDAO
 			preparedStatement.setString(5, user.getPasswordUtente());
 			preparedStatement.setDate(6, user.getDataNascita());
 			preparedStatement.setString(7, user.getTelefono());
+			preparedStatement.setBoolean(8, user.getAdmin());
 
 			
 			preparedStatement.executeUpdate();
@@ -152,6 +154,7 @@ public class UserDAO
 				bean.setCognome(rs.getString("cognome"));
 				bean.setTelefono(rs.getString("telefono"));
 				bean.setData(rs.getDate("dataDiNascita"));
+				bean.setAdmin(rs.getBoolean("isadmin"));
 			}
 			else
 			{
@@ -193,6 +196,7 @@ public class UserDAO
 				bean.setCognome(rs.getString("cognome"));
 				bean.setTelefono(rs.getString("telefono"));
 				bean.setData(rs.getDate("dataDiNascita"));
+				bean.setAdmin(rs.getBoolean("isadmin"));
 			}
 			else
 			{
@@ -267,7 +271,7 @@ public class UserDAO
 				bean.setCognome(rs.getString("cognome"));
 				bean.setTelefono(rs.getString("telefono"));
 				bean.setData(rs.getDate("dataDiNascita"));
-				
+				bean.setAdmin(rs.getBoolean("isadmin"));
 				
 				users.add(bean);
 			}

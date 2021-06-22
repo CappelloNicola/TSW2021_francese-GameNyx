@@ -37,8 +37,8 @@ public class ProductDAO
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
 				+ " (titolo, descrizione, casaProduttrice, piattaforma,"
-				+ "  genere, dataPubblicazione, prezzo, lingua, sottotitoli, iva) "
-				+ "  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ "  genere, dataPubblicazione, prezzo, lingua, sottotitoli, iva, quantitaNegozio) "
+				+ "  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			connection = ds.getConnection();
@@ -53,6 +53,7 @@ public class ProductDAO
 			preparedStatement.setString(8, product.getLingua());
 			preparedStatement.setString(9, product.getSottotitoli());
 			preparedStatement.setDouble(10, product.getIva());
+			preparedStatement.setInt(11, product.getQuantitaNegozio());
 			
 			preparedStatement.executeUpdate();
 
@@ -97,6 +98,7 @@ public class ProductDAO
 				bean.setMediaValutazioni(rs.getDouble("mediaValutazioni"));
 				bean.setIva(rs.getDouble("iva"));
 				bean.setNumeroVendite(rs.getInt("numeroVendite"));
+				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));
 			}
 
 		} finally {
@@ -142,6 +144,7 @@ public class ProductDAO
 				bean.setMediaValutazioni(rs.getDouble("mediaValutazioni"));
 				bean.setIva(rs.getDouble("iva"));
 				bean.setNumeroVendite(rs.getInt("numeroVendite"));
+				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));
 
 				products.add(bean);
 			}
@@ -221,6 +224,7 @@ public class ProductDAO
 				bean.setMediaValutazioni(rs.getDouble("mediaValutazioni"));
 				bean.setIva(rs.getDouble("iva"));
 				bean.setNumeroVendite(rs.getInt("numeroVendite"));
+				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));	
 				
 				products.add(bean);
 			}
