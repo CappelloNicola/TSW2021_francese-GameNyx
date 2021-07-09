@@ -17,12 +17,13 @@
             
     }
     
-   
+
+    body
+    {
+        margin: 0;
+    }
 	
-	#indexBody
-	{
-    	margin: 0;
-	}
+
 
 	#adminNav{
 		margin-bottom:10px;
@@ -180,9 +181,6 @@
         display: inline-block;
     }*/
 
-    a:hover, a:active {
-        background-color: rgba(35, 155, 243, 0.64);
-    }
 
    
    
@@ -194,7 +192,50 @@
         border-color: #04AA6D;
         font-weight: bold;
     }
-    
+    .buttonSort {
+        height: 40px;
+        width: 200px;
+        border-radius: 25px;
+        background-color: red;
+        border-color: black;
+        font-weight: bold;
+    }
+
+    #mostra {
+        height: 30px;
+        width: 80px;
+        border-radius: 30px;
+        border: none;
+        background-color: #1F618D;
+        color: white;
+        font-weight: bold;
+    }
+
+    #controlliSort
+    {
+        margin: auto;
+        width: 30%;
+    }
+
+    #tableOrdiniAdmin
+    {
+        margin-top: 60px;
+        margin-left: 25%;
+    }
+
+    .textDesign{
+        width: 70%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+
+
+
     #InsertForm 
     {
     	display: block;
@@ -337,11 +378,12 @@
     
     #header
     {
+        position: relative;
         height: 80px;
-        background: #2980B9;
-        box-shadow: 1px 2px 10px 1px #333333;
-        left: 0;
-        right: 0;
+        background: #3a416a;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+
+
     }
     #logo
     {
@@ -350,39 +392,89 @@
         margin-top: 25px;
         margin-left: 30px;
         color: white;
+        text-decoration: none;
+
     }
 
-    #headerbuttons
+    #searchBar
     {
+        background-color: white;
+        width: 50%;
+        margin-left: 30%;
+        height: 30px;
+        border: none;
+        border-radius: 15px;
+        text-decoration: none;
+        outline: none;
+        text-indent:20px;
+
+    }
+
+    #searchBar::placeholder {
+        font-family: Arial;
+        color:#9492a2;
+    }
+
+    #profileButton
+    {
+        font-family: Arial;
         display: inline-block;
-        background-color: #239bf3;
+        background-color:#525c8e;
+        border-color: white;
         color: white;
         text-align: center;
         text-decoration: none;
         float: right;
         margin-top: 20px;
-        margin-right: 5px;
-        border-radius: 50px;
-        line-height: 25px;
-        width: 100px;
-        height: 25px;
+        margin-right: 10px;
+        border-radius: 15px;
+        line-height: 35px;
+        width: 150px;
+        height: 35px;
+    }
+
+    #cartButton
+    {
+        display: inline-block;
+        float: right;
+        margin-top: 15px;
+        margin-right: 20px;
     }
 
     #signup
     {
+        font-family: Arial;
         display: inline-block;
-        background-color: #f3235e;
+        background-color:#f3235e;
+        border-color: white;
         color: white;
         text-align: center;
         text-decoration: none;
         float: right;
         margin-top: 20px;
-        margin-right: 20px;
-        border-radius: 50px;
-        line-height: 25px;
-        width: 100px;
-        height: 25px;
+        margin-right: 10px;
+        border-radius: 15px;
+        line-height: 35px;
+        width: 150px;
+        height: 35px;
+    }
 
+    #login
+    {
+        font-family: Arial;
+        display: inline-block;
+        background-color:#525c8e;
+        border-color: white;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        float: right;
+        margin-top: 20px;
+        margin-right: 10px;
+        border-radius: 15px;
+        line-height: 35px;
+        width: 150px;
+        height: 35px;
 
     }
 
@@ -399,9 +491,7 @@
 
     }
     
-   	#header a:hover, #header a:active {
-        background-color: rgba(35, 155, 243, 0.64);
-    }
+
     
    
     

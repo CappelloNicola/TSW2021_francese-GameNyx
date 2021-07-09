@@ -42,7 +42,7 @@
     {
         display: inline;
     }
-    img
+    #copertine
     {
         float: left;
         margin-left: 5%;
@@ -55,18 +55,6 @@
     }
 
 
-    a:link, a:visited {
-        background-color: #239bf3;
-        color: white;
-        padding: 10px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    a:hover, a:active {
-        background-color: rgba(35, 155, 243, 0.64);
-    }
 
     #carrello
     {
@@ -142,7 +130,7 @@
     {
         display: inline;
     }
-    img
+    #copertine
     {
         float: left;
         margin-left: 5%;

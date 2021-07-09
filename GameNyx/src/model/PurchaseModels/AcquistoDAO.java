@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -126,7 +127,7 @@ public class AcquistoDAO
 		String TB="videogioco"; //nome tabella con cui fare join
 		
 		String selectSQL = "SELECT numeroOrdine, prezzo, stato, indirizzo, "
-				+ "dataOrdine from " + TABLE_NAME + " where utente= ?";
+				+ "dataOrdine,utente from " + TABLE_NAME + " where utente= ?";
 				
 		String selectSQL2 = "SELECT quantitaVideogioco, ivaVideogioco, "
 				+  "prezzoVideogioco, id, titolo, piattaforma FROM "
@@ -145,6 +146,7 @@ public class AcquistoDAO
 			while (rs.next()) {
 				rows=true;
 				AcquistoBean bean=new AcquistoBean();
+				bean.setUtente(rs.getString("utente"));
 				bean.setNumeroOrdine(rs.getInt("numeroOrdine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setStato(rs.getString("stato"));
@@ -350,6 +352,83 @@ public class AcquistoDAO
 		}
 		return orders;
 	}
+
+	//Ricava gli ordini che vanno dal paramentro dataInizio fino al parametro dataFine
+	public synchronized ArrayList<AcquistoBean> doRetrieveFromDateToDate(Date dataInizio, Date dataFine) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		ArrayList<AcquistoBean> orders = new ArrayList<AcquistoBean>();
+
+		String selectSQL = "SELECT * FROM " +TABLE_NAME + " WHERE (dataOrdine BETWEEN ? AND ?)";
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setDate(1, (java.sql.Date) dataInizio);
+			preparedStatement.setDate(2, (java.sql.Date) dataFine);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next())
+			{
+				AcquistoBean bean = new AcquistoBean();
+
+				bean.setNumeroOrdine(rs.getInt("numeroOrdine"));
+				bean.setPrezzo(rs.getDouble("prezzo"));
+				bean.setStato(rs.getString("stato"));
+				bean.setIndirizzo(rs.getString("indirizzo"));
+				bean.setDataOrdine(rs.getDate("dataOrdine"));
+				bean.setUtente(rs.getString("utente"));
+
+				orders.add(bean);
+			}
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return orders;
+	}
+
+	public synchronized int doRetrieveNvideogiochiAcquistati(String user) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		int quantity = 0;
+
+		String selectSQL = "SELECT SUM(quantitaVideogioco) as quantita"
+				+ " FROM "
+				+ TABLE_NAME + " as T1 inner join " + TABLE_NAME2 + " as T2 on "
+				+ "T1.numeroOrdine = T2.acquisto where T1.utente= ?";
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setString(1, user);
+
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			if(rs.next())
+				quantity = rs.getInt("quantita");
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return quantity;
+	}
+
 
 
 }

@@ -93,7 +93,7 @@ public class UserDAO
 		String insertSQL = "INSERT INTO " + TABLE_NAME
 				+ " (email, nome, cognome, username,"
 				+ "  passwordUtente, dataDiNascita, telefono, isadmin) "
-				+ "  VALUES (?, ?, ?, ?, ?, ?, ?)";
+				+ "  VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			connection = ds.getConnection();

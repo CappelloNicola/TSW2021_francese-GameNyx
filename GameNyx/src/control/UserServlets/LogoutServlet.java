@@ -24,9 +24,6 @@ public class LogoutServlet extends HttpServlet {
 		
 			sessione.removeAttribute("currentUserSession");
 			response.sendRedirect("index.jsp");
-				
-		 
-	
 	}
 
 	

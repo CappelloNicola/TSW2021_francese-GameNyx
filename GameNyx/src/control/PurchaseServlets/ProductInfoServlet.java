@@ -31,13 +31,13 @@ public class ProductInfoServlet extends HttpServlet {
 			
 			HttpSession sessione=request.getSession();
 			
-			//se l'utente loggato è un admin bisogna ridirezionarlo ad una pagina diversa
+			//se l'utente loggato ï¿½ un admin bisogna ridirezionarlo ad una pagina diversa
 			UserBean user=(UserBean)sessione.getAttribute("currentUserSession");
 			if(user!=null)
 			{
 				if (user.getAdmin())
 				{
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/adminPages/ProdottoAdmin.jsp");
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/adminPages/ModifyProduct.jsp");
 					dispatcher.forward(request, response);
 					return;
 				}

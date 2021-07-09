@@ -36,8 +36,9 @@ public class RegistrationServlet extends HttpServlet {
 		user.setPasswordUtente(request.getParameter("password"));
 		user.setNome(request.getParameter("nome"));
 		user.setCognome(request.getParameter("cognome"));
-		user.setData(Date.valueOf(request.getParameter("nascita")));
+		user.setData(Date.valueOf(request.getParameter("dataNascita")));
 		user.setTelefono(request.getParameter("telefono"));
+		user.setAdmin(false); //TODO default in database ?
 		
 		UserDAO userDao=new UserDAO();
 		boolean flag=false;
@@ -48,7 +49,8 @@ public class RegistrationServlet extends HttpServlet {
 		catch(Exception e)
 		{
 			System.out.println("doSave non riuscito: "+e);
-			response.sendRedirect("Registrazione.jsp");
+			//TODO inviare l'errore in base al parametro già presente nel DB ->  email o username
+			response.sendRedirect("Registrazione.jsp?error=true");
 			flag=true;
 		}
 		//per evitare l'exception : "duplicate sendRedirect"

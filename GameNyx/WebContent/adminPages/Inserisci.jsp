@@ -32,25 +32,46 @@
 	<%@ include file="../fragments/AdminNavbar.jsp" %>
 	
 	<div id="InsertForm">
-		<form action="../InsertProductServlet" method="POST"  enctype="multipart/form-data">
-			<label>Copertina: <input type="file" name="copertina" placeholder="Copertina" accept=".png, .jpg, .jpeg"/></label>
-			<input type="text" name="nome" placeholder="Nome Videogioco"> 
-			<textarea  cols="30" placeholder="Descrizione" name="descrizione"></textarea>
-			<input type="text" name="casaProduttrice" placeholder="Software House">
-			 <select name="piattaforma">
+		<form name="inserisciProdotto" onSubmit="return formValidation();" action="../InsertProductServlet" method="POST"  enctype="multipart/form-data">
+			<div class="formValidationCopertina">
+				<label>Copertina: <input type="file" id="copertina" name="copertina" placeholder="Copertina" accept=".png, .jpg, .jpeg"/></label>
+			</div>
+			<div class="formValidation"> <!-- ci sono titoli di giochi con 3 caratteri : fez -->
+				<input type="text" id="titolo" name="nome"  maxlength="80" placeholder="Nome Videogioco">
+			</div>
+			<div class="formValidation">
+			<textarea  cols="30" placeholder="Descrizione" id="descrizione" name="descrizione" maxlength="800"></textarea>
+			</div>
+			<div class="formValidation">
+			<input type="text" name="casaProduttrice" id="casaProduttrice" minlength="8" maxlength="100" placeholder="Software House">
+			</div>
+			<div class="formValidation">
+			 <select name="piattaforma" id="piattaforma">
 			    <option value="Ps4">Ps4</option>
 			    <option value="Xbox One">Xbox One</option>
 			    <option value="Ps3">Ps3</option>
 			    <option value="Xbox 360">Xbox 360</option>
-			  </select> 
+			  </select>
+			</div>
+			<div class="formValidation">
 			 <select name="genere">
 			    <option value="Rpg">Rpg</option>
 			    <option value="Azione">Azione</option>
 			  </select>
-			 <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="data" placeholder="Data pubblicazione" >
-			 <input type="text" name="prezzo" placeholder="prezzo">
-			 <input type="text" name="iva" placeholder="IVA">
-			 <input type="number" name="quantitaNegozio" placeholder="quantità in negozio">
+			</div>
+			<div class="formValidation">
+			 <input type="text" id="data" onfocus="(this.type='date')" onblur="(this.type='text')" name="data" min="1980-04-01" max="2030-12-31" placeholder="Data pubblicazione" >
+			</div>
+			<div class="formValidation">
+			 <input type="number" id="prezzo" name="prezzo" placeholder="prezzo" min="0" max="200">
+			</div>
+			<div class="formValidation">
+			 <input type="number" id="IVA" name="iva" placeholder="IVA" min="0" max="100">
+			</div>
+			<div class="formValidation">
+			 <input type="number" id="quantitaNegozio" name="quantitaNegozio" placeholder="quantità in negozio" min="1" max="10000">
+			</div>
+			<div id="lingua">
 			 <fieldset>
 			 <legend>Lingue</legend>
 			 <table id="lingue">
@@ -68,6 +89,8 @@
 			 	</tr>
 			 </table>
 			 </fieldset>
+			</div>
+			<div id="sottotitoli">
 			 <fieldset>
 			 <legend>Sottotitoli</legend>
 			 <table id="sottotitoli">
@@ -85,7 +108,7 @@
 			 	</tr>
 			 </table>
 			 </fieldset>
-			 
+			</div>
 			 <input type="submit" class="dettagliButton" value="Inserisci">
 			 <input type="reset" class="dettagliButton" value="Elimina">	
 
@@ -94,6 +117,7 @@
 	
 	
  	<script src="${pageContext.request.contextPath}/scripts/jquery.js"></script> 
-	<script src="${pageContext.request.contextPath}/scripts/InserisciScripts.js"></script> 
+	<script src="${pageContext.request.contextPath}/scripts/InserisciScripts.js"></script>
+
 </body>
 </html>

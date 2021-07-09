@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -240,5 +241,46 @@ public class ProductDAO
 		}
 		return products;
 	}
+
+	public synchronized void doUpdate(ProductBean product) throws SQLException, Exception {
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		String insertSQL = "UPDATE " + TABLE_NAME
+				+ " SET titolo=?, descrizione=?, casaProduttrice=?, piattaforma=?,"
+				+ "  genere=?, dataPubblicazione=?, prezzo=?, lingua=?, sottotitoli=?, iva=?, quantitaNegozio=? "
+				+ "  WHERE id=?";
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setString(1, product.getTitolo());
+			preparedStatement.setString(2, product.getDescrizione());
+			preparedStatement.setString(3, product.getCasaProduttrice());
+			preparedStatement.setString(4, product.getPiattaforma());
+			preparedStatement.setString(5, product.getGenere());
+			preparedStatement.setDate(6, product.getDataPubblicazione());
+			preparedStatement.setDouble(7, product.getPrezzo());
+			preparedStatement.setString(8, product.getLingua());
+			preparedStatement.setString(9, product.getSottotitoli());
+			preparedStatement.setDouble(10, product.getIva());
+			preparedStatement.setInt(11, product.getQuantitaNegozio());
+			preparedStatement.setInt(12, product.getId());
+
+			preparedStatement.executeUpdate();
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+	}
+
+
 
 }

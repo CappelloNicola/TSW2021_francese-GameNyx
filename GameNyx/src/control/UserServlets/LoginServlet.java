@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		UserBean user = new UserBean();
 		user.setUsername(request.getParameter("username"));
 		user.setPasswordUtente(request.getParameter("password"));
-		
+
 		user = UserDAO.doRetrieve(user);
 		
 		if(user.getIsValid())
@@ -48,14 +48,14 @@ public class LoginServlet extends HttpServlet {
 			{
 				response.sendRedirect(getServletContext().getContextPath());	
 				//problema: se fai un login dopo aver provato il checkout, bisogna fare il checkout in automatico
-				//Nicola: non per forza: facendo così l'utente si ritrova il carrello vuoto senza sapere se l'acquisto è andato a buon fine o meno
-				//io lo rimarrei così.
+				//Nicola: non per forza: facendo cosï¿½ l'utente si ritrova il carrello vuoto senza sapere se l'acquisto ï¿½ andato a buon fine o meno
+				//io lo rimarrei cosï¿½.
 			}
 			
 		}
 		else
 		{
-			response.sendRedirect("Registrazione.jsp");
+			response.sendRedirect("Login.jsp?error=true");
 		}
 		
 	}
