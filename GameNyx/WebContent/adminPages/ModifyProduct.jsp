@@ -46,11 +46,10 @@
 	<div>
 		<form action="ModifyProductServlet" method="POST" enctype="multipart/form-data">
 		<table>
-			<tr>
-		    <td><b>Cambia copertina</b></td>
-		    <td><input type="file" id="copertina" name="copertina" placeholder="Copertina" accept=".png, .jpg, .jpeg"/></td>
+		  <tr>
+			<td><b>Cambia copertina</b></td>
+			<td><input type="file" id="copertina" name="copertina" placeholder="Copertina" accept=".jpg"/></td>
 		  </tr>
-		  <!-- TODO Aggiungere modifica copertina e cambio nome del file immagine al cambiamento del titolo -->
 		  <tr>
 		    <td><b>Titolo</b></td>
 		    <td><input type="text" name="titolo" size=50 value="<%=product.getTitolo() %>"></td>
@@ -101,13 +100,15 @@
 
 		 <tr>
 		    <td><b>Piattaforma</b></td>
-		    <td><select id="platformSelect" name="piattaforma" autocomplete="off">
-				<option value="Ps4">Ps4</option>
-				<option value="Xbox One">Xbox One</option>
-				<option value="Ps3">Ps3</option>
-				<option value="Xbox 360">Xbox 360</option>
-				<option value="Nintendo Switch">Nintendo Switch</option>
-			</select> </td>
+			 <td>
+				 <select id="platformSelect" name="piattaforma" autocomplete="off">
+				 <option value="Ps4">Ps4</option>
+				 <option value="Xbox One">Xbox One</option>
+				 <option value="Ps3">Ps3</option>
+				 <option value="Xbox 360">Xbox 360</option>
+				 <option value="Nintendo Switch">Nintendo Switch</option>
+				 </select>
+			 </td>
 		  </tr>
 			<tr>
 				<td><b>Presenza sottotitoli</b></td>
@@ -135,7 +136,7 @@
 			</tr>
 		  <tr>
 		    <td><b>Prezzo</b></td>
-		    <td><input id="priceForAdmin" style="width: 50px" type="text" name="prezzo" value="<%=product.getPrezzo()%>" onblur="changePrice()"> euro</td>
+			  <td><input id="priceForAdmin" style="width: 50px" type="text" name="prezzo" value="<%=product.getPrezzo()%>" onblur="changePrice()"> euro</td>
 		  </tr>
 		  <tr>
 		    <td><b>Iva</b></td>
@@ -143,7 +144,7 @@
 		  </tr>
 		  <tr>
 		    <td><h3>Prezzo Totale:</h3></td>
-		    <td><span id="totalPriceForAdmin"><%=product.getPrezzoTotale()%></span></td>
+			  <td><span id="totalPriceForAdmin"><%=product.getPrezzoTotale()%></span></td>
 		  </tr>
 		  <tr>
 			 <td><h3>Quantità in negozio:</h3></td>
@@ -164,32 +165,27 @@
 
 </div>
 
-
 </body>
 
-<script src="${pageContext.request.contextPath}/scripts/jquery.js"></script> 
+	<script src="${pageContext.request.contextPath}/scripts/jquery.js"></script> 
 	<script src="${pageContext.request.contextPath}/scripts/ProdottoAdminScripts.js"></script>
 	<script>
-			
-			/*Cambio gli option*/
-			changeSelected("<%=product.getGenere()%>", "genreSelect");
-			changeSelected("<%=product.getPiattaforma()%>", "platformSelect");
-		
-		
-			var lingua="<%=product.getLingua()%>";
-			var sottotitoli="<%=product.getSottotitoli()%>";
-			
-			/*suddivido lingue e sottotitoli in array*/
-			const linguaArray = lingua.split(",");
-			const sottotitoliArray = sottotitoli.split(",");
-			
-			/*chiamo le funzioni per spuntare i boxes*/
-			checkBoxes(linguaArray, "lingua");
-			checkBoxes(sottotitoliArray, "sottotitoli");
-			 
-		
-		
-		
+
+		/*Cambio gli option*/
+		changeSelectedDefault("<%=product.getGenere()%>", "genreSelect");
+		changeSelectedDefault("<%=product.getPiattaforma()%>", "platformSelect");
+
+
+		var lingua="<%=product.getLingua()%>";
+		var sottotitoli="<%=product.getSottotitoli()%>";
+
+		/*suddivido lingue e sottotitoli in array*/
+		const linguaArray = lingua.split(",");
+		const sottotitoliArray = sottotitoli.split(",");
+
+		/*chiamo le funzioni per spuntare i boxes*/
+		checkBoxes(linguaArray, "lingua");
+		checkBoxes(sottotitoliArray, "sottotitoli");
+
 	</script>
-	
 </html>

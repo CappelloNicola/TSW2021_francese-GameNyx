@@ -21,8 +21,19 @@
     body
     {
         margin: 0;
+        font-family: sans-serif;
+        background-image: url(./images/cool-background.svg);
     }
-	
+
+    .example::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .example {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
 
 
 	#adminNav{
@@ -390,7 +401,7 @@
         display: inline-block;
         font-size: 1.5em;
         margin-top: 25px;
-        margin-left: 30px;
+        margin-left: 80px;
         color: white;
         text-decoration: none;
 
@@ -399,8 +410,8 @@
     #searchBar
     {
         background-color: white;
-        width: 40%;
-        margin-left: 20%;
+        width: 30%;
+        margin-left: 25%;
         height: 30px;
         border: none;
         border-radius: 15px;
@@ -415,7 +426,7 @@
         color:#9492a2;
     }
 
-    #profileButton
+    #profileButtonStyle
     {
         font-family: Arial;
         display: inline-block;
@@ -433,12 +444,88 @@
         height: 35px;
     }
 
-    #cartButton
+    #arrow-down {
+        position: absolute;
+        margin-top: 38px;
+        margin-left: 5px;
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+        border-top: 4px solid white;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 3;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    #headerRightButtons
     {
         display: inline-block;
+        width: 23%;
+        height: 100%;
         float: right;
-        margin-top: 15px;
-        margin-right: 20px;
+    }
+
+    #userProfile
+    {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        height: 100%;
+        font-size: 20px;
+        float: right;
+        cursor: pointer;
+    }
+
+    #profileButton
+    {
+        color: white;
+        text-decoration: none;
+        line-height: 80px;
+        margin-right: 40px;
+
+    }
+    #cartButton
+    {
+        position: relative;
+        margin-top: 20px;
+        margin-right: 30px;
+        float: right;
+    }
+
+
+    #cartImage
+    {
+        width: 55px;
+    }
+
+    #cartSize
+    {
+        position: absolute;
+        color: white;
+        font-weight: bold;
+        margin-top: -35px;
+        margin-left: 31px;
+    }
+
+    #loginRegisterDiv
+    {
+        width: 80%;
+        height: 100%;
     }
 
     #signup
@@ -450,9 +537,8 @@
         color: white;
         text-align: center;
         text-decoration: none;
-        float: right;
         margin-top: 20px;
-        margin-right: 10px;
+        margin-right: 7px;
         border-radius: 15px;
         line-height: 35px;
         width: 150px;
@@ -468,9 +554,8 @@
         color: white;
         text-align: center;
         text-decoration: none;
-        float: right;
         margin-top: 20px;
-        margin-right: 10px;
+        margin-right: 7px;
         border-radius: 15px;
         line-height: 35px;
         width: 150px;
@@ -490,13 +575,9 @@
         border-radius: 50px;
 
     }
-    
 
-    
-   
-    
-    
-   
+
+
 @media screen and (min-width: 600px) and  (max-width: 768px) /*tablet*/
 {
     #productInformationDiv {

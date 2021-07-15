@@ -73,7 +73,19 @@ public class Cart
 		//Prodotto non presente nel carrello --> aggiungi prodotto al carrello
 			toAdd.setCartQuantity(1);
 			productsCart.add(toAdd);
+	}
+
+	public int getCartTotalQuantity()
+	{
+		int quantity = 0;
+
+		for(ProductBeanCart e : productsCart)
+		{
+			quantity += e.getCartQuantity();
 		}
+
+		return quantity;
+	}
 		
 	
 	

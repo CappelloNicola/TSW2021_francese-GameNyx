@@ -5,9 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.file.Paths;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -16,10 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import control.AdminServlets.ImageUpload.FilePart;
 import model.PurchaseModels.ProductBean;
 import model.PurchaseModels.ProductDAO;
 import java.sql.Date;
-@MultipartConfig //dichiara che la servlet gestir‡ una codifica multipart per caricare la copertina del gioco su server
+
+@MultipartConfig //dichiara che la servlet gestir√† una codifica multipart per caricare la copertina del gioco su server
 @WebServlet("/InsertProductServlet")
 public class InsertProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -44,7 +44,7 @@ public class InsertProductServlet extends HttpServlet {
 			String[] lingueArray=request.getParameterValues("lingua");
 			String[] sottotitoliArray=request.getParameterValues("sottotitolo");
 			String quantitaNegozio=request.getParameter("quantitaNegozio");
-			
+
 			Date date=Date.valueOf(data);//converto la stringa data in un sql.Date
 			//metto tutte le lingue e i sottotitoli in un'unica stringa
 			String lingue=lingueArray[0];
@@ -82,28 +82,28 @@ public class InsertProductServlet extends HttpServlet {
 				dao.doSave(product);
 				
 				/*Viene presa la copertina e inserita sul server*/
-				//Claudio : TODO filePart.getSubmitted metodo non trovato sul mio pc anche dopo aver imporato il jar --> da risolvere
+
 				//Metto in un InputStream l'immagine
 			    Part filePart = request.getPart("copertina"); 
-			    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+			    String fileName = FilePart.getSubmittedFileName(filePart);
 			    InputStream fileContent = filePart.getInputStream();
 			    
 			    //Ne ricavo l'estensione per creare correttamente il FileOutputStream
 			    String extension=fileName.substring(fileName.lastIndexOf("."));
 			    
-			    //Creo la cartella in cui verr‡ inserita l'immagine nel server
-			    final String imagesPath="C:\\Users\\Giuseppe\\git\\repository\\GameNyx\\WebContent\\images";
-				/*Non si puÚ caricare un file sul server specificando l'URL, bisogna specificare il path vero e proprio.
+			    //Creo la cartella in cui verr√† inserita l'immagine nel server
+			    final String imagesPath="C:\\Users\\Claudio\\Dropbox\\Universit√†\\Semestre attuale\\TecnologieWeb\\WebApps\\TSW2021_francese-GameNyx\\GameNyx\\WebContent\\images";
+				/*Non si pu√≤ caricare un file sul server specificando l'URL, bisogna specificare il path vero e proprio.
 				 * Quando ci lavoriamo, mettiamo la precedente stringa tra commenti e cambiamo il path*/
 			    
 			    String folderName=imagesPath+"\\"+nomeVideogioco; 
 			    new File(folderName).mkdirs();//crea una nuova cartella
 			    
 			    //Creo il nuovo file in cui copiare l'immagine
-			   String outputName=folderName+"\\copertina"+extension;
-			   OutputStream output=new FileOutputStream(outputName);
-			   fileContent.transferTo(output);
-			    output.close();
+			     String outputName=folderName+"\\copertina"+extension;
+			     OutputStream output=new FileOutputStream(outputName);
+			     fileContent.transferTo(output);
+			     output.close();
 			}
 			catch(Exception e)
 			{

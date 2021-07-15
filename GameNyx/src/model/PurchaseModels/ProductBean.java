@@ -65,7 +65,6 @@ public class ProductBean
 	public double getPrezzo() 
 	{
 		return Math.floor(prezzo * 100) / 100;
-
 	}
 	
 	public double getIva()

@@ -51,7 +51,7 @@
 			    <option value="Xbox One">Xbox One</option>
 			    <option value="Ps3">Ps3</option>
 			    <option value="Xbox 360">Xbox 360</option>
-			    <option value="Nintendo Switch">Nintendo Switch</option>
+				 <option value="Nintendo Switch">Nintendo Switch</option>
 			  </select>
 			</div>
 			<div class="formValidation">
@@ -64,7 +64,7 @@
 			 <input type="text" id="data" onfocus="(this.type='date')" onblur="(this.type='text')" name="data" min="1980-04-01" max="2030-12-31" placeholder="Data pubblicazione" >
 			</div>
 			<div class="formValidation">
-			 <input type="text" id="prezzo" name="prezzo" placeholder="prezzo">
+				<input type="text" id="prezzo" name="prezzo" placeholder="prezzo">
 			</div>
 			<div class="formValidation">
 			 <input type="number" id="IVA" name="iva" placeholder="IVA" min="0" max="100">

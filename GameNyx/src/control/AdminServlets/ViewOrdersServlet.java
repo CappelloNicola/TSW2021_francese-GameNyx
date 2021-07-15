@@ -32,7 +32,7 @@ public class ViewOrdersServlet extends HttpServlet {
     {
         AcquistoDAO dao = new AcquistoDAO();
 
-        ArrayList<AcquistoBean> ordini = new ArrayList<AcquistoBean>();
+        ArrayList<AcquistoBean> ordini = new ArrayList<>();
 
         try {
 
