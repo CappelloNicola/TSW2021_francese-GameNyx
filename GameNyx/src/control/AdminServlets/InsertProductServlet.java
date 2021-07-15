@@ -45,7 +45,7 @@ public class InsertProductServlet extends HttpServlet {
 			String[] sottotitoliArray=request.getParameterValues("sottotitolo");
 			String quantitaNegozio=request.getParameter("quantitaNegozio");
 			
-			Date date=Date.valueOf("2021-05-02");//converto la stringa data in un sql.Date
+			Date date=Date.valueOf(data);//converto la stringa data in un sql.Date
 			//metto tutte le lingue e i sottotitoli in un'unica stringa
 			String lingue=lingueArray[0];
 			int size=lingueArray.length;
@@ -85,11 +85,11 @@ public class InsertProductServlet extends HttpServlet {
 				//Claudio : TODO filePart.getSubmitted metodo non trovato sul mio pc anche dopo aver imporato il jar --> da risolvere
 				//Metto in un InputStream l'immagine
 			    Part filePart = request.getPart("copertina"); 
-			   // String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+			    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 			    InputStream fileContent = filePart.getInputStream();
 			    
 			    //Ne ricavo l'estensione per creare correttamente il FileOutputStream
-			  //  String extension=fileName.substring(fileName.lastIndexOf("."));
+			    String extension=fileName.substring(fileName.lastIndexOf("."));
 			    
 			    //Creo la cartella in cui verrà inserita l'immagine nel server
 			    final String imagesPath="C:\\Users\\Giuseppe\\git\\repository\\GameNyx\\WebContent\\images";
@@ -100,10 +100,10 @@ public class InsertProductServlet extends HttpServlet {
 			    new File(folderName).mkdirs();//crea una nuova cartella
 			    
 			    //Creo il nuovo file in cui copiare l'immagine
-			  //  String outputName=folderName+"\\copertina"+extension;
-			   // OutputStream output=new FileOutputStream(outputName);
-			   // fileContent.transferTo(output);
-			    //output.close();
+			   String outputName=folderName+"\\copertina"+extension;
+			   OutputStream output=new FileOutputStream(outputName);
+			   fileContent.transferTo(output);
+			    output.close();
 			}
 			catch(Exception e)
 			{

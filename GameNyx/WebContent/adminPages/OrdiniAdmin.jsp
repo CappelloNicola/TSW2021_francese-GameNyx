@@ -96,7 +96,7 @@
 							</td>
 
 							<td>
-								<%= e.getPrezzo() %>
+								<%= e.getPrezzo() %> &euro;
 							</td>
 							<% ArrayList<ProductBeanCart> videogiochiOrdine =  e.getVideogiochi();
 

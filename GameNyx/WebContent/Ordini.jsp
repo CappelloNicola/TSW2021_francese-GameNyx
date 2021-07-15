@@ -56,7 +56,7 @@
 		</td>
 		
 		<td>
-			<%= e.getPrezzo() %>
+			<%= e.getPrezzo() %> &euro;
 		</td>
 
 		<td>

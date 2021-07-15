@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -202,7 +202,7 @@ public class AcquistoDAO
 		String TB="videogioco"; //nome tabella con cui fare join
 		
 		String selectSQL = "SELECT numeroOrdine, prezzo, stato, indirizzo, "
-				+ "dataOrdine from " + TABLE_NAME + " where numeroOrdine= ?";
+				+ "dataOrdine, utente from " + TABLE_NAME + " where numeroOrdine= ?";
 				
 		String selectSQL2 = "SELECT quantitaVideogioco, ivaVideogioco, "
 				+  "prezzoVideogioco, id, titolo, piattaforma FROM "
@@ -226,6 +226,7 @@ public class AcquistoDAO
 				bean.setStato(rs.getString("stato"));
 				bean.setIndirizzo(rs.getString("indirizzo"));
 				bean.setDataOrdine(rs.getDate("dataOrdine"));
+				bean.setUtente(rs.getString("utente"));
 				
 				ArrayList<ProductBeanCart> videogiochi=new ArrayList<ProductBeanCart>();
 				
@@ -354,19 +355,55 @@ public class AcquistoDAO
 	}
 
 	//Ricava gli ordini che vanno dal paramentro dataInizio fino al parametro dataFine
+	
 	public synchronized ArrayList<AcquistoBean> doRetrieveFromDateToDate(Date dataInizio, Date dataFine) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		ArrayList<AcquistoBean> orders = new ArrayList<AcquistoBean>();
 
-		String selectSQL = "SELECT * FROM " +TABLE_NAME + " WHERE (dataOrdine BETWEEN ? AND ?)";
+		String selectSQL = "SELECT * FROM " +TABLE_NAME+ " WHERE dataOrdine BETWEEN ? AND ?";
 
 		try {
 			connection = ds.getConnection();
 			preparedStatement = connection.prepareStatement(selectSQL);
-			preparedStatement.setDate(1, (java.sql.Date) dataInizio);
-			preparedStatement.setDate(2, (java.sql.Date) dataFine);
+			preparedStatement.setDate(1, dataInizio);
+			preparedStatement.setDate(2, dataFine);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next())
+			{
+				int numeroOrdine=rs.getInt("numeroOrdine");
+				AcquistoBean bean= doRetrieveByKey(numeroOrdine);
+				orders.add(bean);
+			}
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return orders;
+	}
+	
+	/*public synchronized ArrayList<AcquistoBean> doRetrieveFromDateToDate(Date dataInizio, Date dataFine) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		ArrayList<AcquistoBean> orders = new ArrayList<AcquistoBean>();
+
+		String selectSQL = "SELECT * FROM " +TABLE_NAME+ " WHERE dataOrdine BETWEEN ? AND ?";
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setDate(1, dataInizio);
+			preparedStatement.setDate(2, dataFine);
 
 			ResultSet rs = preparedStatement.executeQuery();
 
@@ -395,7 +432,9 @@ public class AcquistoDAO
 		}
 		return orders;
 	}
-
+	*/
+	
+	
 	public synchronized int doRetrieveNvideogiochiAcquistati(String user) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;

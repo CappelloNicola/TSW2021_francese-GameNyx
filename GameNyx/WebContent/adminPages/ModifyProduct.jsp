@@ -44,8 +44,12 @@
 	</div>
 
 	<div>
-		<form action="ModifyProductServlet" method="POST">
+		<form action="ModifyProductServlet" method="POST" enctype="multipart/form-data">
 		<table>
+			<tr>
+		    <td><b>Cambia copertina</b></td>
+		    <td><input type="file" id="copertina" name="copertina" placeholder="Copertina" accept=".png, .jpg, .jpeg"/></td>
+		  </tr>
 		  <!-- TODO Aggiungere modifica copertina e cambio nome del file immagine al cambiamento del titolo -->
 		  <tr>
 		    <td><b>Titolo</b></td>
@@ -97,11 +101,12 @@
 
 		 <tr>
 		    <td><b>Piattaforma</b></td>
-		    <td><select id="platformSelect" name="piattaforma">
+		    <td><select id="platformSelect" name="piattaforma" autocomplete="off">
 				<option value="Ps4">Ps4</option>
 				<option value="Xbox One">Xbox One</option>
 				<option value="Ps3">Ps3</option>
 				<option value="Xbox 360">Xbox 360</option>
+				<option value="Nintendo Switch">Nintendo Switch</option>
 			</select> </td>
 		  </tr>
 			<tr>
@@ -130,15 +135,15 @@
 			</tr>
 		  <tr>
 		    <td><b>Prezzo</b></td>
-		    <td><input style="width: 50px" type="text" name="prezzo" value="<%=product.getPrezzo()%>"> euro</td>
+		    <td><input id="priceForAdmin" style="width: 50px" type="text" name="prezzo" value="<%=product.getPrezzo()%>" onblur="changePrice()"> euro</td>
 		  </tr>
 		  <tr>
 		    <td><b>Iva</b></td>
-			  <td><input style="width: 50px" type="text" name="iva" value="<%=product.getIva()%>"> %</td>
+			  <td><input id="ivaForAdmin" style="width: 50px" type="text" name="iva" value="<%=product.getIva()%>" onblur="changePrice()"> %</td>
 		  </tr>
 		  <tr>
 		    <td><h3>Prezzo Totale:</h3></td>
-		    <td><%=product.getPrezzoTotale()%></td>
+		    <td><span id="totalPriceForAdmin"><%=product.getPrezzoTotale()%></span></td>
 		  </tr>
 		  <tr>
 			 <td><h3>Quantità in negozio:</h3></td>
@@ -159,28 +164,32 @@
 
 </div>
 
+
 </body>
 
-	<script src="${pageContext.request.contextPath}/scripts/jquery.js"></script> 
+<script src="${pageContext.request.contextPath}/scripts/jquery.js"></script> 
 	<script src="${pageContext.request.contextPath}/scripts/ProdottoAdminScripts.js"></script>
 	<script>
-
-		var genre="<%=product.getGenere()%>";
-		var platform="<%=product.getPiattaforma()%>";
-
-		/*setta il default corretto della select
-		* parametri : valoreDefault e ID della select*/
-
-		changeSelectedDefault(genre,'genreSelect');
-		changeSelectedDefault(platform,'platformSelect');
-
-		/*setta checked le checkbox corrette della lingua e dei sottotitoli
-		* parametri : lingua e nome dei checkbox*/
-		var lingua="<%=product.getLingua()%>";
-		var sottotitoli="<%=product.getSottotitoli()%>";
-
-		changeCheckboxChecked(lingua,'lingua');
-		changeCheckboxChecked(sottotitoli,'sottotitoli');
-
+			
+			/*Cambio gli option*/
+			changeSelected("<%=product.getGenere()%>", "genreSelect");
+			changeSelected("<%=product.getPiattaforma()%>", "platformSelect");
+		
+		
+			var lingua="<%=product.getLingua()%>";
+			var sottotitoli="<%=product.getSottotitoli()%>";
+			
+			/*suddivido lingue e sottotitoli in array*/
+			const linguaArray = lingua.split(",");
+			const sottotitoliArray = sottotitoli.split(",");
+			
+			/*chiamo le funzioni per spuntare i boxes*/
+			checkBoxes(linguaArray, "lingua");
+			checkBoxes(sottotitoliArray, "sottotitoli");
+			 
+		
+		
+		
 	</script>
+	
 </html>

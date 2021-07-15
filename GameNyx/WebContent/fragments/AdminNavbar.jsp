@@ -7,10 +7,10 @@
 	<!-- Inserire ricerca di un prodotto in Catalogo -->
 	<!-- Inserire ricerca degli ordini -->
 	<nav id="adminNav"><ul>
-	  <li id="liCatalogo"><a href="../adminPages/Catalogo.jsp">Catalogo</a></li>
-	  <li id="liInserisci"><a href="../adminPages/Inserisci.jsp">Inserisci Prodotto</a></li>
-	  <li id="liOrdini"><a href="../adminPages/OrdiniAdmin.jsp">Ordini</a></li>
-	  <li style="float:right"><a href="../LogoutServlet">Logout</a></li>
+	  <li id="liCatalogo"><a href="${pageContext.request.contextPath}/adminPages/Catalogo.jsp">Catalogo</a></li>
+	  <li id="liInserisci"><a href="${pageContext.request.contextPath}/adminPages/Inserisci.jsp">Inserisci Prodotto</a></li>
+	  <li id="liOrdini"><a href="${pageContext.request.contextPath}/adminPages/OrdiniAdmin.jsp">Ordini</a></li>
+	  <li style="float:right"><a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a></li>
 	</ul></nav>
 	
 	

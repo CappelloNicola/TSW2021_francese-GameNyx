@@ -69,7 +69,7 @@
 		  </tr>
 		  <tr>
 		    <td><b>Prezzo</b></td>
-		    <td><%=product.getPrezzo()%> euro</td>
+		    <td><%=product.getPrezzo()%> &euro;</td>
 		  </tr>
 		  <tr>
 		    <td><b>Iva</b></td>
@@ -77,7 +77,7 @@
 		  </tr>
 		  <tr>
 		    <td><h3>Prezzo Totale:</h3></td>
-		    <td><%=product.getPrezzoTotale()%></td>
+		    <td><%=product.getPrezzoTotale()%> &euro;</td>
 		  </tr>
 		 </table>
 		<form action="AddToCartServlet" method="get" target="_self"><!-- invia i dati alla stessa pagina -->

@@ -27,7 +27,7 @@
 
     <%=ordine.getNumeroOrdine()%><br><br>
     <%=ordine.getStato()%><br><br>
-    <%=ordine.getPrezzo()%><br><br>
+    <%=ordine.getPrezzo()%> &euro;<br><br>
     <%=ordine.getIndirizzo()%><br><br>
     <%=ordine.getDataOrdine()%><br><br>
 
