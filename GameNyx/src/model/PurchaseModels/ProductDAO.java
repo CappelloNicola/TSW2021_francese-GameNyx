@@ -100,6 +100,7 @@ public class ProductDAO
 				bean.setIva(rs.getDouble("iva"));
 				bean.setNumeroVendite(rs.getInt("numeroVendite"));
 				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));
+				bean.setTrailerURL(rs.getString("trailer"));
 			}
 
 		} finally {
@@ -121,6 +122,54 @@ public class ProductDAO
 		ArrayList<ProductBean> products = new ArrayList<>();
 
 		String selectSQL = "SELECT * FROM " +TABLE_NAME + " WHERE genere = '"+genre+"'";
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				ProductBean bean = new ProductBean();
+
+				bean.setId(rs.getInt("id"));
+				bean.setTitolo(rs.getString("titolo"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setCasaProduttrice(rs.getString("casaProduttrice"));
+				bean.setPiattaforma(rs.getString("piattaforma"));
+				bean.setGenere(rs.getString("genere"));
+				bean.setDataPubblicazione(rs.getDate("dataPubblicazione"));
+				bean.setPrezzo(rs.getDouble("prezzo"));
+				bean.setLingua(rs.getString("lingua"));
+				bean.setSottotitoli(rs.getString("sottotitoli"));
+				bean.setNumeroValutazioni(rs.getInt("numeroValutazioni"));
+				bean.setMediaValutazioni(rs.getDouble("mediaValutazioni"));
+				bean.setIva(rs.getDouble("iva"));
+				bean.setNumeroVendite(rs.getInt("numeroVendite"));
+				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));
+
+				products.add(bean);
+			}
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return products;
+	}
+
+	public synchronized ArrayList<ProductBean> doRetrieveByNumeroVendite() throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		ArrayList<ProductBean> products = new ArrayList<>();
+
+		String selectSQL = "SELECT * FROM " +TABLE_NAME + " ORDER BY numeroVendite DESC";
 
 		try {
 			connection = ds.getConnection();
@@ -281,6 +330,58 @@ public class ProductDAO
 		}
 	}
 
+	public synchronized ArrayList<ProductBean> doSearch(String product) throws SQLException, Exception {
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		String searchSQL = "SELECT * FROM " + TABLE_NAME
+				+ "  WHERE titolo LIKE ?";
+
+		ArrayList<ProductBean> products = new ArrayList<ProductBean>();
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(searchSQL);
+
+			preparedStatement.setString(1, product+"%");
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next())
+			{
+				ProductBean bean = new ProductBean();
+
+				bean.setId(rs.getInt("id"));
+				bean.setTitolo(rs.getString("titolo"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setCasaProduttrice(rs.getString("casaProduttrice"));
+				bean.setPiattaforma(rs.getString("piattaforma"));
+				bean.setGenere(rs.getString("genere"));
+				bean.setDataPubblicazione(rs.getDate("dataPubblicazione"));
+				bean.setPrezzo(rs.getDouble("prezzo"));
+				bean.setLingua(rs.getString("lingua"));
+				bean.setSottotitoli(rs.getString("sottotitoli"));
+				bean.setNumeroValutazioni(rs.getInt("numeroValutazioni"));
+				bean.setMediaValutazioni(rs.getDouble("mediaValutazioni"));
+				bean.setIva(rs.getDouble("iva"));
+				bean.setNumeroVendite(rs.getInt("numeroVendite"));
+				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));
+
+				products.add(bean);
+			}
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+
+		return products;
+	}
 
 
 }

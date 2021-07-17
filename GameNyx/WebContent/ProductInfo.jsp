@@ -7,84 +7,90 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/MyCss.css"/>
 <meta charset="ISO-8859-1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <% ProductBean product =(ProductBean) request.getAttribute("product"); %>
 
 <title><%=product.getTitolo() %></title>
+
+	<style>
+		.ProductInfoContainer
+		{
+			width: 70%;
+			margin: auto;
+			margin-top: 3%;
+		}
+
+		.ProductInfoContainer p
+		{
+			font-family: "Roboto Condensed", sans-serif;
+			font-size: 30px;
+			color: black;
+			font-weight: bold;
+		}
+		.ProductInfoMedia
+		{
+			width: 68%;
+			display: inline-block;
+		}
+		.trailerContainer
+		{
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			padding-top: 56.25%;
+		}
+		.trailerContainer iframe
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+		.screenshotsContainer
+		{
+
+		}
+		.screenshotsContainer img
+		{
+			width: 200px;
+			padding-top: 15px;
+		}
+		.ProductInfoDetails
+		{
+			width: 30%;
+			display: inline-block;
+			border-radius: 30px;
+			background: blue;
+			float: right;
+		}
+	</style>
 </head>
 <body>
 
-	<jsp:useBean id="cart" class="model.PurchaseModels.Cart" scope="session" />
+<%@ include file="fragments/header.jsp"%>
+<jsp:useBean id="cart" class="model.PurchaseModels.Cart" scope="session" />
 
 
-<%
-	/*if (request.getParameter("addToCart") != null && request.getParameter("addToCart").equals("aggiungi") ) 
-	{
-		cart.addToCart(product);
-		cart.showCart();
-	}*/
-
-%>
-
-
-
-<div id="productInformationDiv">
-	<div id="productInfoImage">
-		<% String copertina="./images/"+product.getTitolo()+"/copertina.jpg"; %>
-		<img src="<%= copertina %>">
+<div class="ProductInfoContainer">
+	<p><%=product.getTitolo()%></p>
+	<div class="ProductInfoMedia">
+		<div class="trailerContainer">
+			<iframe src="<%=product.getTrailerURL()%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="screenshotsContainer">
+			<img src="https://sm.ign.com/ign_it/screenshot/default/control-new-3_d3gd.jpg">
+			<img src="https://images.everyeye.it/img-notizie/control-remedy-mostra-gioco-nuovi-screenshot-4k-v4-362679.jpg">
+		</div>
 	</div>
-	<div>
-		<table>
-		  <tr>
-		    <td><b>Titolo</b></td>
-		    <td><%=product.getTitolo() %></td>
-		  </tr>
-		  <tr>
-		    <td><b>Descrizione</b></td>
-		    <td><%=product.getDescrizione()%></td>
-		  </tr>
-		  <tr>
-		    <td><b>Casa Produttrice</b></td>
-		    <td><%=product.getCasaProduttrice()%></td>
-		  </tr>
-		  <tr>
-		    <td><b>Genere</b></td>
-		    <td><%=product.getGenere()%></td>
-		  </tr>
-		  <tr>
-		    <td><b>Data pubblicazione</b></td>
-		    <td><%=product.getDataPubblicazione()%></td>
-		  </tr>
-		 <tr>
-		    <td><b>Lingua</b></td>
-		    <td><%=product.getLingua()%></td>
-		  </tr>
-		 <tr>
-		    <td><b>Piattaforma</b></td>
-		    <td><%=product.getPiattaforma()%></td>
-		  </tr>
-		  <tr>
-		    <td><b>Presenza sottotitoli</b></td>
-		    <td><%=product.getSottotitoli()%></td>
-		  </tr>
-		  <tr>
-		    <td><b>Prezzo</b></td>
-		    <td><%=product.getPrezzo()%> &euro;</td>
-		  </tr>
-		  <tr>
-		    <td><b>Iva</b></td>
-		    <td><%=product.getIva()%>%</td>
-		  </tr>
-		  <tr>
-		    <td><h3>Prezzo Totale:</h3></td>
-		    <td><%=product.getPrezzoTotale()%> &euro;</td>
-		  </tr>
-		 </table>
-		<form action="AddToCartServlet" method="get" target="_self"><!-- invia i dati alla stessa pagina -->
-			<!-- reinserisce nell'url l'id del prodotto per non perderlo -->
-			<input class="button" type="hidden" value="<%=product.getId() %>" name="productID">
-			<input class="button" type="submit" name="addToCart" value="aggiungi al carrello">
-		</form>
+	<div class="ProductInfoDetails">
+		<p>d</p>
+		<p>d</p>
+
 	</div>
 </div>
 </body>

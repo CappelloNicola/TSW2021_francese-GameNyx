@@ -16,34 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `acquisto`
+-- Table structure for table `utente`
 --
 
-DROP TABLE IF EXISTS `acquisto`;
+DROP TABLE IF EXISTS `utente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `acquisto` (
-  `numeroOrdine` int NOT NULL AUTO_INCREMENT,
-  `prezzo` decimal(6,2) NOT NULL,
-  `stato` varchar(20) DEFAULT 'ordinato',
-  `indirizzo` varchar(100) NOT NULL,
-  `dataOrdine` date NOT NULL,
-  `utente` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`numeroOrdine`),
-  KEY `FK_utente` (`utente`),
-  CONSTRAINT `FK_utente` FOREIGN KEY (`utente`) REFERENCES `utente` (`username`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `acquisto_chk_1` CHECK ((`stato` in (_utf8mb4'ordinato',_utf8mb4'in consegna',_utf8mb4'consegnato')))
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `utente` (
+  `username` varchar(30) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `cognome` varchar(100) NOT NULL,
+  `passwordUtente` varchar(300) NOT NULL,
+  `dataDiNascita` date NOT NULL,
+  `telefono` varchar(11) NOT NULL,
+  `isadmin` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `acquisto`
+-- Dumping data for table `utente`
 --
 
-LOCK TABLES `acquisto` WRITE;
-/*!40000 ALTER TABLE `acquisto` DISABLE KEYS */;
-INSERT INTO `acquisto` VALUES (6,48.24,'ordinato','Ammaturo','2021-05-18','niky-hat'),(7,44.77,'ordinato','Campitelli','2021-05-18','niky-hat'),(8,117.13,'ordinato','campi verdi 23','2021-06-17','Peppe');
-/*!40000 ALTER TABLE `acquisto` ENABLE KEYS */;
+LOCK TABLES `utente` WRITE;
+/*!40000 ALTER TABLE `utente` DISABLE KEYS */;
+INSERT INTO `utente` VALUES ('Claudio','darkclaus124@gmail.com','Claudio','Buono','Ciaociao1','2001-06-07','331286324',0),('Claudio01','claudiooo1@gmail.com','Claudio','Buono','ciaociao','2001-03-02','3312863453',1),('niky-hat','nikyhat@gmail.com','Nicola','Cappello','nicola','2001-01-29','3457643847',1);
+/*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-22 10:41:04
+-- Dump completed on 2021-07-17 20:07:56

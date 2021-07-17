@@ -33,6 +33,7 @@ CREATE TABLE `videogioco` (
   `prezzo` decimal(5,2) NOT NULL,
   `lingua` varchar(100) NOT NULL,
   `sottotitoli` varchar(100) DEFAULT 'Non presenti',
+  `trailer` varchar(800) NOT NULL,
   `numeroValutazioni` int DEFAULT '0',
   `mediaValutazioni` decimal(2,1) DEFAULT '0.0',
   `iva` decimal(3,1) NOT NULL,
@@ -40,7 +41,7 @@ CREATE TABLE `videogioco` (
   `quantitaNegozio` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `titolo` (`titolo`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +50,7 @@ CREATE TABLE `videogioco` (
 
 LOCK TABLES `videogioco` WRITE;
 /*!40000 ALTER TABLE `videogioco` DISABLE KEYS */;
-INSERT INTO `videogioco` VALUES (1,'Final Fantasy VIII Remastered','Versione rimasterizzata di Final Fantasy VIII','Square Enix','Ps4','Rpg','2019-09-03',20.98,'Italiano','Italiano',0,0.0,15.0,0,10),(2,'Red Dead Redemption 2','Attesissimo seguito di Red Dead Redemption','Rockstar Games','Xbox One','Azione','2018-10-26',28.99,'Inglese','Italiano',0,0.0,15.0,0,10),(3,'Assassin\'s Creed 2','Il secondo capitolo della saga di Assassin\'s Creed','Ubisoft Montreal','Xbox 360','Azione','2009-11-20',10.13,'Italiano, Inglese','Italiano, Inglese',0,0.0,13.0,0,10),(4,'The Last of Us','Capolavoro per Ps3','Naughty Dog','Ps3','Azione','2021-06-17',20.00,'italiano, inglese','Italiano, Inglese',0,0.0,13.0,0,10);
+INSERT INTO `videogioco` VALUES (1,'Final Fantasy VIII Remastered','Versione rimasterizzata di Final Fantasy VIII','Square Enix','Ps4','Rpg','2019-09-03',45.00,'Italiano, Francese','Italiano, Inglese','',0,0.0,19.0,23,43),(2,'Red Dead Redemption 2','Attesissimo seguito di Red Dead Redemption','Rockstar Games','Xbox One','Azione','2018-10-26',28.99,'Inglese','Italiano','',0,0.0,15.0,43,10),(3,'Assassin\'s Creed 2','Il secondo capitolo della saga di Assassin\'s Creed','Ubisoft Montreal','Xbox 360','Azione','2009-11-20',10.13,'Italiano, Inglese, Francese','Italiano, Inglese, Francese','',0,0.0,13.0,12,10),(14,'Dark souls Remastered','Dark Souls è un videogioco action RPG con visuale in terza persona. Il giocatore deve esplorare varie ambientazioni in stile dark fantasy e utilizzare armi, magie e strategie per sopravvivere a trappole e nemici','FromSoftware','Ps4','Rpg','2010-05-16',30.00,'Inglese','Inglese','https://www.youtube.com/embed/KfjG9ZLGBHE',0,0.0,20.0,24,60),(18,'Risk of rain 2','Fuggi da un caotico pianeta alieno combattendo orde di mostri infuriati - con i tuoi amici o da solo. Combina il bottino in maniere sorprendenti e padroneggia ogni personaggio finché non diventerai quel che ti faceva tremare quando sei atterrato per la prima volta','Hopoo Games','Ps4','Azione','2020-08-11',24.99,'Italiano, Inglese','Italiano, Inglese','',0,0.0,15.0,50,60),(19,'Control','Una presenza invasiva ha occupato il Federal Bureau of Control... e solo tu puoi fermarla. Lo scenario circostante sarà la tua arma migliore in un epico scontro con un nemico minaccioso in una serie di ambientazioni profonde e imprevedibili. Il contenimento è stato violato e ora lintera umanità è in pericolo. Riuscirai a riprendere il controllo?','Remedy Entertainment','Ps4','Azione','2020-08-27',39.99,'Inglese','Inglese','',0,0.0,20.0,32,90);
 /*!40000 ALTER TABLE `videogioco` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-22 10:41:04
+-- Dump completed on 2021-07-17 20:07:56

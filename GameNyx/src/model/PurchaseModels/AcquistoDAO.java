@@ -41,8 +41,8 @@ public class AcquistoDAO
 		
 		String insertSQL = "INSERT INTO " + TABLE_NAME
 				+ " (prezzo, stato, indirizzo, dataOrdine,"
-				+ "  utente) "
-				+ "  VALUES (?, ?, ?, ?, ?)";
+				+ "  utente, numeroCivico, cap, citta, provincia) "
+				+ "  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		String insertSQL2 = "INSERT INTO " + TABLE_NAME2
 						+ "(acquisto, videogioco, quantitaVideogioco, "
@@ -61,6 +61,10 @@ public class AcquistoDAO
 			preparedStatement.setString(3, acquisto.getIndirizzo());;
 			preparedStatement.setDate(4, acquisto.getDataOrdine());
 			preparedStatement.setString(5, acquisto.getUtente());
+			preparedStatement.setInt(6, acquisto.getNumeroCivico());
+			preparedStatement.setInt(7, acquisto.getCap());
+			preparedStatement.setString(8, acquisto.getCitta());
+			preparedStatement.setString(9, acquisto.getProvincia());
 			
 			if(preparedStatement.executeUpdate()==1)
 			{
@@ -127,7 +131,7 @@ public class AcquistoDAO
 		String TB="videogioco"; //nome tabella con cui fare join
 		
 		String selectSQL = "SELECT numeroOrdine, prezzo, stato, indirizzo, "
-				+ "dataOrdine,utente from " + TABLE_NAME + " where utente= ?";
+				+ "dataOrdine, utente, numeroCivico, cap, citta, provincia from " + TABLE_NAME + " where utente= ?";
 				
 		String selectSQL2 = "SELECT quantitaVideogioco, ivaVideogioco, "
 				+  "prezzoVideogioco, id, titolo, piattaforma FROM "
@@ -152,6 +156,10 @@ public class AcquistoDAO
 				bean.setStato(rs.getString("stato"));
 				bean.setIndirizzo(rs.getString("indirizzo"));
 				bean.setDataOrdine(rs.getDate("dataOrdine"));
+				bean.setNumeroCivico(rs.getInt("numeroCivico"));
+				bean.setCap(rs.getInt("cap"));
+				bean.setCitta(rs.getString("citta"));
+				bean.setProvicia(rs.getString("provincia"));
 				
 				ArrayList<ProductBeanCart> videogiochi=new ArrayList<ProductBeanCart>();
 				preparedStatement2.setInt(1, rs.getInt("numeroOrdine"));
@@ -202,7 +210,7 @@ public class AcquistoDAO
 		String TB="videogioco"; //nome tabella con cui fare join
 
 		String selectSQL = "SELECT numeroOrdine, prezzo, stato, indirizzo, "
-				+ "dataOrdine,utente from " + TABLE_NAME + " where numeroOrdine= ?";
+				+ "dataOrdine, utente, numeroCivico, cap, citta, provincia from " + TABLE_NAME + " where numeroOrdine= ?";
 				
 		String selectSQL2 = "SELECT quantitaVideogioco, ivaVideogioco, "
 				+  "prezzoVideogioco, id, titolo, piattaforma FROM "
@@ -227,6 +235,10 @@ public class AcquistoDAO
 				bean.setIndirizzo(rs.getString("indirizzo"));
 				bean.setDataOrdine(rs.getDate("dataOrdine"));
 				bean.setUtente(rs.getString("utente"));
+				bean.setNumeroCivico(rs.getInt("numeroCivico"));
+				bean.setCap(rs.getInt("cap"));
+				bean.setCitta(rs.getString("citta"));
+				bean.setProvicia(rs.getString("provincia"));
 				
 				ArrayList<ProductBeanCart> videogiochi=new ArrayList<ProductBeanCart>();
 				
@@ -337,6 +349,10 @@ public class AcquistoDAO
 				bean.setIndirizzo(rs.getString("indirizzo"));
 				bean.setDataOrdine(rs.getDate("dataOrdine"));
 				bean.setUtente(rs.getString("utente"));
+				bean.setNumeroCivico(rs.getInt("numeroCivico"));
+				bean.setCap(rs.getInt("cap"));
+				bean.setCitta(rs.getString("citta"));
+				bean.setProvicia(rs.getString("provincia"));
 				
 				
 				orders.add(bean);

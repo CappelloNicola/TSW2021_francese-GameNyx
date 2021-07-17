@@ -19,6 +19,7 @@ public class ProductBean
 	double mediaValutazioni; //compreso tra 0 e 5 stelle
 	int numeroVendite;
 	int quantitaNegozio;
+	String trailerURL;
 	
 	public double getPrezzoTotale()
 	{
@@ -101,7 +102,11 @@ public class ProductBean
 	{
 		return quantitaNegozio;
 	}
-	
+
+	public String getTrailerURL() {
+		return trailerURL;
+	}
+
 	public void setId(int newId)
 	{
 		id=newId;
@@ -176,5 +181,8 @@ public class ProductBean
 	{
 		quantitaNegozio=newQuantity;
 	}
-	
+
+	public void setTrailerURL(String trailerURL) {
+		this.trailerURL = trailerURL;
+	}
 }

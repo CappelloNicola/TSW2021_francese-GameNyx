@@ -11,6 +11,13 @@
 <meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carrello</title>
+<style>
+	.paymentCard
+	{
+		width:100px;
+		height:auto;
+	}
+</style>
 </head>
 <body>
 
@@ -100,7 +107,23 @@
 	<h2 id="prezzoTotale">Prezzo Totale: <%=prezzoTotale %> </h2>
 	<!-- Checkout che annulla il carrello  -->
 	<form method="get" action="CheckoutServlet">
-	<p id="indirizzoConsegna"> <input type="text" name="indirizzo" placeholder="indirizzo di consegna"> </p>
+	<hr>
+	<h2>Spedizione</h2>
+	<p> <input type="text" name="indirizzo" placeholder="Indirizzo"> </p>
+	<p> <input type="text" name="numeroCivico" placeholder="Numero Civico"> *SNC se assente </p>
+	<p> <input type="text" name="cap" placeholder="CAP"> </p>
+	<p> <input type="text" name="citta" placeholder="Citt&agrave;"> </p>
+	<p> <input type="text" name="provincia" placeholder="Provincia"> </p>
+	<hr>
+	<h2>Pagamento</h2>
+	<p>Carte accettate: </p>
+	<img class="paymentCard" src="images/paymentCards/mastercard.jpg">
+	<img class="paymentCard" src="images/paymentCards/visa.jpg">
+	<p> <input type="text" name="intestatario" placeholder="Intestatario"> </p>
+	<p> <input type="text" name="numeroCarta" placeholder="Numero Carta"> </p>
+	<p> <input type="text" name="meseScadenza" placeholder="Mese di scadenza" onfocus="(this.type='number')" onblur="(this.type='text')" min='1' max='12'> </p>
+	<p> <input type="text" name="annoScadenza" placeholder="Anno di scadenza" onfocus="(this.type='number')" onblur="(this.type='text')" min='2021' max='2050'> </p>
+	<p> <input type="text" name="cvv" placeholder="CVV"> </p>
 	<h1 id="checkout"><input class="button" type="submit" name="checkout" value="Checkout"></h1>
 	</form>
 	

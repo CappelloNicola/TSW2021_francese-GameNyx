@@ -11,12 +11,10 @@
     <link rel="stylesheet" type="text/css" href="css/MyCss.css">
     <title>GameNyx</title>
 </head>
-<body id="indexBody">
+<body>
 <%@ include file="fragments/header.jsp"%>
 
 <%@ include file="fragments/menu.jsp"%>
-
-<%@ include file="fragments/GenereBarAnimation.jsp"%>
 
 <%@ include file="fragments/footer.jsp"%>
 

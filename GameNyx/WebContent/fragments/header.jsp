@@ -1,34 +1,115 @@
 <%@ page import="model.UserModels.UserBean" %>
+<%@page import="model.PurchaseModels.Cart"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <link rel="stylesheet" type="text/css" href="css/MyCss.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div id="header">
-    <div id="logo">GameNyx</div>
+<style>
+    #livesearch
+    {
+        position: absolute;
+        background-color: white;
+        margin: auto;
+        width: 29%;
+        z-index: 2;
+        background: white;
+        margin-left: 35.5%;
+        margin-top: -10px;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 30%);
+    }
+    .searchedElement
+    {
+        margin-left: 30px;
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: 20px;
+    }
+    .searchedElement img
+    {
+        width: 60px;
 
-<%
+    }
+
+    #livesearch span
+    {
+        margin-left: 10px;
+        color: black;
+        font-family: "Roboto Condensed", sans-serif;
+    }
+
+</style>
+<div id="header">
+    <a id="logo" href="index.jsp">GameNyx</a>
+
+    <!-- TODO implementare cerca prodotto-->
+    <input type="text" id="searchBar" placeholder="Cerca videogioco..." onkeyup="showResult(this.value)">
+
+
+    <div id="headerRightButtons">
+
+        <!-- Carrello con numero della quantità totale di videogiochi nel carrello -->
+        <%
+            Cart carrello = null;
+            int size = 0;
+            if(session.getAttribute("carrello")!=null)
+            {
+                carrello = (Cart) session.getAttribute("carrello");
+                size = carrello.getCartTotalQuantity();
+            }
+        %>
+
+        <a id="cartButton" href="Cart.jsp" target="_blank"><img id="cartImage" src="images/icons/cart.png"><span id="cartSize"><%=size%></span></a>
+
+    <%
     if(session.getAttribute("currentUserSession")!=null)
     {
-%>
-        <% UserBean user = (UserBean) session.getAttribute("currentUserSession");%>
+    %>
+        <% UserBean user = (UserBean) session.getAttribute("currentUserSession"); %>
 
-        <a id="headerbuttons" href="LogoutServlet">Logout</a>
-        <a id="headerbuttons" style="background: #229954" href="GetOrdersServlet">Ordini</a>
-
-        <!-- Implementare profilo -->
-        <div id="user">
-           <font color="black" size="3px">logged as</font> <%=user.getUsername()%>
-        </div>
-<%
-}
+            <div id="userProfile">
+              <div class="dropdown" id="profileButton"><%=user.getUsername()%><span id="arrow-down"></span>
+                <div class="dropdown-content">
+                    <a id="profileButton" style="color: black" href="ProfileServlet?user=<%=user.getUsername()%>">Profilo</a>
+                    <a id="profileButton" style="color: black" href="LogoutServlet">Logout</a>
+                </div>
+              </div>
+            </div>
+    <%
+    }
     else
     {
     %>
-        <a id="signup" href="Registrazione.jsp">Sign up</a>
-        <a id="headerbuttons" href="Login.jsp">Login</a>
+        <div id="loginRegisterDiv">
+            <a id="signup" href="Registrazione.jsp">Sign up</a>
+            <a id="login" href="Login.jsp">Login</a>
+        </div>
     <%
     }
-%>
+    %>
+    </div>
 
 </div>
+<div id="livesearch"></div>
+<script>
+function showResult(str)
+{
+    if (str.length==0)
+    {
+        document.getElementById("livesearch").innerHTML="";
+        return;
+    }
+
+    var xmlhttp=new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange=function()
+    {
+        if (this.readyState==4 && this.status==200)
+        {
+            document.getElementById("livesearch").innerHTML=this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET","LiveSearchServlet?q="+str,true);
+    xmlhttp.send();
+}
+</script>

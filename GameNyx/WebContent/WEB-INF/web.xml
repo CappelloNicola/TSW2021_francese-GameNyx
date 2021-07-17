@@ -13,6 +13,12 @@
 
     <servlet-name>OrderInfo</servlet-name>
     <servlet-class>control.UserServlets.OrderInfoServlet</servlet-class>
+
+    <servlet-name>ModifyProductServlet</servlet-name>
+    <servlet-class>control.AdminServlets.ModifyProductServlet</servlet-class>
+
+    <servlet-name>ViewOrdersServlet</servlet-name>
+    <servlet-class>control.AdminServlets.ViewOrdersServlet</servlet-class>
   </servlet>
   <error-page>
     <error-code>404</error-code>

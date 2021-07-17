@@ -195,8 +195,9 @@
 
     .centralDiv
     {
+        position: relative;
         margin-top: 10%;
-        height: 790px;
+        height: 200%;
     }
     .barraGeneri
     {
@@ -263,6 +264,7 @@
         border-bottom-right-radius: 50px;
         margin-top: -1px;
         z-index: 2;
+        line-height: 40px;
     }
     #showGames
     {

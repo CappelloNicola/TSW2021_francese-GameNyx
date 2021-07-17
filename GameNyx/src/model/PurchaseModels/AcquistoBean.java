@@ -8,6 +8,10 @@ public class AcquistoBean {
 	private double prezzo;
 	private String stato;
 	private String indirizzo;
+	private int numeroCivico;
+	private int cap;
+	private String citta;
+	private String provincia;
 	private Date dataOrdine;
 	private String utente;
 	private ArrayList<ProductBeanCart> videogiochi;
@@ -27,6 +31,26 @@ public class AcquistoBean {
 			ProductBeanCart v=videogiochi.get(i);
 			prezzo=prezzo+(v.getPrezzoTotale()*v.getCartQuantity());
 		}
+	}
+	
+	public void setNumeroCivico(int newNCivico)
+	{
+		numeroCivico=newNCivico;
+	}
+	
+	public void setCap(int newCap)
+	{
+		cap=newCap;
+	}
+	
+	public void setCitta(String newCitta)
+	{
+		citta=newCitta;
+	}
+	
+	public void setProvicia(String newProvincia)
+	{
+		provincia=newProvincia;
 	}
 	
 	public void setPrezzo(double prezzo)
@@ -62,6 +86,26 @@ public class AcquistoBean {
 	public int getNumeroOrdine()
 	{
 		return numeroOrdine;
+	}
+	
+	public int getNumeroCivico()
+	{
+		return numeroCivico;
+	}
+	
+	public int getCap()
+	{
+		return cap;
+	}
+	
+	public String getCitta()
+	{
+		return citta;
+	}
+	
+	public String getProvincia()
+	{
+		return provincia;
 	}
 	
 	public double getPrezzo()

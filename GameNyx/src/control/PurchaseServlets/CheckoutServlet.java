@@ -47,6 +47,10 @@ public class CheckoutServlet extends HttpServlet {
 			acquisto.setUtente(utente.getUsername());
 			acquisto.setVideogiochi(carrello.getProducts());
 			acquisto.setPrezzoAuto();
+			acquisto.setNumeroCivico(Integer.parseInt(request.getParameter("numeroCivico")));
+			acquisto.setCap(Integer.parseInt(request.getParameter("cap")));
+			acquisto.setCitta(request.getParameter("citta"));
+			acquisto.setProvicia(request.getParameter("provincia"));
 			
 			AcquistoDAO acquistoDao=new AcquistoDAO();
 			try

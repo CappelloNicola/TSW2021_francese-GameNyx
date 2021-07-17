@@ -16,34 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `utente`
+-- Table structure for table `composto`
 --
 
-DROP TABLE IF EXISTS `utente`;
+DROP TABLE IF EXISTS `composto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `utente` (
-  `username` varchar(30) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `cognome` varchar(100) NOT NULL,
-  `passwordUtente` varchar(300) NOT NULL,
-  `dataDiNascita` date NOT NULL,
-  `telefono` varchar(11) NOT NULL,
-  `isadmin` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`username`),
-  UNIQUE KEY `email` (`email`)
+CREATE TABLE `composto` (
+  `acquisto` int NOT NULL,
+  `videogioco` int NOT NULL,
+  `quantitaVideogioco` int DEFAULT '1',
+  `ivaVideogioco` decimal(3,1) NOT NULL,
+  `prezzoVideogioco` decimal(5,2) NOT NULL,
+  PRIMARY KEY (`acquisto`,`videogioco`),
+  KEY `FK_videogioco` (`videogioco`),
+  CONSTRAINT `FK_acquisto` FOREIGN KEY (`acquisto`) REFERENCES `acquisto` (`numeroOrdine`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `FK_videogioco` FOREIGN KEY (`videogioco`) REFERENCES `videogioco` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `utente`
+-- Dumping data for table `composto`
 --
 
-LOCK TABLES `utente` WRITE;
-/*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES ('niky-hat','nikyhat@gmail.com','Nicola','Cappello','nicola','2001-01-29','3457643847',1),('Peppe','peppinofranco@gmail.it','Giuseppe','Verdi','ciao','2001-04-02','3457894512',0);
-/*!40000 ALTER TABLE `utente` ENABLE KEYS */;
+LOCK TABLES `composto` WRITE;
+/*!40000 ALTER TABLE `composto` DISABLE KEYS */;
+INSERT INTO `composto` VALUES (6,1,2,15.0,20.98),(7,2,1,15.0,28.99),(7,3,1,13.0,10.13),(9,1,4,19.0,45.00),(9,2,2,15.0,28.99),(10,1,2,19.0,45.00),(11,1,4,19.0,45.00),(11,2,2,15.0,28.99),(12,1,5,19.0,45.00),(12,2,1,15.0,28.99),(12,3,3,13.0,10.13),(13,1,50,19.0,45.00),(14,3,5,13.0,10.13),(15,1,3,19.0,45.00),(16,1,5,19.0,45.00),(16,2,2,15.0,28.99),(17,18,1,15.0,24.99);
+/*!40000 ALTER TABLE `composto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-22 10:41:06
+-- Dump completed on 2021-07-17 20:07:55
