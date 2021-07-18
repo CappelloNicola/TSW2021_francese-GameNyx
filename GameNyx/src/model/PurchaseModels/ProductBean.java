@@ -20,12 +20,18 @@ public class ProductBean
 	int numeroVendite;
 	int quantitaNegozio;
 	String trailerURL;
+	boolean inCatalogo;
 	
 	public double getPrezzoTotale()
 	{
 		double prezzoIva=prezzo + ((prezzo*iva)/100);
 		double val=Math.floor(prezzoIva * 100) / 100;
 		return val;
+	}
+	
+	public boolean getInCatalogo()
+	{
+		return inCatalogo;
 	}
 	
 	public int getId()
@@ -105,6 +111,11 @@ public class ProductBean
 
 	public String getTrailerURL() {
 		return trailerURL;
+	}
+	
+	public void setInCatalogo(boolean value)
+	{
+		inCatalogo=value;
 	}
 
 	public void setId(int newId)

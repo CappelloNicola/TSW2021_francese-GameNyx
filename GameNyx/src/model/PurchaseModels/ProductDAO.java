@@ -38,8 +38,8 @@ public class ProductDAO
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
 				+ " (titolo, descrizione, casaProduttrice, piattaforma,"
-				+ "  genere, dataPubblicazione, prezzo, lingua, sottotitoli, iva, quantitaNegozio) "
-				+ "  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ "  genere, dataPubblicazione, prezzo, lingua, sottotitoli, iva, quantitaNegozio, inCatalogo) "
+				+ "  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			connection = ds.getConnection();
@@ -55,6 +55,7 @@ public class ProductDAO
 			preparedStatement.setString(9, product.getSottotitoli());
 			preparedStatement.setDouble(10, product.getIva());
 			preparedStatement.setInt(11, product.getQuantitaNegozio());
+			preparedStatement.setBoolean(12, product.getInCatalogo());
 			
 			preparedStatement.executeUpdate();
 
@@ -101,6 +102,7 @@ public class ProductDAO
 				bean.setNumeroVendite(rs.getInt("numeroVendite"));
 				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));
 				bean.setTrailerURL(rs.getString("trailer"));
+				bean.setInCatalogo(rs.getBoolean("inCatalogo"));
 			}
 
 		} finally {
@@ -147,6 +149,8 @@ public class ProductDAO
 				bean.setIva(rs.getDouble("iva"));
 				bean.setNumeroVendite(rs.getInt("numeroVendite"));
 				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));
+				bean.setTrailerURL(rs.getString("trailer"));
+				bean.setInCatalogo(rs.getBoolean("inCatalogo"));
 
 				products.add(bean);
 			}
@@ -195,7 +199,9 @@ public class ProductDAO
 				bean.setIva(rs.getDouble("iva"));
 				bean.setNumeroVendite(rs.getInt("numeroVendite"));
 				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));
-
+				bean.setTrailerURL(rs.getString("trailer"));
+				bean.setInCatalogo(rs.getBoolean("inCatalogo"));
+				
 				products.add(bean);
 			}
 
@@ -216,9 +222,15 @@ public class ProductDAO
 		PreparedStatement preparedStatement = null;
 
 		int result = 0;
-
-		String deleteSQL = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
-
+		
+		//String deleteSQL = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
+		
+		/*Se un prodotto viene eliminato, l'utente deve poter vedere nei suoi ordini il prodotto
+		 * se l'ha precedentemente acquistato. Per fare questo, non cancelliamo la riga dal DB, ma settiamo
+		 * inCatalogo a false per mantenere le informazioni sul prodotto e allo stesso tempo, non mostrarlo 
+		 * nel Catalogo*/
+		String deleteSQL="update " + TABLE_NAME + " set inCatalogo=false, quantitaNegozio=0 where id= ?";
+		
 		try {
 			connection = ds.getConnection();
 			preparedStatement = connection.prepareStatement(deleteSQL);
@@ -275,6 +287,8 @@ public class ProductDAO
 				bean.setIva(rs.getDouble("iva"));
 				bean.setNumeroVendite(rs.getInt("numeroVendite"));
 				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));	
+				bean.setTrailerURL(rs.getString("trailer"));
+				bean.setInCatalogo(rs.getBoolean("inCatalogo"));
 				
 				products.add(bean);
 			}
@@ -298,7 +312,7 @@ public class ProductDAO
 
 		String insertSQL = "UPDATE " + TABLE_NAME
 				+ " SET titolo=?, descrizione=?, casaProduttrice=?, piattaforma=?,"
-				+ "  genere=?, dataPubblicazione=?, prezzo=?, lingua=?, sottotitoli=?, iva=?, quantitaNegozio=? "
+				+ "  genere=?, dataPubblicazione=?, prezzo=?, lingua=?, sottotitoli=?, iva=?, quantitaNegozio=?, trailer=?, inCatalogo=? "
 				+ "  WHERE id=?";
 
 		try {
@@ -315,7 +329,9 @@ public class ProductDAO
 			preparedStatement.setString(9, product.getSottotitoli());
 			preparedStatement.setDouble(10, product.getIva());
 			preparedStatement.setInt(11, product.getQuantitaNegozio());
-			preparedStatement.setInt(12, product.getId());
+			preparedStatement.setString(12, product.getTrailerURL());
+			preparedStatement.setBoolean(13, product.getInCatalogo());
+			preparedStatement.setInt(14, product.getId());
 
 			preparedStatement.executeUpdate();
 
@@ -366,7 +382,9 @@ public class ProductDAO
 				bean.setIva(rs.getDouble("iva"));
 				bean.setNumeroVendite(rs.getInt("numeroVendite"));
 				bean.setQuantitaNegozio(rs.getInt("quantitaNegozio"));
-
+				bean.setTrailerURL(rs.getString("trailer"));
+				bean.setInCatalogo(rs.getBoolean("inCatalogo"));
+				
 				products.add(bean);
 			}
 

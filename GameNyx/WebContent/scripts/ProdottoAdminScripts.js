@@ -48,3 +48,19 @@
 		fullPrice.innerText=truncated;
 	}
 
+	function checkRadio(inCatalogo)
+	{
+		
+		if(inCatalogo==true)
+		{
+			
+			document.getElementById("inCatalogoTrue").checked = true;
+			
+			
+		}
+		else
+		{
+			document.getElementById("inCatalogoFalse").checked = true;
+			
+		}
+	}

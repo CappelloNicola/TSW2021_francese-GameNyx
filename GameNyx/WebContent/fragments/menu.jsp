@@ -204,7 +204,10 @@
         <%
            for(ProductBean e:products)
            {
-
+				if(e.getInCatalogo()==false)
+				{
+					continue; //Se il prodotto non è in catalogo non viene visualizzato
+				}
         %>
 
             <div class="productElement">

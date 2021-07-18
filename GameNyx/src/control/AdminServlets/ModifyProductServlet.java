@@ -78,6 +78,15 @@ public class ModifyProductServlet extends HttpServlet {
         String[] lingueArray=request.getParameterValues("lingua");
         String[] sottotitoliArray=request.getParameterValues("sottotitoli");
         String quantitaNegozio=request.getParameter("quantitaNegozio");
+        String trailer=request.getParameter("trailer");
+        String inCatalogo=request.getParameter("inCatalogo");
+        
+        boolean isInCatalogo=false;
+        if(inCatalogo.equals("si"))
+        {
+        	isInCatalogo=true;
+        }
+        
 
         Date date=Date.valueOf(data);//converto la stringa data in un sql.Date
         //metto tutte le lingue e i sottotitoli in un'unica stringa
@@ -109,6 +118,8 @@ public class ModifyProductServlet extends HttpServlet {
         product.setLingua(lingue);
         product.setSottotitoli(sottotitoli);
         product.setQuantitaNegozio(Integer.parseInt(quantitaNegozio));
+        product.setTrailerURL(trailer);
+        product.setInCatalogo(isInCatalogo);
 
 
 

@@ -15,6 +15,9 @@
 
 <title><%=product.getTitolo() %></title>
 </head>
+
+
+
 <body>
 
 <%
@@ -46,6 +49,16 @@
 	<div>
 		<form action="ModifyProductServlet" method="POST" enctype="multipart/form-data">
 		<table>
+		  <tr>
+			<td><b>In Catalogo</b></td>
+			<td><label>S&igrave; <input id="inCatalogoTrue" type="radio" name="inCatalogo" value="si"> </label>
+				<label>No <input id="inCatalogoFalse" type="radio" name="inCatalogo" value="no"> </label>
+			</td>
+		  </tr>
+		  <tr>
+			<td><b>URL Trailer</b></td>
+			<td><input type="text" name="trailer" value="<%=product.getTrailerURL()%>"></td>
+		  </tr> 
 		  <tr>
 			<td><b>Cambia copertina</b></td>
 			<td><input type="file" id="copertina" name="copertina" placeholder="Copertina" accept=".jpg"/></td>
@@ -165,12 +178,13 @@
 
 </div>
 
-</body>
-
 	<script src="${pageContext.request.contextPath}/scripts/jquery.js"></script> 
 	<script src="${pageContext.request.contextPath}/scripts/ProdottoAdminScripts.js"></script>
+	
 	<script>
-
+	
+	
+	$(document).ready(function(){
 		/*Cambio gli option*/
 		changeSelectedDefault("<%=product.getGenere()%>", "genreSelect");
 		changeSelectedDefault("<%=product.getPiattaforma()%>", "platformSelect");
@@ -178,6 +192,8 @@
 
 		var lingua="<%=product.getLingua()%>";
 		var sottotitoli="<%=product.getSottotitoli()%>";
+		var inCatalogo=<%=product.getInCatalogo()%>;
+		
 
 		/*suddivido lingue e sottotitoli in array*/
 		const linguaArray = lingua.split(",");
@@ -186,6 +202,14 @@
 		/*chiamo le funzioni per spuntare i boxes*/
 		checkBoxes(linguaArray, "lingua");
 		checkBoxes(sottotitoliArray, "sottotitoli");
+		checkRadio(inCatalogo);
+		});
+	
+	
 
 	</script>
+</body>
+
+	
+	
 </html>

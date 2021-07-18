@@ -90,15 +90,23 @@
 
 </div>
 <div id="livesearch"></div>
+
+<script src="${pageContext.request.contextPath}/scripts/jquery.js"></script> 
+
 <script>
+
+
+
 function showResult(str)
 {
+	
+	
     if (str.length==0)
     {
         document.getElementById("livesearch").innerHTML="";
         return;
     }
-
+	/*
     var xmlhttp=new XMLHttpRequest();
 
     xmlhttp.onreadystatechange=function()
@@ -111,5 +119,18 @@ function showResult(str)
 
     xmlhttp.open("GET","LiveSearchServlet?q="+str,true);
     xmlhttp.send();
+    */
+    $.ajax({
+    	type:"GET",
+    	url:"LiveSearchServlet",
+    	data:"q="+str,
+    	success:function(data)
+    				{
+    					$("#livesearch").html(data);
+    					
+    				}
+    	
+    });
+    
 }
 </script>

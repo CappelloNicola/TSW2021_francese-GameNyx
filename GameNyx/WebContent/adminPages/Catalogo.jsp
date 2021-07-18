@@ -43,13 +43,31 @@
         <% for(ProductBean e :catalogo) { %>
 
         <tr>
-            <td rowspan="2">
+            <td rowspan="3">
                 <% String copertina=request.getContextPath()+"/images/"+e.getTitolo()+"/copertina.jpg"; %>
                 <img class="copertina" src="<%= copertina %>" width="120px">
             </td>
             <td>
                 <span id="gameTitle" > <%= e.getTitolo()%> </span>
             </td>
+        </tr>
+        <tr>
+        	<td>	
+        		<%
+        			boolean isInCatalogo=e.getInCatalogo();
+        			String inCatalogo="";
+        			if(isInCatalogo)
+        			{
+        				inCatalogo="In catalogo";
+        			}
+        			else
+        			{
+        				inCatalogo="Non in catalogo";
+        			}
+
+        		%>
+        		<span><%= inCatalogo %></span>
+        	</td>
         </tr>
         <tr>
             <td>
