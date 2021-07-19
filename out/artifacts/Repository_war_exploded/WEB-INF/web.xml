@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <display-name>GameNyx</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>ProductInfoServlet</servlet-name>
+    <servlet-class>control.PurchaseServlets.ProductInfoServlet</servlet-class>
+
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>control.UserServlets.LoginServlet</servlet-class>
+
+    <servlet-name>OrderInfo</servlet-name>
+    <servlet-class>control.UserServlets.OrderInfoServlet</servlet-class>
+
+    <servlet-name>ModifyProductServlet</servlet-name>
+    <servlet-class>control.AdminServlets.ModifyProductServlet</servlet-class>
+
+    <servlet-name>ViewOrdersServlet</servlet-name>
+    <servlet-class>control.AdminServlets.ViewOrdersServlet</servlet-class>
+  </servlet>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/errors/error404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>401</error-code>
+    <location>/errors/error401.jsp</location>
+  </error-page>
+</web-app>

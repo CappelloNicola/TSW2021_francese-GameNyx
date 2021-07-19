@@ -1,0 +1,765 @@
+@charset "UTF-8";
+
+
+/*
+    Desktop CSS
+*/
+
+html
+{
+    height: 100%;
+}
+body
+{
+    margin: 0;
+    font-family: sans-serif;
+    height: 110%;
+}
+
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+#tableCatalogo
+{
+    font-family: Arial, Helvetica, sans-serif;
+    height: auto;
+    width:35%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+#adminNav{
+    margin-bottom:10px;
+    font-family: verdana;
+    font-style: italic;
+}
+
+#adminNav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background:black /*#2980B9*/;
+    width: 100%
+}
+
+#adminNav li {
+    float: left;
+}
+
+#adminNav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#adminNav li a:hover:not(.active) {
+    background-color:red /*#111*/;
+}
+
+.active {
+    background-color: red /*#04AA6D*/;
+}
+
+/*#divCatalogo
+{
+    margin-top: 10%;
+    margin-left: 10%;
+    text-align:center;
+    border:1px solid black;
+}*/
+
+#gameTitle
+{
+    font-family: arial;
+    font-style: oblique;
+    font-weight:bold;
+    display:block;
+    width:100%;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.dettagliButton {
+    width: 50%;
+    padding:5%;
+    border-radius: 25px;
+    border-width:4px;
+    border-color: red;
+    font-family: arial;
+    font-style: oblique;
+    font-weight: 600;
+    font-size: 100%;
+}
+
+#gameImage
+{
+    width:50%;
+}
+
+#productInformationDivAdmin {
+    /* margin: 50px 20px 0 0;*/
+    border: 5px #333;
+    overflow: auto;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+#productInfoImageAdmin {
+    float: left;
+    width: 15%;
+}
+
+#productInfoImageAdmin img {
+    display: block;
+    width: 100%
+}
+
+#productInformationDivAdmin td {
+    font-size: 18px;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+
+
+
+#productInformationDivAdmin .button {
+    height: 30px;
+    width: 150px;
+    background-color: #4CAF50;
+    border-color: grey;
+    font-weight: bold;
+    color: #263B27;
+    margin-left:20%
+
+}
+
+.titoloGioco
+{
+    text-align: center;
+    margin-left: 35%;
+    margin-top: 20%;
+    height: 200px;
+}
+
+#tdSx
+{
+
+    width: 50%;
+
+}
+#tdDx
+{
+    width: 50%;
+
+}
+
+#dettagliform
+{
+    display: inline;
+}
+
+
+.FirstRow {
+    line-height: 1px;
+    background-color:  #2980B9;
+}
+
+
+/*   a:link, a:visited {
+       background-color: #239bf3;
+       color: white;
+       padding: 10px 25px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+   }*/
+
+
+
+
+.button {
+    height: 40px;
+    width: 200px;
+    border-radius: 25px;
+    background-color: #04AA6D;
+    border-color: #04AA6D;
+    font-weight: bold;
+}
+.buttonSort {
+    height: 40px;
+    width: 200px;
+    border-radius: 25px;
+    background-color: red;
+    border-color: black;
+    font-weight: bold;
+}
+
+#mostra {
+    height: 30px;
+    width: 80px;
+    border-radius: 30px;
+    border: none;
+    background-color: #1F618D;
+    color: white;
+    font-weight: bold;
+}
+
+#controlliSort
+{
+    margin: auto;
+    width: 30%;
+}
+
+#tableOrdiniAdmin
+{
+    margin-top: 60px;
+    margin-left: 25%;
+}
+
+.textDesign{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+
+#InsertForm
+{
+    display: block;
+    text-align: center;
+}
+
+
+#InsertForm form
+{
+    display: inline-block;
+    margin-left:auto;
+    margin-right:auto;
+    width:30%;
+    text-align: center;
+}
+
+textarea{
+    resize:none;
+}
+
+#InsertForm form input,#InsertForm form textarea, #InsertForm form select
+{
+
+    width:100%;
+    display:inline;
+    text-align:center;
+    border-color: #04AA6D;
+    padding:8px;
+    margin-bottom:10px;
+    box-sizing:border-box;
+}
+
+td span{
+    float:left;
+}
+
+#productInformationDiv {
+    margin: 50px 20px 0 0;
+    border: 5px #333;
+    overflow: auto;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+#productInfoImage {
+    float: left;
+    width: 15%;
+}
+
+#productInfoImage img {
+    display: block;
+    width: 100%
+}
+
+#productInformationDiv td {
+    font-size: 18px;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+
+#productInformationDiv .button {
+    height: 30px;
+    width: 150px;
+    background-color: #4CAF50;
+    border-color: grey;
+    font-weight: bold;
+    color: #263B27;
+    margin-left:20%
+
+}
+
+#prezzoTotale, #indirizzoConsegna {
+
+    text-align: center;
+}
+
+#checkout, #cartTitle {
+    margin-left: 43%;
+}
+
+#productContainer {
+    margin: 50px 20px 0 0;
+    border: 5px #333;
+    overflow: auto;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+#cartImageContainer {
+    float: left;
+    width: 15%;
+}
+
+#cartImage {
+    display: block;
+    width: 100%
+}
+
+#CartInformationDiv {
+    margin-top: 20px;
+    margin-left: 22%
+}
+
+#CartInformationDiv td {
+    font-size: 18px;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+
+#CartInformationDiv .button {
+    height: 25px;
+    width: 100px;
+    background-color: #4CAF50;
+    border-color: grey;
+    font-weight: bold;
+    color: #263B27;
+    margin-left:0%
+
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #525c8e;
+    height: 200px;
+}
+
+#informazioniFooter {
+    background: #3a416a;
+    height: 50px;
+    width: 100%;
+}
+
+#informazioniFooter	p {
+    display: inline-block;
+    margin-left: 20%;
+}
+
+#header
+{
+    position: relative;
+    height: 80px;
+    background: #3a416a;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+
+
+}
+#logo
+{
+    display: inline-block;
+    font-size: 1.5em;
+    margin-top: 25px;
+    margin-left: 80px;
+    color: white;
+    text-decoration: none;
+
+}
+
+#searchBar
+{
+    background-color: white;
+    width: 30%;
+    margin: auto;
+    display: block;
+    height: 30px;
+    margin-top: -30px;
+    border: none;
+    border-radius: 15px;
+    text-decoration: none;
+    outline: none;
+    text-indent: 20px;
+}
+
+#searchBar::placeholder {
+    font-family: Arial;
+    color:#9492a2;
+}
+
+#profileButtonStyle
+{
+    font-family: Arial;
+    display: inline-block;
+    background-color:#525c8e;
+    border-color: white;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+    border-radius: 15px;
+    line-height: 35px;
+    width: 150px;
+    height: 35px;
+}
+
+#arrow-down {
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-top: 4px solid white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 3;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+#headerRightButtons
+{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    float: right;
+    margin-top: -50px;
+}
+
+#userProfile
+{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    font-size: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+#profileButton
+{
+    color: white;
+    text-decoration: none;
+    line-height: 70px;
+    margin-right: 40px;
+
+}
+#cartButton
+{
+    position: relative;
+    margin-top: 20px;
+    margin-right: 30px;
+    float: right;
+}
+
+
+#cartImage
+{
+    width: 55px;
+}
+
+#cartSize
+{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    margin-top: -35px;
+    margin-left: 31px;
+}
+
+#loginRegisterDiv
+{
+    width: 100%;
+    height: 100%;
+}
+
+#signup
+{
+    font-family: "Roboto Condensed", sans-serif;
+    display: inline-block;
+    background-color: #f3235e;
+    border-color: white;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-right: 25px;
+    border-radius: 8px;
+    line-height: 35px;
+    width: 110px;
+    height: 35px;
+    float: right;
+}
+
+#login
+{
+    font-family: "Roboto Condensed", sans-serif;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-right: 25px;
+    border-radius: 15px;
+    line-height: 35px;
+    height: 35px;
+    float: right;
+
+}
+
+#user
+{
+    display: inline-block;
+    color: white;
+    font-size: 1.4em;
+    color: #F5B041;
+    float: right;
+    margin-top: 25px;
+    margin-right: 30px;
+    border-radius: 50px;
+
+}
+
+
+
+@media screen and (min-width: 600px) and  (max-width: 768px) /*tablet*/
+{
+    #productInformationDiv {
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+    #productInfoImage {
+        width: 45%;
+        margin-left:30%
+    }
+
+    #productInformationDiv table
+    {
+        padding-top:10%;
+    }
+    #productInformationDiv td
+    {
+        font-size: 20px;
+        padding-left: 80px;
+        padding-top: 10px;
+    }
+
+    #productInformationDiv .button
+    {
+        position:absolute;
+        height:50px;
+        width:220px;
+        font-size:18px;
+        background-color: #4CAF50;
+        border-color: grey;
+        font-weight: bold;
+        color: #263B27;
+        margin-left:30%;
+    }
+
+    #productContainer {
+        margin: 50px 20px 0 0;
+        border: 5px #333;
+        overflow: auto;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+
+    #cartImageContainer {
+        width: 45%;
+        margin-left:30%
+    }
+
+    #CartInformationDiv > table
+    {
+        padding-top:10%;
+    }
+
+    #CartInformationDiv td  {
+        font-size: 20px;
+        padding-left: 80px;
+        padding-top: 10px;
+    }
+
+    #CartInformationDiv .button
+    {
+        position:relative;
+        height:40px;
+        width:120px;
+        font-size:18px;
+        background-color: #4CAF50;
+        border-color: grey;
+        font-weight: bold;
+        color: #263B27;
+
+
+    }
+
+
+    #headerbuttons
+    {
+
+        height: 20px;
+    }
+}
+
+/*
+	Phone CSS
+	-------------------------------------------------------
+	Phone CSS
+	-------------------------------------------------------
+	Phone CSS
+	-------------------------------------------------------
+	Phone CSS
+	-------------------------------------------------------
+	Phone CSS
+	-------------------------------------------------------
+*/
+
+@media screen and (min-width: 320px) and  (max-width: 599px)/*phone*/
+{
+
+    #productInformationDiv {
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+    #productInfoImage {
+        width: 55%;
+        margin-left:30%
+    }
+
+    #productInformationDiv table
+    {
+        padding-top:10%;
+    }
+    #productInformationDiv td
+    {
+        padding-top: 10px;
+    }
+
+    #productInformationDiv .button
+    {
+        position:absolute;
+        width:180px;
+
+    }
+
+    #productContainer {
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+
+    #cartImageContainer {
+        width: 55%;
+        margin-left:30%
+    }
+
+
+    #CartInformationDiv > table
+    {
+        padding-top:10%;
+    }
+
+    #CartInformationDiv td   {
+        padding-top: 20px;
+    }
+
+    #CartInformationDiv .button
+    {
+        position:relative;
+        height:30px;
+        width:120px;
+        margin-top:3px;
+
+    }
+
+
+    #informazioniFooter {
+        width: auto;
+    }
+
+    #informazioniFooter	p {
+        width: 50%;
+    }
+
+    #header
+    {
+        top: 0;
+        position: fixed;
+
+    }
+
+    #headerbuttons
+    {
+        line-height: 40px;
+        width: 90px;
+        height: 40px;
+    }
+
+    #signup
+    {
+        line-height: 40px;
+        margin-right: 10px;
+        width: 90px;
+        height: 40px;
+    }
+
+    #user
+    {
+        display: none;
+    }
+
+}

@@ -39,3 +39,13 @@
         t = setTimeout(showSlides,6000);  //mostra l'immagine per 8 secondi tramite un timeout
     }
 
+    //Evidenziamento del prodotto al passaggio del mouse
+    $(function() {
+        $(".productElement").hover(function () {
+            this.style.boxShadow="0 4px 8px 0 rgb(255 255 255 / 30%), 0 6px 20px 0 rgb(255 255 255 / 30%)";
+        }).mouseleave(function (){
+            this.style.boxShadow="none";
+        });
+
+    });
+
