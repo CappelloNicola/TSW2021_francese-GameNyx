@@ -110,8 +110,45 @@ function showResult(str)
     	data:"q="+str,
     	success:function(data)
     	{
-    		$("#livesearch").html(data);
-    					
+    		/*
+    			La servlet Java converte un ArrayList in una stringa Json
+    			data però non sarà una stringa, ma un oggetto JS rappresentante la stringa
+    		*/
+    		
+    		//TODO da risolvere il conflitto con gli apici singoli
+    		
+    		/*
+    			la funzione append inserisce alla fine e all'interno del tag selezionato il testo specificato
+    			come parametro. Tuttavia, se si appende un tag non chiuso, la funzione lo chiude automaticamente. Bisogna fare per questo
+    			una stringa da appendere alla fine
+    		*/
+    		var stringToAppend="<div id='searchedElementsDiv'>"; 
+    		
+    		
+    		
+    		if(data[0]==null) //nessun risultato
+    		{	
+    			stringToAppend=stringToAppend+"<p class='searchedElement'>"+"Nessun risultato trovato"+"</p>";
+    			
+    		}
+    		else
+    		{ 
+    			$.each(data, function(i, object)
+    					{
+    						var copertina="./images/"+object.titolo+"/copertina.jpg";
+    						stringToAppend=stringToAppend+"<p class='searchedElement'>"+
+    							"<a style=\"text-decoration: none;\" href=\"ProductInfoServlet?productID="+object.id+"\" target=\"_blank\">"+
+    							"<img src='"+copertina+"'>"+
+    							"<span>"+object.titolo+"</span>"+
+    							"</p>";
+    					});	
+    		}
+    		stringToAppend=stringToAppend+"</div>";
+    		$("#livesearch").append(stringToAppend);
+    		
+    		
+    		
+    		
     	}
     	
     });

@@ -44,6 +44,7 @@ public class InsertProductServlet extends HttpServlet {
 			String[] lingueArray=request.getParameterValues("lingua");
 			String[] sottotitoliArray=request.getParameterValues("sottotitolo");
 			String quantitaNegozio=request.getParameter("quantitaNegozio");
+			String trailer=request.getParameter("trailer");
 
 			Date date=Date.valueOf(data);//converto la stringa data in un sql.Date
 			//metto tutte le lingue e i sottotitoli in un'unica stringa
@@ -73,6 +74,7 @@ public class InsertProductServlet extends HttpServlet {
 			product.setLingua(lingue);
 			product.setSottotitoli(sottotitoli);
 			product.setQuantitaNegozio(Integer.parseInt(quantitaNegozio));
+			product.setTrailerURL(trailer);
 			
 			ProductDAO dao=new ProductDAO();
 			/*Solo il doSave potrebbe lanciare un'eccezione. Se nessuna eccezione viene lanciata

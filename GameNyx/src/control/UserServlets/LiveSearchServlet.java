@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.ArrayList;
-
+import com.google.gson.*;
 
 @WebServlet("/LiveSearchServlet")
 public class LiveSearchServlet extends HttpServlet
@@ -37,8 +37,22 @@ public class LiveSearchServlet extends HttpServlet
             System.out.println("doSearch non effettuato");
             e.printStackTrace();
         }
-
-        response.setContentType("text/html");
+        
+        
+        
+      
+        	response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+        	 Gson object=new Gson();
+             String jsonObject=object.toJson(productsSearched);
+             response.getWriter().write(jsonObject);
+             System.out.print(jsonObject);
+        
+       
+        
+        
+        
+       /* response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
         out.println("<div id='searchedElementsDiv'>");
@@ -63,7 +77,7 @@ public class LiveSearchServlet extends HttpServlet
             out.println("</p>");
 
         }
-        out.println("</div>");
+        out.println("</div>");*/
 
     }
 

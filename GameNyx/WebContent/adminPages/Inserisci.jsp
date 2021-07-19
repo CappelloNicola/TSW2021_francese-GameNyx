@@ -36,6 +36,9 @@
 			<div class="formValidationCopertina">
 				<label>Copertina: <input type="file" id="copertina" name="copertina" placeholder="Copertina" accept=".png, .jpg, .jpeg"/></label>
 			</div>
+			<div class="formValidation"> <!-- VALIDARE CON ESPRESSIONI REGOLARI -->
+				<input type="text" id="trailer" name="trailer"  maxlength="800" placeholder="Trailer">
+			</div>
 			<div class="formValidation"> <!-- ci sono titoli di giochi con 3 caratteri : fez -->
 				<input type="text" id="titolo" name="nome"  maxlength="80" placeholder="Nome Videogioco">
 			</div>
