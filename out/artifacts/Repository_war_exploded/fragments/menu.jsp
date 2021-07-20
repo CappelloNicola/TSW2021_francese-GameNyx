@@ -5,7 +5,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <link rel="stylesheet" type="text/css" href="css/menu.css">
 
+<style>
+    .upBarIconsContainer
+    {
+        width: 90%;
+        margin: auto;
+    }
+    .genreButton p
+    {
+        font-size: 1vw;
+    }
+</style>
 
+<body class="menuBackground">
 <div id="slideShowSwitchContainer">
     <p id="slideShowTitle">Giochi del momento</p>
 
@@ -36,38 +48,39 @@
 
 <div class="centralDiv">
     <div class="barraGeneri">
-        <h1 style="margin-left: 8%;">Generi</h1>
         <div id="upBar">
+            <div class="upBarIconsContainer">
             <a href="?genere=Avventura#upBar">
-            <span style="margin-left: 10%" class="genreButton">
-                <img id="elementGenre" src="./images/GenreBar%20icons/adventureIcon.png" width="80px">
+            <span class="genreButton">
+                <img id="elementGenre" src="./images/GenreBar%20icons/adventureIcon.png" >
                 <p>AVVENTURA</p>
             </span>
             </a>
             <a href="?genere=Azione#upBar">
             <span class="genreButton">
-                <img id="elementGenre" src="./images/GenreBar%20icons/FPSicon.png" width="80px">
+                <img id="elementGenre" src="./images/GenreBar%20icons/FPSicon.png" >
                 <p>AZIONE</p>
             </span>
             </a>
             <span class="genreButton">
-                <img id="elementGenre" src="./images/GenreBar%20icons/RacingIcon.png" width="80px">
+                <img id="elementGenre" src="./images/GenreBar%20icons/RacingIcon.png" >
                 <p>SPORTIVI</p>
             </span>
             <a href="?genere=RPG#upBar">
             <span class="genreButton">
-                <img id="elementGenre" src="./images/GenreBar%20icons/rpgIcon.png" width="80px">
+                <img id="elementGenre" src="./images/GenreBar%20icons/rpgIcon.png">
                 <p>DI RUOLO</p>
             </span>
             </a>
             <span class="genreButton">
-                <img id="elementGenre" src="./images/GenreBar%20icons/puzzleIcon.png" width="80px">
+                <img id="elementGenre" src="./images/GenreBar%20icons/puzzleIcon.png">
                 <p>STRATEGICI</p>
             </span>
             <span class="genreButton">
-                <img id="elementGenre" src="./images/GenreBar%20icons/simulazioneIcon.png" width="80px">
-                <p>SIMULAZIONE</p>
+                <img id="elementGenre" src="./images/GenreBar%20icons/platformIcon.png">
+                <p>PLATFORM</p>
             </span>
+        </div>
         </div>
         <div id="downBar">
             <a href="?vendite#upBar">
@@ -138,6 +151,6 @@
         </div>
     </div>
 </div>
-
+</body>
 <script src="${pageContext.request.contextPath}/scripts/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/scripts/menuScripts.js"></script>

@@ -18,24 +18,30 @@
         margin-top: -10px;
         box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 30%);
     }
+
     .searchedElement
     {
-        margin-left: 30px;
-        font-family: "Roboto Condensed", sans-serif;
-        font-size: 20px;
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-bottom: 3%;
     }
+
     .searchedElement img
     {
-        width: 60px;
+        width: 15%;
+        display: inline-block;
 
     }
 
-    #livesearch span
+    .searchedElement p
     {
-        margin-left: 10px;
+        display: inline-block;
+        margin-left: 5%;
         color: black;
-        font-family: "Roboto Condensed", sans-serif;
+        font-size: 1vw;
     }
+
+
 
 </style>
 <div id="header">
@@ -57,7 +63,7 @@
             }
         %>
 
-        <a id="cartButton" href="Cart.jsp" target="_blank"><img id="cartImage" src="images/icons/cart.png"><span id="cartSize"><%=size%></span></a>
+        <a id="cartButton" href="Cart.jsp"><img id="cartImage" src="images/icons/cart.png"><span id="cartSize"><%=size%></span></a>
 
     <%
     if(session.getAttribute("currentUserSession")!=null)
@@ -110,8 +116,45 @@ function showResult(str)
     	data:"q="+str,
     	success:function(data)
     	{
-    		$("#livesearch").html(data);
-    					
+    		/*
+    			La servlet Java converte un ArrayList in una stringa Json
+    			data però non sarà una stringa, ma un oggetto JS rappresentante la stringa
+    		*/
+    		
+    		//TODO da risolvere il conflitto con gli apici singoli
+    		
+    		/*
+    			la funzione append inserisce alla fine e all'interno del tag selezionato il testo specificato
+    			come parametro. Tuttavia, se si appende un tag non chiuso, la funzione lo chiude automaticamente. Bisogna fare per questo
+    			una stringa da appendere alla fine
+    		*/
+    		var stringToAppend="<div id='searchedElementsDiv'>"; 
+    		
+    		
+    		
+    		if(data[0]==null) //nessun risultato
+    		{	
+    			stringToAppend=stringToAppend+"<p class='searchedElement'>"+"Nessun risultato trovato"+"</p>";
+    			
+    		}
+    		else
+    		{ 
+    			$.each(data, function(i, object)
+    					{
+    						var copertina="./images/"+object.titolo+"/copertina.jpg";
+    						stringToAppend=stringToAppend+"<div class='searchedElement'>"+
+    							"<a style=\"text-decoration: none;\" href=\"ProductInfoServlet?productID="+object.id+"\" target=\"_blank\">"+
+    							"<img src='"+copertina+"'>"+
+    							"<p>"+object.titolo+"</p>"+
+    							"</div>";
+    					});	
+    		}
+    		stringToAppend=stringToAppend+"</div>";
+    		$("#livesearch").html(stringToAppend);
+    		
+    		
+    		
+    		
     	}
     	
     });

@@ -18,24 +18,30 @@
         margin-top: -10px;
         box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 30%);
     }
+
     .searchedElement
     {
-        margin-left: 30px;
-        font-family: "Roboto Condensed", sans-serif;
-        font-size: 20px;
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-bottom: 3%;
     }
+
     .searchedElement img
     {
-        width: 60px;
+        width: 15%;
+        display: inline-block;
 
     }
 
-    #livesearch span
+    .searchedElement p
     {
-        margin-left: 10px;
+        display: inline-block;
+        margin-left: 5%;
         color: black;
-        font-family: "Roboto Condensed", sans-serif;
+        font-size: 1vw;
     }
+
+
 
 </style>
 <div id="header">
@@ -57,7 +63,7 @@
             }
         %>
 
-        <a id="cartButton" href="Cart.jsp" target="_blank"><img id="cartImage" src="images/icons/cart.png"><span id="cartSize"><%=size%></span></a>
+        <a id="cartButton" href="Cart.jsp"><img id="cartImage" src="images/icons/cart.png"><span id="cartSize"><%=size%></span></a>
 
     <%
     if(session.getAttribute("currentUserSession")!=null)
@@ -136,15 +142,15 @@ function showResult(str)
     			$.each(data, function(i, object)
     					{
     						var copertina="./images/"+object.titolo+"/copertina.jpg";
-    						stringToAppend=stringToAppend+"<p class='searchedElement'>"+
+    						stringToAppend=stringToAppend+"<div class='searchedElement'>"+
     							"<a style=\"text-decoration: none;\" href=\"ProductInfoServlet?productID="+object.id+"\" target=\"_blank\">"+
     							"<img src='"+copertina+"'>"+
-    							"<span>"+object.titolo+"</span>"+
-    							"</p>";
+    							"<p>"+object.titolo+"</p>"+
+    							"</div>";
     					});	
     		}
     		stringToAppend=stringToAppend+"</div>";
-    		$("#livesearch").append(stringToAppend);
+    		$("#livesearch").html(stringToAppend);
     		
     		
     		

@@ -70,11 +70,10 @@ public class LiveSearchServlet extends HttpServlet
         {
             //TODO da risolvere il conflitto con gli apici singoli
             copertina ="./images/"+e.getTitolo()+"/copertina.jpg";
-            out.println("<p class='searchedElement'>");
+            out.println("<div class='searchedElement'>");
             out.print("<a style=\"text-decoration: none;\" href=\"ProductInfoServlet?productID="+e.getId()+"\" target=\"_blank\">");
-            out.println("<img src='"+copertina+"'>");
-            out.println("<span>"+e.getTitolo()+"</span>");
-            out.println("</p>");
+            out.println("<img src='"+copertina+"'><p>"+e.getTitolo()+"</p>");
+            out.println("</div>");
 
         }
         out.println("</div>");*/
