@@ -1,0 +1,116 @@
+@charset "ISO-8859-1";
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #3a416a; /*#525c8e;*/
+    height: auto;
+    color:white;
+}
+
+#informazioniFooter {
+    background: #3a416a;
+    height: 50px;
+    width:80%;
+    border-style:none;
+     margin: 0 auto;
+     table-layout:fixed;
+     border-collapse:separate; 
+	border-spacing:3em;
+}
+
+b
+{
+	font-size:1.3em;
+}
+
+a
+{
+	text-decoration:none;
+	color:inherit;
+}
+
+a:hover {
+  background-color: red;
+  
+}
+
+#informazioniFooter td{
+    word-wrap: break-word;"
+    
+}
+
+#copyright
+{
+	text-align:center;
+}
+
+/*
+#informazioniFooter	p {
+    display: inline-block;
+    margin-left: 20%;
+    margin-right: 20%;
+}*/
+
+ 
+
+@media screen and (min-width: 320px) and  (max-width: 599px)
+{
+	/*#informazioniFooter {
+        width: auto;
+    }
+	
+	#informazioniFooter	p {
+        width: 50%;
+    }*/
+    
+
+    
+}
+
+@media screen and (max-width: 600px) {
+  #informazioniFooter {
+    border: 0;
+  }
+
+  
+  #informazioniFooter thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  #informazioniFooter tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  #informazioniFooter td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  #informazioniFooter td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  #informazioniFooter td:last-child {
+    border-bottom: 0;
+  }
+}
