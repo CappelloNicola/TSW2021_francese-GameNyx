@@ -4,32 +4,27 @@
 <title>Profilo</title>
 
 <link rel="stylesheet" type="text/css" href="css/MyCss.css">
+<link rel="stylesheet" type="text/css" href="css/profilo.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <%@ include file="fragments/header.jsp"%>
 
-<img src="images/icons/profileBackground.png" width="50%" style="
-    z-index: -1;
-    width: 100%;
-">
-
 <% UserBean user = (UserBean) session.getAttribute("currentUserSession");%>
 
-<div id="picAndUsername" class="profileTop">
-    <!-- TODO : Permettere il cambio di immagine-->
-    <img id="proPic" src="images/icons/proPicExample.jpg">
-
-    <a id="username" class="profileTop"><%=user.getUsername()%>
-
-        <!-- Barra esperienza : Minimal style 2-->
-    </a>
-
-</div><div id="livello">Livello 16</div><div id="barraEspEsterna">
-    <div id="barraEspInterna" style="width: 80%;">
+<div class="topContainer">
+    <div class="userTopInfoContainer">
+        <img id="proPic" src="images/icons/proPicExample.jpg">
+        <div class="userTopInfo">
+            <p id="username"><%=user.getUsername()%></p>
+                <div id="livello">Livello 16</div>
+                <div id="barraEspEsterna">
+                <div id="barraEspInterna" style="width: 80%;">
+                </div></div>
+        </div>
     </div>
-</div><div id="central">
-    <div id="backgroundCentral"></div>
-    <div id="profileButtons">
+</div>
+<div class="centralDiv">
+    <div class="profileButtons">
         <input type="submit" id="informazioni" class="profileButtonsStyle" value="Informazioni" onclick="showInformations();">
         <input type="submit" id="ordini" class="profileButtonsStyle" value="Ordini" onclick="location.href='GetOrdersServlet'">
         <input type="submit" id="recensioni" class="profileButtonsStyle" value="Recensioni">
@@ -96,4 +91,5 @@
         }
 
     }
+    //claudio gay
 </script>

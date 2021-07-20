@@ -329,6 +329,7 @@ td span{
 #prezzoTotale, #indirizzoConsegna {
 
     text-align: center;
+    margin-top: 50px;
 }
 
 #checkout, #cartTitle {

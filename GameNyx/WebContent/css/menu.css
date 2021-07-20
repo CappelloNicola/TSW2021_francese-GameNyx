@@ -149,6 +149,8 @@
     {
         width: 200px;
         height: 246px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
     }
     #prezzo
     {
@@ -190,6 +192,8 @@
     {
         margin: 0;
         background: #3a416a;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
     }
 
     .addToCart
@@ -207,7 +211,7 @@
     }
     .ordinaButton
     {
-        margin-left: 15%;
+        margin-left: 13%;
         font-size: 0.9vw;
     }
 
@@ -293,7 +297,7 @@
     {
         position: relative;
         margin-top: 20%;
-        height: 200%;
+        height: 180%;
     }
     .barraGeneri
     {
@@ -359,6 +363,12 @@
         z-index: 2;
         line-height: 40px;
     }
+    #downBar a
+    {
+        color: white;
+        text-decoration: none;
+        font-size: 1vw;
+    }
     #showGames
     {
         background: #525c8e;
@@ -367,6 +377,24 @@
         margin-top: -50px;
         z-index: -1;
     }
+    .upBarIconsContainer
+    {
+        width: 90%;
+        margin: auto;
+    }
+    .genreButton p
+    {
+        font-size: 1vw;
+    }
+
+    .zoom {
+        transition: transform .2s;
+    }
+
+    .zoom:hover {
+        transform: scale(1.3);
+    }
+
 }
 
 @media screen and (min-width: 600px) and  (max-width: 767px) /*tablet*/ {

@@ -20,16 +20,16 @@
     		<td><b>Email:</b> Gamenyx@gmail.com <br> <b>Cellulare:</b> 080-435-678-76</td>
     		<td><img src="images/SocialIcons/instagram.png" width="30px" height="auto"> 
     					<br>
-    					<b><a id="socialLink" href="https://www.instagram.com/niky_hat/">Nicola</a></b>
+    					<b ><a class="socialLink" href="https://www.instagram.com/niky_hat/">Nicola</a></b>
     					<br>
-    					<b><a id="socialLink" href="https://www.instagram.com/claudio.buono01/">Claudio</a></b>
+    					<b><a class="socialLink" href="https://www.instagram.com/claudio.buono01/">Claudio</a></b>
     					<br>
     					<br>
     			<img src="images/SocialIcons/facebook.png" width="30px" height="auto">
     					<br>
-    					<b>Nicola</b>
+    					<b><a class="socialLink" >Nicola</a></b>
     					<br>
-    					<b>Claudio</b>
+						<b><a class="socialLink" >Claudio</a></b>
     					<br>
     		</td>
     	</tr>

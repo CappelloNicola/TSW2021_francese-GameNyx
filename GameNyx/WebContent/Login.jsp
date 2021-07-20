@@ -3,9 +3,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/loginRegister.css">
 <title>Login</title>
 
 	<style>
+		body
+		{
+			background: #525c8e;
+		}
 		.textInputStyle
 		{
 			width: 75%;
@@ -22,39 +27,50 @@
 		{
 			position: relative;
 			width: 25%;
-			left: 35%;
-			margin-top:5%;
+			margin: auto;
+			margin-top: 5%;
 			background-color: #3a416a;
-			border-radius: 50px;
+			border-radius: 20px;
 		}
 
 		.formValidation
 		{
-			margin-left: 20%;
+			margin-left: 15%;
+			width: 90%;
 			padding-top: 20px;
 			color: white;
-			font-family: Arial;
+			font-family: "Roboto Condensed", sans-serif;
 		}
 
 
 		#loginButton
 		{
 			background-color: #1F618D;
-			width: 200px;
-			height: 40px;
+			width: 50%;
+			height: 35px;
 			border: none;
 			border-radius: 15px;
 			color: white;
-			margin-left: 30%;
+			margin-left: 23%;
 			margin-top: 10%;
-			margin-bottom:10% ;
+			/* margin: auto; */
+			margin-bottom: 10%;
 			cursor: pointer;
+		}
+		.errorText
+		{
+			width: 50%;
+			margin: auto;
+			color: red;
+			margin-top: 8%;
+			font-size: 18px;
 		}
 
 	</style>
 </head>
-<body>
+
 	<%@ include file="fragments/header.jsp"%>
+<body>
 	<div id="formLogin">
 		<form method="post" action="LoginServlet">
 		<div class="formValidation">
@@ -71,7 +87,7 @@
 		   if(error!=null)
 		   {
 		%>
-			<p style="margin-left: 30%;color: red;font-size: 18px">Username o password errati</p>
+			<p class="errorText">Username o password errati</p>
 		<%
 		   }
 		%>

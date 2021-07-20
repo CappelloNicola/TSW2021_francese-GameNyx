@@ -3,9 +3,7 @@ package control.PurchaseServlets;
 import java.sql.Date;
 import java.io.IOException;
 
-import model.PurchaseModels.AcquistoBean;
-import model.PurchaseModels.AcquistoDAO;
-import model.PurchaseModels.Cart;
+import model.PurchaseModels.*;
 import model.UserModels.UserBean;
 
 import javax.servlet.ServletException;
@@ -42,7 +40,7 @@ public class CheckoutServlet extends HttpServlet {
 			
 			AcquistoBean acquisto=new AcquistoBean();
 			acquisto.setStato("ordinato");
-			acquisto.setIndirizzo(request.getParameter("indirizzo"));	
+			acquisto.setIndirizzo(request.getParameter("Indirizzo"));
 			acquisto.setDataOrdine(new Date(System.currentTimeMillis())); //restituisce la data odierna
 			acquisto.setUtente(utente.getUsername());
 			acquisto.setVideogiochi(carrello.getProducts());
@@ -53,13 +51,27 @@ public class CheckoutServlet extends HttpServlet {
 			acquisto.setProvicia(request.getParameter("provincia"));
 			
 			AcquistoDAO acquistoDao=new AcquistoDAO();
+			ProductDAO productDAO = new ProductDAO();
 			try
 			{
+				//TODO VERIFICARE LA PRESENZA DI SCORTE PRIMA DI ACQUISTARE
 				acquistoDao.doSave(acquisto);
 			}
 			catch(Exception e)
 			{
 				System.out.println("doSave acquisto non riuscito: "+e);
+			}
+
+			try
+			{
+				for(ProductBeanCart e:acquisto.getVideogiochi())
+				{
+					productDAO.doUpdateProduct(e);
+				}
+			}
+			catch(Exception e)
+			{
+				System.out.println("doUpdate acquisto non riuscito: "+e);
 			}
 			
 			

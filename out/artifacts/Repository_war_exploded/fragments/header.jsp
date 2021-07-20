@@ -144,13 +144,15 @@ function showResult(str)
     						var copertina="./images/"+object.titolo+"/copertina.jpg";
     						stringToAppend=stringToAppend+"<div class='searchedElement'>"+
     							"<a style=\"text-decoration: none;\" href=\"ProductInfoServlet?productID="+object.id+"\" target=\"_blank\">"+
-    							"<img src='"+copertina+"'>"+
+    							'<img src="'+copertina+'">'+
     							"<p>"+object.titolo+"</p>"+
     							"</div>";
     					});	
     		}
+    	
     		stringToAppend=stringToAppend+"</div>";
     		$("#livesearch").html(stringToAppend);
+    		
     		
     		
     		

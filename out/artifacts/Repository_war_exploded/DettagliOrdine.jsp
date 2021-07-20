@@ -7,7 +7,7 @@
 <html>
 <head>
     <title>Dettagli</title>
-    <link rel="stylesheet" type="text/css" href="css/OrderDetails.css">
+    <link rel="stylesheet" type="text/css" href="css/orderDetails.css">
 </head>
 <body>
 

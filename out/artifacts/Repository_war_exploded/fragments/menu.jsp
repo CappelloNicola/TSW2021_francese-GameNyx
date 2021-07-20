@@ -5,17 +5,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <link rel="stylesheet" type="text/css" href="css/menu.css">
 
-<style>
-    .upBarIconsContainer
-    {
-        width: 90%;
-        margin: auto;
-    }
-    .genreButton p
-    {
-        font-size: 1vw;
-    }
-</style>
 
 <body class="menuBackground">
 <div id="slideShowSwitchContainer">
@@ -51,32 +40,32 @@
         <div id="upBar">
             <div class="upBarIconsContainer">
             <a href="?genere=Avventura#upBar">
-            <span class="genreButton">
+            <span class="genreButton zoom">
                 <img id="elementGenre" src="./images/GenreBar%20icons/adventureIcon.png" >
                 <p>AVVENTURA</p>
             </span>
             </a>
             <a href="?genere=Azione#upBar">
-            <span class="genreButton">
+            <span class="genreButton zoom">
                 <img id="elementGenre" src="./images/GenreBar%20icons/FPSicon.png" >
                 <p>AZIONE</p>
             </span>
             </a>
-            <span class="genreButton">
+            <span class="genreButton zoom">
                 <img id="elementGenre" src="./images/GenreBar%20icons/RacingIcon.png" >
                 <p>SPORTIVI</p>
             </span>
             <a href="?genere=RPG#upBar">
-            <span class="genreButton">
+            <span class="genreButton zoom">
                 <img id="elementGenre" src="./images/GenreBar%20icons/rpgIcon.png">
                 <p>DI RUOLO</p>
             </span>
             </a>
-            <span class="genreButton">
+            <span class="genreButton zoom" >
                 <img id="elementGenre" src="./images/GenreBar%20icons/puzzleIcon.png">
                 <p>STRATEGICI</p>
             </span>
-            <span class="genreButton">
+            <span class="genreButton zoom">
                 <img id="elementGenre" src="./images/GenreBar%20icons/platformIcon.png">
                 <p>PLATFORM</p>
             </span>
@@ -88,14 +77,14 @@
                     Più venduti
                 </span>
             </a>
-            <a href="?popolari#upBar">
+            <a href="?nuovi#upBar">
                 <span class="ordinaButton">
-                    Più popolari
+                    Ultime uscite
                 </span>
             </a>
-            <a href="?ordina#upBar">
+            <a href="?prezzo#upBar">
                 <span class="ordinaButton">
-                    Ordina per
+                    Prezzo minore
                 </span>
             </a>
         </div>
@@ -108,14 +97,33 @@
                 ArrayList<ProductBean> products = new ArrayList<>();
                 ProductDAO productDAO = new ProductDAO();
 
-                if(request.getParameter("genere")==null || request.getParameter("vendite")!=null)
-                {
+                try {
 
-                    products = productDAO.doRetrieveByNumeroVendite();
-                }
-                else
+
+                    if (request.getParameter("vendite") != null)
+                    {
+                        products = productDAO.doRetrieveByNumeroVendite();
+                    }
+                    else if(request.getParameter("nuovi")!=null)
+                    {
+                        products = productDAO.doRetrieveByDateDESC();
+                    }
+                    else if(request.getParameter("prezzo")!=null)
+                    {
+                        products = productDAO.doRetrieveByPrice();
+                    }
+                    else if(request.getParameter("genere")!=null)
+                    {
+                        products = productDAO.doRetrieveByGenre(request.getParameter("genere"));
+                    }
+                    else
+                    {
+                        products = productDAO.doRetrieveByNumeroVendite();
+                    }
+
+                }catch (Exception e)
                 {
-                    products = productDAO.doRetrieveByGenre(request.getParameter("genere"));
+                    e.printStackTrace();
                 }
             %>
 

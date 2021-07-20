@@ -22,8 +22,6 @@
 <jsp:useBean id="cart" class="model.PurchaseModels.Cart" scope="session" />
 
 
-
-
 <div class="ProductUpperInfoContainer">
 	<p id="titolo"><%=product.getTitolo()%></p>
 	<div class="ProductInfoMedia">

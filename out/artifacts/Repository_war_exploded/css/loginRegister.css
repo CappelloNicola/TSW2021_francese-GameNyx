@@ -1,0 +1,47 @@
+body
+{
+    background: #525c8e;
+}
+.textInputStyle
+{
+    width: 85%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+#formRegistrazione
+{
+    position: relative;
+    width: 30%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: #3a416a;
+    border-radius: 50px;
+}
+
+.formValidation
+{
+    margin-left: 15%;
+    padding-top: 20px;
+    color: white;
+    font-family: Arial;
+}
+
+#registratiButton
+{
+    background-color: #1F618D;
+    width: 50%;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    margin-left: 25%;
+    margin-top: 10%;
+    margin-bottom:10% ;
+    cursor: pointer;
+}
