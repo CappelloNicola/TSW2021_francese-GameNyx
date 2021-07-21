@@ -54,7 +54,7 @@ public class GetOrdersServlet extends HttpServlet {
 			}
 			
 			
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Ordini.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Profile.jsp");
 			dispatcher.forward(request, response);
 			
 		}

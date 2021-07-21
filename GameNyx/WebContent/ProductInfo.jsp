@@ -16,7 +16,7 @@
 
 
 </head>
-<body>
+<body class="productInfoBackground">
 
 <%@ include file="fragments/header.jsp"%>
 <jsp:useBean id="cart" class="model.PurchaseModels.Cart" scope="session" />

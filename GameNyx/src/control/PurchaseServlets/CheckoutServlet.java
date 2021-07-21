@@ -40,7 +40,7 @@ public class CheckoutServlet extends HttpServlet {
 			
 			AcquistoBean acquisto=new AcquistoBean();
 			acquisto.setStato("ordinato");
-			acquisto.setIndirizzo(request.getParameter("Indirizzo"));
+			acquisto.setIndirizzo(request.getParameter("indirizzo"));
 			acquisto.setDataOrdine(new Date(System.currentTimeMillis())); //restituisce la data odierna
 			acquisto.setUtente(utente.getUsername());
 			acquisto.setVideogiochi(carrello.getProducts());

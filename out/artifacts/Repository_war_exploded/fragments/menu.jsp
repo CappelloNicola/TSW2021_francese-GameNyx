@@ -17,15 +17,15 @@
     <div class="slideshow-container">
 
         <div class="mySlides fade" style="display: none;">
-            <a style="text-decoration: none;" href="ProductInfoServlet?productID=14"><img src="./images/SlideshowImages/ds2slideshow.jpg" style="width:100%;margin-top: 2px;"></a>
+            <a style="text-decoration: none;" href="ProductInfoServlet?productID=14"><img src="./images/SlideshowImages/ds2slideshow.jpg"></a>
         </div>
 
         <div class="mySlides fade" style="display: none;">
-            <a style="text-decoration: none;" href="ProductInfoServlet?productID=3"><img src="./images/SlideshowImages/ac2slideshow.jpg" style="width:100%;margin-top: 2px;"></a>
+            <a style="text-decoration: none;" href="ProductInfoServlet?productID=3"><img src="./images/SlideshowImages/ac2slideshow.jpg"></a>
         </div>
 
         <div class="mySlides fade" style="display: block;">
-            <a style="text-decoration: none;" href="ProductInfoServlet?productID=2"><img src="./images/SlideshowImages/rdr2slideshow.jpg" style="width:100%;margin-top: 2px;"></a>
+            <a style="text-decoration: none;" href="ProductInfoServlet?productID=2"><img src="./images/SlideshowImages/rdr2slideshow.jpg"></a>
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094</a>

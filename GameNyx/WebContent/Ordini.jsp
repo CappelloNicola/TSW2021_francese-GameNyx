@@ -6,24 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<style>
-	table
-	{
-		width:30%;
-		margin-left: 30%;
-	}
-	td
-	{
-		border: 1px solid black;
-		padding: 10px 10px 10px;
-		text-align: center;
-	}
-	tr:nth-child(even)
-	{
-		background: #EEEEEE;
-	}
 
-</style>
 
 <title>Ordini</title>
 </head>

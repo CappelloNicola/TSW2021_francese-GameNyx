@@ -34,7 +34,7 @@ public class OrderInfoServlet extends HttpServlet {
                 request.setAttribute("dettagliOrdine",ordine);
             }
 
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/DettagliOrdine.jsp");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Profile.jsp");
             dispatcher.forward(request, response);
 
         } catch (SQLException e) {

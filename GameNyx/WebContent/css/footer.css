@@ -25,6 +25,11 @@ b
 	font-size:1.3em;
 }
 
+td img
+{
+    width: 40px;
+}
+
 .socialLink
 {
 	text-decoration:none;
