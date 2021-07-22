@@ -94,7 +94,7 @@ public class InsertProductServlet extends HttpServlet {
 			    String extension=fileName.substring(fileName.lastIndexOf("."));
 			    
 			    //Creo la cartella in cui verrà inserita l'immagine nel server
-			    final String imagesPath="C:\\Users\\Claudio\\Dropbox\\Università\\Semestre attuale\\TecnologieWeb\\WebApps\\TSW2021_francese-GameNyx\\GameNyx\\WebContent\\images";
+			    final String imagesPath="C:\\Users\\Giuseppe\\git\\repository\\GameNyx\\WebContent\\images";
 				/*Non si può caricare un file sul server specificando l'URL, bisogna specificare il path vero e proprio.
 				 * Quando ci lavoriamo, mettiamo la precedente stringa tra commenti e cambiamo il path*/
 			    

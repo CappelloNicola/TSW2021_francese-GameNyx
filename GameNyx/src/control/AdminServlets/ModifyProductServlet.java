@@ -135,7 +135,7 @@ public class ModifyProductServlet extends HttpServlet {
 
             dao.doUpdate(product);
             Part filePart = request.getPart("copertina");
-            final String imagesPath="C:\\Users\\Claudio\\Dropbox\\Università\\Semestre attuale\\TecnologieWeb\\WebApps\\TSW2021_francese-GameNyx\\GameNyx\\WebContent\\images";
+            final String imagesPath="C:\\Users\\Giuseppe\\git\\repository\\GameNyx\\WebContent\\images";
 
             //1
             if(oldTitle.equals(nomeVideogioco)==false && filePart.getSize()<=0)

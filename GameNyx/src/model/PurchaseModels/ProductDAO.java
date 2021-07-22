@@ -38,8 +38,8 @@ public class ProductDAO
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
 				+ " (titolo, descrizione, casaProduttrice, piattaforma,"
-				+ "  genere, dataPubblicazione, prezzo, lingua, sottotitoli, iva, quantitaNegozio, inCatalogo) "
-				+ "  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ "  genere, dataPubblicazione, prezzo, lingua, sottotitoli, iva, quantitaNegozio, inCatalogo, trailer) "
+				+ "  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			connection = ds.getConnection();
@@ -56,6 +56,7 @@ public class ProductDAO
 			preparedStatement.setDouble(10, product.getIva());
 			preparedStatement.setInt(11, product.getQuantitaNegozio());
 			preparedStatement.setBoolean(12, product.getInCatalogo());
+			preparedStatement.setString(13, product.getTrailerURL());
 			
 			preparedStatement.executeUpdate();
 
