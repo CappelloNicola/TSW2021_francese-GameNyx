@@ -7,9 +7,10 @@
 <title>Login</title>
 
 	<style>
-		body
+		.loginBody
 		{
 			background: #525c8e;
+			height: 70%;
 		}
 		.textInputStyle
 		{
@@ -23,6 +24,10 @@
 
 		}
 
+		.loginContainer
+		{
+			height: 100%;
+		}
 		#formLogin
 		{
 			position: relative;
@@ -80,7 +85,8 @@
 </head>
 
 	<%@ include file="fragments/header.jsp"%>
-<body>
+<body class="loginBody">
+  <div class="loginContainer">
 	<div id="formLogin">
 		<form method="post" action="LoginServlet">
 		<div class="formValidation">
@@ -103,8 +109,9 @@
 		%>
 		<input id="loginButton" type="submit" value="Accedi">
 		</form>
-</div>
+	</div>
+  </div>
 
-<%@ include file="fragments/footer.jsp"%>
+  <%@ include file="fragments/footer.jsp"%>
 </body>
 </html>

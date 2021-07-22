@@ -100,15 +100,19 @@
 		if(user==null)
 		{
 		%>
-			<div>
-				<p style="font-size:1vw;color: #ff1a3f;font-weight: bold">Effettua il login per continuare con l'acquisto</p>
-				<div class="priceDiv">
-					<p style="text-align: left;margin: 0;color: gainsboro;">Prezzo Totale: </p>
-					<h3 style="margin: 0;color: white;font-size: 2vw;"><%=prezzoTotale %> euro </h3>
+				<div>
+					<p style="font-size:1vw;color: #ff1a3f;font-weight: bold">Effettua il login per continuare con l'acquisto</p>
+					<div class="priceDiv">
+						<p style="text-align: left;margin: 0;color: gainsboro;">Prezzo Totale: </p>
+						<h3 style="margin: 0;color: white;font-size: 2vw;"><%=prezzoTotale %> euro </h3>
+					</div>
+					<h1><input disabled style="background-color: darkgray;border: none" class="button" type="submit" name="checkout" value="Checkout"></h1>
 				</div>
-				<h1><input disabled style="background-color: darkgray;border: none" class="button" type="submit" name="checkout" value="Checkout"></h1>
+		      </div>
 			</div>
+			<%@ include file="fragments/footer.jsp"%>
 		<%
+
 		return;
 		}
 		%>
