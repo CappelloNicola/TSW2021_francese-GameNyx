@@ -1,9 +1,9 @@
-body
+.registerBody
 {
     background: #525c8e;
+    height: 100%;
 }
-.textInputStyle
-{
+.textInputStyle {
     width: 85%;
     padding: 5px 5px;
     margin: 8px 0;
@@ -12,6 +12,10 @@ body
     border-radius: 4px;
     box-sizing: border-box;
 
+}
+.registrazioneContainer
+{
+    height: 90%;
 }
 
 #formRegistrazione
