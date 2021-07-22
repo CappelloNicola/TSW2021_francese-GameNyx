@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /**
  * 
  */
@@ -333,4 +333,4 @@ function resetField(e)
 {
     document.getElementsByName(e)[0].style.backgroundColor="white";
 }
->>>>>>> refs/remotes/origin/master
+
