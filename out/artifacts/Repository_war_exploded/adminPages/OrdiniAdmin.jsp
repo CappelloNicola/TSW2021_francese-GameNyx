@@ -13,6 +13,11 @@
 <title>Ordini</title>
 
 	<style>
+		table
+		{
+			width:50%;
+		}
+	
 		td
 		{
 			border: 1px solid black;
