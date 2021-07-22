@@ -83,6 +83,8 @@
 			<td><p><%=product.getPrezzoTotale()*product.getCartQuantity()%> euro</p></td>
 			</form>
 		</tr>
+		
+		
 		<%
 				prezzoTotale=prezzoTotale+(product.getPrezzoTotale()*product.getCartQuantity());
 				prezzoTotale=Math.floor(prezzoTotale * 100) / 100;
@@ -91,7 +93,12 @@
 		</tbody>
 
 	</table>
+	
+	
+	
 	</div>
+	
+	
 	<div class="checkoutContainer">
 		<!-- Checkout che annulla il carrello  -->
 		<form method="get" action="CheckoutServlet">
