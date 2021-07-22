@@ -49,7 +49,7 @@
         	</ul>
         </div>
         
-        <di id="footerHeaders">
+        <div id="footerHeaders">
         	<ul>
         		<li><button onclick="showChiSiamo()">Chi siamo</button></li>
         		<li><button onclick="showContattaci()">Contattaci</button></li>
@@ -67,7 +67,7 @@
         <div id="copyrightDiv">
       		  <p id="copyright"><b>©  2020 N&C Industry - All Rights Reserved.</b></p>
         </div>
-       	
 
-    	<script src="${pageContext.request.contextPath}/scripts/footerScripts.js"></script>
+	<script src="${pageContext.request.contextPath}/scripts/footerScripts.js"></script>
+
 </footer>

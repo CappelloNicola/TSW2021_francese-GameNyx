@@ -26,11 +26,12 @@
 		#formLogin
 		{
 			position: relative;
-			width: 25%;
+			width: 30%;
 			margin: auto;
 			margin-top: 5%;
 			background-color: #3a416a;
 			border-radius: 20px;
+			margin-bottom:5px;
 		}
 
 		.formValidation
@@ -65,6 +66,15 @@
 			margin-top: 8%;
 			font-size: 18px;
 		}
+		
+		@media screen and (max-width: 958px) {
+		  #formLogin
+			{
+		    
+		    	width: 50%;
+		    
+			}
+		}
 
 	</style>
 </head>
@@ -94,5 +104,7 @@
 		<input id="loginButton" type="submit" value="Accedi">
 		</form>
 </div>
+
+<%@ include file="fragments/footer.jsp"%>
 </body>
 </html>

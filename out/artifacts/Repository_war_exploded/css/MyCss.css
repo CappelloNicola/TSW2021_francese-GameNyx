@@ -18,6 +18,7 @@ body
 }
 
 
+
 #adminNav{
     margin-bottom:10px;
     font-family: verdana;
@@ -56,14 +57,17 @@ body
 #productInformationDivAdmin {
     /* margin: 50px 20px 0 0;*/
     border: 5px #333;
+    width:100%;
     overflow: auto;
-    margin-left: 25%;
-    margin-top: 5%;
+    margin-left: auto;
+    margin-top: auto;
 }
 
 #productInfoImageAdmin {
-    float: left;
+    /*float: left;*/
     width: 15%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 #productInfoImageAdmin img {
@@ -190,7 +194,7 @@ body
     display: inline-block;
     margin-left:auto;
     margin-right:auto;
-    width:30%;
+    width:40%;
     text-align: center;
 }
 
@@ -474,4 +478,30 @@ td span{
         display: none;
     }
 
+}
+
+@media screen and (max-width: 767px)
+{
+	#InsertForm form
+	{
+	    display: inline-block;
+	    margin-left:auto;
+	    margin-right:auto;
+	    width:70%;
+	    text-align: center;
+	}
+	
+}
+
+@media screen and (max-width: 767px)
+{
+	#InsertForm form
+	{
+	    display: inline-block;
+	    margin-left:auto;
+	    margin-right:auto;
+	    width:70%;
+	    text-align: center;
+	}
+	
 }

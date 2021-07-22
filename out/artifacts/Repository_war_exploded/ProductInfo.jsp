@@ -84,11 +84,6 @@
 
 		</div>
 	</div>
-
-	<div class="productReviewsContainer">
-		<h3>Recensioni</h3>
-		<hr>
-	</div>
 </div>
 
 

@@ -92,25 +92,85 @@
 
 	</table>
 	</div>
+
 	<div class="checkoutContainer">
+
+		<%
+		UserBean user = (UserBean) session.getAttribute("currentUserSession");
+		if(user==null)
+		{
+		%>
+			<div>
+				<p style="font-size:1vw;color: #ff1a3f;font-weight: bold">Effettua il login per continuare con l'acquisto</p>
+				<div class="priceDiv">
+					<p style="text-align: left;margin: 0;color: gainsboro;">Prezzo Totale: </p>
+					<h3 style="margin: 0;color: white;font-size: 2vw;"><%=prezzoTotale %> euro </h3>
+				</div>
+				<h1><input disabled style="background-color: darkgray;border: none" class="button" type="submit" name="checkout" value="Checkout"></h1>
+			</div>
+		<%
+		return;
+		}
+		%>
 		<!-- Checkout che annulla il carrello  -->
-		<form method="get" action="CheckoutServlet">
+		<form name="checkoutForm"  method="get" action="CheckoutServlet" onSubmit="return formValidationSpedizione();">
 			<h2>Spedizione</h2>
-			<p> <input type="text" name="indirizzo" placeholder="Indirizzo"> </p>
-			<p> *SNC se assente<br><input type="text" name="numeroCivico" placeholder="Numero Civico">  </p>
-			<p> <input type="text" name="cap" placeholder="CAP"> </p>
-			<p> <input type="text" name="citta" placeholder="Citt&agrave;"> </p>
-			<p> <input type="text" name="provincia" placeholder="Provincia"> </p>
+			<p>
+				<input class="inputFormCart" type="text" name="indirizzo" placeholder="Indirizzo" onClick="resetField(this.name);">
+				<br>
+				<small style="margin-top: 20px;"></small>
+			</p>
+			<p>
+				*SNC se assente<br>
+				<input class="inputFormCart" type="text" name="numeroCivico" placeholder="Numero Civico" onClick="resetField(this.name);">
+				<br>
+				<small></small>
+			</p>
+			<p>
+				<input class="inputFormCart" type="text" name="cap" placeholder="CAP" onClick="resetField(this.name);">
+				<br>
+				<small></small>
+			</p>
+			<p>
+				<input class="inputFormCart" type="text" name="citta" placeholder="Citt&agrave;" onClick="resetField(this.name);">
+				<br>
+				<small></small>
+			</p>
+			<p>
+				<input class="inputFormCart" type="text" name="provincia" placeholder="Provincia" onClick="resetField(this.name);">
+				<br>
+				<small></small>
+			</p>
 			<hr width="70%">
 			<h2>Pagamento</h2>
 			<p>Carte accettate: </p>
 			<img class="paymentCard" src="images/paymentCards/mastercard.jpg">
 			<img class="paymentCard" src="images/paymentCards/visa.jpg">
-			<p> <input type="text" name="intestatario" placeholder="Intestatario"> </p>
-			<p> <input type="text" name="numeroCarta" placeholder="Numero Carta"> </p>
-			<p> <input type="text" name="meseScadenza" placeholder="Mese di scadenza" onfocus="(this.type='number')" onblur="(this.type='text')" min='1' max='12'> </p>
-			<p> <input type="text" name="annoScadenza" placeholder="Anno di scadenza" onfocus="(this.type='number')" onblur="(this.type='text')" min='2021' max='2050'> </p>
-			<p> <input type="text" name="cvv" placeholder="CVV"> </p>
+			<p>
+				<input class="inputFormCart" type="text" name="intestatario" placeholder="Intestatario">
+				<br>
+				<small></small>
+			</p>
+			<p>
+				<input class="inputFormCart" type="text" name="numeroCarta" placeholder="Numero Carta">
+				<br>
+				<small></small>
+			</p>
+			<p>
+				<input class="inputFormCart" type="text" name="meseScadenza" placeholder="Mese di scadenza" onfocus="(this.type='number')" onblur="(this.type='text')">
+				<br>
+				<small></small>
+			</p>
+			<p>
+				<input class="inputFormCart" type="text" name="annoScadenza" placeholder="Anno di scadenza" onfocus="(this.type='number')" onblur="(this.type='text')">
+				<br>
+				<small></small>
+			</p>
+			<p>
+				<input class="inputFormCart" type="text" name="cvv" placeholder="CVV">
+				<br>
+				<small></small>
+			</p>
 			<div class="priceDiv">
 				<p style="text-align: left;margin: 0;color: gainsboro;">Prezzo Totale: </p>
 				<h3 style="margin: 0;color: white;font-size: 2vw;"><%=prezzoTotale %> euro </h3>
@@ -119,6 +179,10 @@
 		</form>
 	</div>
 </div>
-</body>
+
+<script src="${pageContext.request.contextPath}/scripts/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/scripts/CartScripts.js"></script>
 <%@ include file="fragments/footer.jsp"%>
+</body>
+
 </html>

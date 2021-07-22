@@ -65,15 +65,16 @@
 		  </tr>
 		  <tr>
 		    <td><b>Titolo</b></td>
-		    <td><input type="text" name="titolo" size=50 value="<%=product.getTitolo() %>"></td>
+		    <td><input type="text" name="titolo" size=30 value="<%=product.getTitolo() %>"></td>
 		  </tr>
 		  <tr>
 		    <td><b>Descrizione</b></td>
-		    <td><input type="text" name="descrizione" size=50 value="<%=product.getDescrizione()%>"></td>
+		    <td><textarea  rows="20" cols="30" name="descrizione" maxlength="800"><%=product.getDescrizione()%></textarea></td>
+		  <!--   <td><input type="text" name="descrizione" size=50 value="<%=product.getDescrizione()%>"></td>-->
 		  </tr>
 		  <tr>
 		    <td><b>Casa Produttrice</b></td>
-		    <td><input type="text" name="casaProduttrice" size=50 value="<%=product.getCasaProduttrice()%>"></td>
+		    <td><input type="text" name="casaProduttrice" size=30 value="<%=product.getCasaProduttrice()%>"></td>
 		  </tr>
 		  <tr>
 		    <td><b>Genere</b></td>

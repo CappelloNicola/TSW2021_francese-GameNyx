@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-/**
- * 
- */
- 
- function checkQuantity(quantity)
- {
- 	var obj=document.getElementById("quantitaAcquistabile");
- 	if(obj.value>quantity)
- 	{
- 		obj.value=quantity;
- 		alert("Solo "+quantity+" scorte disponibili!");
- 	}
- }
- 
-
 
 function formValidationSpedizione()
 {
@@ -333,4 +317,3 @@ function resetField(e)
 {
     document.getElementsByName(e)[0].style.backgroundColor="white";
 }
->>>>>>> refs/remotes/origin/master

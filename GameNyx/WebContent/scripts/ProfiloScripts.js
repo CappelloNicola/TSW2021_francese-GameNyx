@@ -28,22 +28,6 @@
 
     }
 
-    function detailsCloud()
-    {
-        let barraLivello = document.getElementById("barraEspEsterna");
-        barraLivello.addEventListener("mouseover", function( event )
-        {
-            var detailsCloud = document.createElement("div");
-            detailsCloud.setAttribute("id","details");
-            barraLivello.append(detailsCloud);
-        });
-
-        barraLivello.addEventListener("mouseout", function( event )
-    {
-        document.getElementById("details").remove();
-    });
-    }
-
 
 
 

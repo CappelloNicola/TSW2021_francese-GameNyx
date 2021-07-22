@@ -492,3 +492,16 @@ td span{
 	}
 	
 }
+
+@media screen and (max-width: 767px)
+{
+	#InsertForm form
+	{
+	    display: inline-block;
+	    margin-left:auto;
+	    margin-right:auto;
+	    width:70%;
+	    text-align: center;
+	}
+	
+}

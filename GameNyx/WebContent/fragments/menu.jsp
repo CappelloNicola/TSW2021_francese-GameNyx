@@ -41,34 +41,40 @@
             <div class="upBarIconsContainer">
             <a href="?genere=Avventura#upBar">
             <span class="genreButton zoom">
-                <img id="elementGenre" src="./images/GenreBar%20icons/adventureIcon.png" >
+                <img class="elementGenre" src="./images/GenreBar%20icons/adventureIcon.png" >
                 <p>AVVENTURA</p>
             </span>
             </a>
             <a href="?genere=Azione#upBar">
             <span class="genreButton zoom">
-                <img id="elementGenre" src="./images/GenreBar%20icons/FPSicon.png" >
+                <img class="elementGenre" src="./images/GenreBar%20icons/FPSicon.png" >
                 <p>AZIONE</p>
             </span>
             </a>
+            <a href="?genere=Sport#upBar">
             <span class="genreButton zoom">
-                <img id="elementGenre" src="./images/GenreBar%20icons/RacingIcon.png" >
+                <img class="elementGenre" src="./images/GenreBar%20icons/RacingIcon.png" >
                 <p>SPORTIVI</p>
             </span>
+            </a>
             <a href="?genere=RPG#upBar">
             <span class="genreButton zoom">
-                <img id="elementGenre" src="./images/GenreBar%20icons/rpgIcon.png">
+                <img class="elementGenre" src="./images/GenreBar%20icons/rpgIcon.png">
                 <p>DI RUOLO</p>
             </span>
             </a>
+            <a href="?genere=Puzzle#upBar">
             <span class="genreButton zoom" >
-                <img id="elementGenre" src="./images/GenreBar%20icons/puzzleIcon.png">
+                <img class="elementGenre" src="./images/GenreBar%20icons/puzzleIcon.png">
                 <p>STRATEGICI</p>
             </span>
+            </a>
+            <a href="?genere=Platform#upBar">
             <span class="genreButton zoom">
-                <img id="elementGenre" src="./images/GenreBar%20icons/platformIcon.png">
+                <img class="elementGenre" src="./images/GenreBar%20icons/platformIcon.png">
                 <p>PLATFORM</p>
             </span>
+            </a>
         </div>
         </div>
         <div id="downBar">

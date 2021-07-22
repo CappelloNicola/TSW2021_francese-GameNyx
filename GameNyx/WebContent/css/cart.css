@@ -145,6 +145,13 @@ td:last-child
     margin-top: 50px;
 }
 
+.inputFormCart {
+    border-radius: 10px;
+    border: none;
+    height: 18px;
+    text-indent: 10px;
+    width: 35%;
+}
 
 @media screen and (max-width: 932px)
 {

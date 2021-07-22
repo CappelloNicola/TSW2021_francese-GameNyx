@@ -308,7 +308,7 @@
         margin: auto;
     }
 
-    #elementGenre
+    .elementGenre
     {
         text-align: center;
         width: 40%;
@@ -724,7 +724,7 @@
         margin: auto;
     }
 
-    #elementGenre {
+    .elementGenre {
         text-align: center;
         width: 40%;
     }
@@ -1140,7 +1140,7 @@
         margin: auto;
     }
 
-    #elementGenre
+    .elementGenre
     {
         text-align: center;
         width: 40%;
