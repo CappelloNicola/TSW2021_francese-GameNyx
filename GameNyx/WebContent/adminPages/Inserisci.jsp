@@ -43,7 +43,7 @@
 				<input type="text" id="titolo" name="nome"  maxlength="80" placeholder="Nome Videogioco">
 			</div>
 			<div class="formValidation">
-			<textarea  cols="30" placeholder="Descrizione" id="descrizione" name="descrizione" maxlength="800"></textarea>
+			<textarea  rows="20" cols="30" placeholder="Descrizione" id="descrizione" name="descrizione" maxlength="800"></textarea>
 			</div>
 			<div class="formValidation">
 			<input type="text" name="casaProduttrice" id="casaProduttrice" minlength="8" maxlength="100" placeholder="Software House">
