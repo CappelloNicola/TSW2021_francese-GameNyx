@@ -119,6 +119,7 @@
 		</form>
 	</div>
 </div>
-</body>
 <%@ include file="fragments/footer.jsp"%>
+</body>
+
 </html>

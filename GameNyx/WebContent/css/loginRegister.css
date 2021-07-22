@@ -22,6 +22,7 @@ body
     margin-top: 5%;
     background-color: #3a416a;
     border-radius: 50px;
+    margin-bottom:5px;
 }
 
 .formValidation
@@ -44,4 +45,13 @@ body
     margin-top: 10%;
     margin-bottom:10% ;
     cursor: pointer;
+}
+
+@media screen and (max-width: 958px) {
+  #formRegistrazione
+	{
+    
+    	width: 50%;
+    
+	}
 }
