@@ -29,7 +29,7 @@ public class Cart
 		product.setMediaValutazioni(e.getMediaValutazioni());
 		product.setNumeroVendite(e.getNumeroVendite());
 		product.setCartQuantity(0);
-		
+		product.setQuantitaNegozio(e.getQuantitaNegozio());		
 		return product;
 	}
 	
