@@ -63,6 +63,34 @@
 			<td><b>Cambia copertina</b></td>
 			<td><input type="file" id="copertina" name="copertina" placeholder="Copertina" accept=".jpg"/></td>
 		  </tr>
+			<!--<tr>
+				<td><b>Cambia screenshots</b></td>
+
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="file" id="copertina" name="screenshot1"  accept=".jpg"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="file" id="copertina" name="screenshot2" accept=".jpg"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="file" id="copertina" name="screenshot3" accept=".jpg"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="file" id="copertina" name="screenshot4" accept=".jpg"/></td>
+			</tr>
+			<tr>
+				<td><b>Cambia background</b></td>
+				<td><input type="file" id="copertina" name="background" accept=".jpg"/></td>
+			</tr>
+			<tr>
+				<td><b>Cambia header</b></td>
+				<td><input type="file" id="copertina" name="header"  accept=".jpg"/></td>
+			</tr>-->
 		  <tr>
 		    <td><b>Titolo</b></td>
 		    <td><input type="text" name="titolo" size=30 value="<%=product.getTitolo() %>"></td>

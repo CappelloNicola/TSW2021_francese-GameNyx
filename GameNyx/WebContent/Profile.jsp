@@ -6,7 +6,6 @@
 <%@ page import="model.PurchaseModels.AcquistoBean" %>
 <%@ page import="java.sql.SQLException" %>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="/GameNyx/css/profiloCss.css">
 <title>Profilo</title>
 
 <link rel="stylesheet" type="text/css" href="css/MyCss.css">
@@ -27,6 +26,7 @@
 
 %>
 
+<body class="profileBody">
 <div class="topContainer">
     <div class="userTopInfoContainer">
         <img id="proPic" src="images/icons/proPicExample.jpg">
@@ -130,6 +130,7 @@
                     int i=0;
                     for(ProductBean videogioco:videogiochiOrdine){
                 %>
+                <div class="detailsOrder">
                 <%
                     String copertina="./images/"+videogioco.getTitolo()+"/copertina.jpg"; %>
                 <!-- Copertine cliccabili anche dai dettagli degli ordini che portano alle informazioni sul gioco-->
@@ -137,7 +138,7 @@
 
                 <!-- Mostra la quantità acquistata per ogni prodotto (utilizza un indice i che scorre l'arrayList) -->
                 <div id="quantità"> Quantita' : <%= ordine.getVideogiochi().get(i).getCartQuantity()%></div>
-
+                </div>
                 <%
                         i++;
                     }
@@ -188,23 +189,31 @@
                             return;
                         }
 
+                    %>
+                    <form method="get" action="OrderInfoServlet">
+                    <%
                         for(AcquistoBean e:orders)
                     {
                         if(e.getStato().equals("ordinato") && i<3)
                         {
                     %>
+
                         <div class="order">
                             <img width="80px" src="./images/<%=e.getVideogiochi().get(0).getTitolo()%>/copertina.jpg">
                             <p style="color:greenyellow;"><%=e.getStato()%></p>
                             <p style="color: white"><%=e.getPrezzo()%> euro</p>
+                            <input type="hidden" value="<%=e.getNumeroOrdine() %>" name="numeroOrdine">
+                            <input class="dettagli" type="submit" value="Dettagli">
 
                         </div>
+
                     <%
                             i++;
                         }
                     }
 
                     %>
+                    </form>
                 </div>
             </div>
         </div>
@@ -212,7 +221,7 @@
 
 
 </div>
-
+</body>
 
 
 

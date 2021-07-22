@@ -1,265 +1,554 @@
-.topContainer {
-    width: 100%;
-    height: 25%;
-    position: relative;
-    background: round;
-    background-image: url("../images/icons/profileBackground.png");
+@media screen and (min-width: 1200px) {
+    .topContainer {
+        width: 100%;
+        height: 25%;
+        position: relative;
+        background: round;
+        background-image: url("../images/icons/profileBackground.png");
 
-}
+    }
 
-.userTopInfoContainer {
-    position: absolute;
-    bottom: 0;
-    margin-left: 10%;
-    width: 30%;
-}
-.userTopInfo img
-{
-    width: 60%;
-}
-.userTopInfo
-{
-    font-size: 1.5vw;
-    color: white;
-    display: inline-block;
-    margin-left: 35%;
-    width: 100%;
-    margin-bottom: 5%;
-}
-#proPic
-{
-    position: absolute;
-    bottom: 0;
-    height: auto;
-    width: 30%;
-}
-#username
-{
-    color: white;
-    text-shadow: 2px 2px 1px black;
-}
-#barraEspEsterna
-{
-    margin-top: 9px;
-    width: 50%;
-    border-radius: 20px;
-    height: 14px;
-    border: 2px solid black;
-}
+    .userTopInfoContainer {
+        position: absolute;
+        bottom: 0;
+        margin-left: 10%;
+        width: 30%;
+    }
 
-#barraEspInterna
-{
-    margin: 2px;
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
-    width: 25%;
-    height: 10px;
-    background-color: green;
-}
+    .userTopInfo img {
+        width: 60%;
+    }
 
-#livello
-{
-    width: 200px;
-    font-family: verdana;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    font-size: 13px;
-}
+    .userTopInfo {
+        font-size: 1.5vw;
+        color: white;
+        display: inline-block;
+        margin-left: 35%;
+        width: 100%;
+        margin-bottom: 5%;
+    }
 
-.centralDiv
-{
-    height: 80%;
-    background: #525c8e;
-    margin-bottom: -2%;
-}
+    #proPic {
+        position: absolute;
+        bottom: 0;
+        height: auto;
+        width: 30%;
+    }
 
-.profileButtons
-{
-    width: 30%;
-    margin: auto;
-    background: #3a416a;
-    height: 40px;
-    line-height: 40px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
+    #username {
+        color: white;
+        text-shadow: 2px 2px 1px black;
+    }
 
-.profileButtons a
-{
-    text-decoration: none;
-    color: white;
-    margin-left: 15%;
-    font-size: 1vw;
-}
-.informationsContainer
-{
-    width: 40%;
-    display: inline-block;
-    height: 100%;
-    margin-top: 5%;
-    background: #3a416a;+
-    border-radius: 20px;
-}
+    #barraEspEsterna {
+        margin-top: 9px;
+        width: 50%;
+        border-radius: 20px;
+        height: 14px;
+        border: 2px solid black;
+    }
 
-.informations
-{
-    position: absolute;
-    margin-left: 3%;
-    width: 30%;
-}
-.informations p
-{
-    margin-left: 20%;
-}
-.informations .titolo
-{
-    color: white;
-    font-size: 1.8vw;
-    margin-left: 3%;
-    margin-bottom: 10%;
+    #barraEspInterna {
+        margin: 2px;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+        width: 25%;
+        height: 10px;
+        background-color: green;
+    }
 
-}
+    #livello {
+        width: 200px;
+        font-family: verdana;
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        font-size: 13px;
+    }
 
-.label
-{
-    color: antiquewhite;
-}
+    .centralDiv {
+        height: 80%;
+        background: #525c8e;
+        margin-bottom: -2%;
+    }
 
-.info
-{
-    color: white;
-    margin-left: 10%;
-}
+    .profileButtons {
+        width: 30%;
+        margin: auto;
+        background: #3a416a;
+        height: 40px;
+        line-height: 40px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
 
-.lastOrdersContainer
-{
-    width: 50%;
-    display: inline-block;
-    height: 100%;
-    margin-top: 5%;
-    background: #3a416a;
-    margin-left: 5%;
-    border-radius: 20px;
-}
+    .profileButtons a {
+        text-decoration: none;
+        color: white;
+        margin-left: 15%;
+        font-size: 1vw;
+    }
 
-.lastOrders
-{
-    position: absolute;
-    margin-left: 3%;
-    width: 40%;
-}
-.lastOrders .titolo
-{
-    color: white;
-    font-size: 1.8vw;
-    margin-left: 3%;
-    margin-bottom: 10%;
-}
-.order
-{
-    display: inline-block;
-    margin-left: 8%;
-    width: 20%;
-    text-align: center;
-}
-.order img
-{
-    width: 80%;
-}
+    .informationsContainer {
+        width: 40%;
+        display: inline-block;
+        height: 100%;
+        margin-top: 5%;
+        background: #3a416a;
+    + border-radius: 20 px;
+    }
 
-.orderDetailsTable
-{
-    width: 70%;
-    margin: auto;
-    border-collapse: collapse;
-    margin-top: 4%;
-    border: none;
-}
-.orderDetailsTable td
-{
-    padding: 10px 10px 10px;
-    text-align: center;
-}
-.orderDetailsTable tr:nth-child(even)
-{
-    background: #EEEEEE;
-}
-.orderDetailsTable tr:nth-child(odd)
-{
-    background: #cbcaca;
-}
-h2
-{
-    color: lightgray;
-}
-.dettagli
-{
-    height: 40px;
-    width: 200px;
-    border-radius: 120px;
-    background-color: #04AA6D;
-    border-color: #04AA6D;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-    margin-top: 5px;
-    border: none;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 30%);
-    cursor: pointer;
-}
+    .informations {
+        position: absolute;
+        margin-left: 3%;
+        width: 30%;
+    }
 
-.container {
-    height: 150px;
-    display: inline-block;
-    width: 25%;
-    box-sizing: border-box;
+    .informations p {
+        margin-left: 20%;
+    }
+
+    .informations .titolo {
+        color: white;
+        font-size: 1.8vw;
+        margin-left: 3%;
+        margin-bottom: 10%;
+
+    }
+
+    .label {
+        color: antiquewhite;
+    }
+
+    .info {
+        color: white;
+        margin-left: 10%;
+    }
+
+    .lastOrdersContainer {
+        width: 50%;
+        display: inline-block;
+        height: 100%;
+        margin-top: 5%;
+        background: #3a416a;
+        margin-left: 5%;
+        border-radius: 20px;
+    }
+
+    .lastOrders {
+        position: absolute;
+        margin-left: 3%;
+        width: 40%;
+    }
+
+    .lastOrders .titolo {
+        color: white;
+        font-size: 1.8vw;
+        margin-left: 3%;
+        margin-bottom: 10%;
+    }
+
+    .order {
+        display: inline-block;
+        margin-left: 8%;
+        width: 20%;
+        text-align: center;
+    }
+
+    .detailsOrder
+    {
+        display: inline-block;
+        margin: auto;
+        width: 30%;
+        text-align: center;
+    }
+
+    .order img {
+        width: 80%;
+    }
+
+    .orderDetailsTable {
+        width: 70%;
+        margin: auto;
+        border-collapse: collapse;
+        margin-top: 4%;
+        border: none;
+    }
+
+    .orderDetailsTable td {
+        padding: 10px 10px 10px;
+        text-align: center;
+    }
+
+    .orderDetailsTable tr:nth-child(even) {
+        background: #EEEEEE;
+    }
+
+    .orderDetailsTable tr:nth-child(odd) {
+        background: #cbcaca;
+    }
+
+    h2 {
+        color: lightgray;
+    }
+
+    .dettagli {
+        height: 30px;
+        width: 70%;
+        border-radius: 120px;
+        background-color: #04AA6D;
+        border-color: #04AA6D;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        margin-top: 5px;
+        border: none;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 30%);
+        cursor: pointer;
+    }
+
+    .container {
+        height: 150px;
+        display: inline-block;
+        width: 25%;
+        box-sizing: border-box;
+    }
+
+    #labels {
+        margin-top: 50px;
+        font-size: 0.8vw;
+        color: #ececec;
+        font-weight: 100;
+        margin-left: 5%;
+        margin-bottom: 5%;
+
+    }
+
+    #info {
+        color: white;
+        font-size: 0.8vw;
+        font-weight: bold;
+    }
+
+    #main-box {
+        text-align: left;
+        font-size: 1.3em;
+        border-radius: 20px;
+        background: #3a416a;
+
+    }
+
+    #videogames {
+        color: #cbcaca;
+        text-align: center;
+        position: absolute;
+    }
+
+    #copertine {
+        padding-left: 30px;
+    }
+
+    #quantitÃ  {
+        position: relative;
+
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+
+    .centralDivContainer {
+        width: 80%;
+        height: 60%;
+        margin: auto;
+        margin-top: 3%;
+    }
 }
+@media screen and (max-width: 1199px) {
+    .profileBody
+    {
+        margin: 0;
+        font-family: sans-serif;
+        height: 150%;
+    }
+    .topContainer {
+        width: 100%;
+        height: 15%;
+        position: relative;
+        background: round;
+        background-image: url("../images/icons/profileBackground.png");
 
-#labels {
-    margin-top: 50px;
-    font-size: 0.8vw;
-    color: #ececec;
-    font-weight: 100;
-    margin-left: 5%;
-    margin-bottom: 5%;
+    }
 
-}
+    .userTopInfoContainer {
+        position: absolute;
+        bottom: 0;
+        margin-left: 10%;
+        width: 80%;
+    }
 
-#info {
-    color: white;
-    font-size: 0.8vw;
-    font-weight: bold;
-}
+    .userTopInfo img {
+        width: 60%;
+    }
 
-#main-box {
-    text-align: left;
-    font-size: 1.3em;
-    border-radius: 20px;
-    background: #3a416a;
+    .userTopInfo {
+        font-size: 4vw;
+        color: white;
+        display: inline-block;
+        margin-left: 35%;
+        width: 100%;
+        margin-bottom: 1%;
+    }
 
-}
+    #proPic {
+        position: absolute;
+        bottom: 0;
+        height: auto;
+        width: 30%;
+    }
 
-#videogames {
-    color: #cbcaca;
-    text-align: center;
-    position: absolute;
-}
+    #username {
+        font-size: 5vw;
+        color: white;
+        text-shadow: 2px 2px 1px black;
+    }
 
-#copertine {
-    padding-left: 30px;
-}
+    #barraEspEsterna {
+        margin-top: 9px;
+        width: 50%;
+        border-radius: 20px;
+        height: 14px;
+        border: 2px solid black;
+    }
 
-#quantità {
-    position: relative;
-    margin-left: 30px;
-    margin-top: 10px;
-    margin-bottom: 50px;
-}
-.centralDivContainer
-{
-    width: 80%;
-    height: 50%;
-    margin: auto;
-    margin-top: 3%;
+    #barraEspInterna {
+        margin: 2px;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+        width: 25%;
+        height: 10px;
+        background-color: green;
+    }
+
+    #livello {
+        width: 200px;
+        font-family: verdana;
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    .centralDiv {
+        height: 160%;
+        background: #525c8e;
+        margin-bottom: -2%;
+    }
+
+    .profileButtons {
+        margin: auto;
+        background: #3a416a;
+        height: 40px;
+        line-height: 40px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .profileButtons a {
+        text-decoration: none;
+        color: white;
+        margin-left: 15%;
+        font-size: 3vw;
+    }
+
+    .informationsContainer {
+        display: block;
+        height: 20%;
+        margin-top: 5%;
+        background: #3a416a;
+        border-radius: 20px;
+    }
+
+    .informations {
+        position: absolute;
+        margin-left: 3%;
+        width: 80%;
+    }
+
+    .informations p {
+        margin-left: 5%;
+    }
+
+    .informations .titolo {
+        color: white;
+        font-size: 5vw;
+        margin-left: 3%;
+        margin-bottom: 10%;
+
+    }
+
+    .label {
+        color: antiquewhite;
+    }
+
+    .info {
+        color: white;
+        margin-left: 10%;
+    }
+
+    .lastOrdersContainer {
+        display: block;
+        height: 60%;
+        margin-top: 5%;
+        background: #3a416a;
+        border-radius: 20px;
+    }
+
+    .lastOrders {
+        position: absolute;
+        margin-left: 3%;
+        width: 80%;
+    }
+
+    .lastOrders .titolo {
+        color: white;
+        font-size: 5vw;
+        margin-left: 3%;
+        margin-bottom: 10%;
+    }
+
+    .order {
+        display: block;
+        margin: auto;
+        width: 50%;
+        text-align: center;
+        margin-top: 10%;
+    }
+
+    .detailsOrder
+    {
+        display: block;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+        margin-top: 10%;
+    }
+
+    .order img {
+        width: 80%;
+    }
+
+    .orderDetailsTable {
+        width: 95%;
+        margin: auto;
+        border-collapse: collapse;
+        margin-top: 10%;
+        border: none;
+    }
+
+    .orderDetailsTable td {
+        padding: 10px 10px 10px;
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    .orderDetailsTable .dettagli
+    {
+        height: 30px;
+        width: 100%;
+        border-radius: 120px;
+        background-color: #04AA6D;
+        border-color: #04AA6D;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        margin-top: 5px;
+        border: none;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 30%);
+        cursor: pointer;
+    }
+
+    .orderDetailsTable tr:nth-child(even) {
+        background: #EEEEEE;
+    }
+
+    .orderDetailsTable tr:nth-child(odd) {
+        background: #cbcaca;
+    }
+
+    h2 {
+        color: lightgray;
+    }
+
+    .dettagli {
+        height: 30px;
+        width: 80%;
+        border-radius: 120px;
+        background-color: #04AA6D;
+        border-color: #04AA6D;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        margin-top: 5px;
+        border: none;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 30%);
+        cursor: pointer;
+    }
+
+    .container {
+        height: 150px;
+        display: inline-block;
+        width: 25%;
+        box-sizing: border-box;
+    }
+
+    #labels {
+        margin-top: 50px;
+        font-size: 4vw;
+        color: #ececec;
+        font-weight: 100;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        width: 40%;
+    }
+
+    #info {
+        color: white;
+        font-size: 4vw;
+        width: 40%;
+        font-weight: bold;
+    }
+
+    #main-box {
+        text-align: left;
+        font-size: 1.3em;
+        border-radius: 20px;
+        background: #3a416a;
+        width: 100%;
+        height: auto;
+    }
+
+    #videogames {
+        color: #cbcaca;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        margin-bottom: 30%;
+    }
+
+    #copertine {
+        padding-left: 30px;
+    }
+
+    #quantitÃ  {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+
+    .centralDivContainer {
+        width: 90%;
+        height: 100%;
+        margin: auto;
+        margin-top: 3%;
+    }
+
 }

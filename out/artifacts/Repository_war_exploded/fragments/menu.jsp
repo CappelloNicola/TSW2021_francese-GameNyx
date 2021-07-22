@@ -40,37 +40,37 @@
         <div id="upBar">
             <div class="upBarIconsContainer">
             <a href="?genere=Avventura#upBar">
-            <span class="genreButton zoom">
+            <span class="genreButton">
                 <img class="elementGenre" src="./images/GenreBar%20icons/adventureIcon.png" >
                 <p>AVVENTURA</p>
             </span>
             </a>
             <a href="?genere=Azione#upBar">
-            <span class="genreButton zoom">
+            <span class="genreButton">
                 <img class="elementGenre" src="./images/GenreBar%20icons/FPSicon.png" >
                 <p>AZIONE</p>
             </span>
             </a>
             <a href="?genere=Sport#upBar">
-            <span class="genreButton zoom">
+            <span class="genreButton">
                 <img class="elementGenre" src="./images/GenreBar%20icons/RacingIcon.png" >
                 <p>SPORTIVI</p>
             </span>
             </a>
             <a href="?genere=RPG#upBar">
-            <span class="genreButton zoom">
+            <span class="genreButton">
                 <img class="elementGenre" src="./images/GenreBar%20icons/rpgIcon.png">
                 <p>DI RUOLO</p>
             </span>
             </a>
             <a href="?genere=Puzzle#upBar">
-            <span class="genreButton zoom" >
+            <span class="genreButton" >
                 <img class="elementGenre" src="./images/GenreBar%20icons/puzzleIcon.png">
                 <p>STRATEGICI</p>
             </span>
             </a>
             <a href="?genere=Platform#upBar">
-            <span class="genreButton zoom">
+            <span class="genreButton">
                 <img class="elementGenre" src="./images/GenreBar%20icons/platformIcon.png">
                 <p>PLATFORM</p>
             </span>
@@ -168,3 +168,5 @@
 </body>
 <script src="${pageContext.request.contextPath}/scripts/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/scripts/menuScripts.js"></script>
+
+</script>

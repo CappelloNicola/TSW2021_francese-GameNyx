@@ -35,9 +35,21 @@
 		<form name="inserisciProdotto" onSubmit="return formValidation();" action="../InsertProductServlet" method="POST"  enctype="multipart/form-data">
 			<div class="formValidationCopertina">
 				<label>Copertina: <input type="file" id="copertina" name="copertina" placeholder="Copertina" accept=".png, .jpg, .jpeg"/></label>
+				<label>Screenshots:
+					<input type="file" id="copertina" name="screenshot1" accept=".png, .jpg, .jpeg"/>
+					<input type="file" id="copertina" name="screenshot2" accept=".png, .jpg, .jpeg"/>
+					<input type="file" id="copertina" name="screenshot3" accept=".png, .jpg, .jpeg"/>
+					<input type="file" id="copertina" name="screenshot4" accept=".png, .jpg, .jpeg"/>
+				</label>
+				<label>Background:
+					<input type="file" id="copertina" name="background" accept=".png, .jpg, .jpeg"/>
+				</label>
+				<label>Header:
+					<input type="file" id="copertina" name="header" accept=".png, .jpg, .jpeg"/>
+				</label>
 			</div>
 			<div class="formValidation"> <!-- VALIDARE CON ESPRESSIONI REGOLARI -->
-				<input type="text" id="trailer" name="trailer"  maxlength="800" placeholder="Trailer">
+				<input type="text" id="trailer" name="trailer"  maxlength="800" placeholder="Trailer link embedded">
 			</div>
 			<div class="formValidation"> <!-- ci sono titoli di giochi con 3 caratteri : fez -->
 				<input type="text" id="titolo" name="nome"  maxlength="80" placeholder="Nome Videogioco">

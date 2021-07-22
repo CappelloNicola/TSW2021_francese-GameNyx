@@ -1,4 +1,20 @@
 
+/**
+ * 
+ */
+ 
+ function checkQuantity(quantity)
+ {
+ 	var obj=document.getElementById("quantitaAcquistabile");
+ 	if(obj.value>quantity)
+ 	{
+ 		obj.value=quantity;
+ 		alert("Solo "+quantity+" scorte disponibili!");
+ 	}
+ }
+ 
+
+
 function formValidationSpedizione()
 {
     var indirizzo = document.checkoutForm.indirizzo;
@@ -317,3 +333,4 @@ function resetField(e)
 {
     document.getElementsByName(e)[0].style.backgroundColor="white";
 }
+

@@ -40,12 +40,31 @@
     }
 
     //Evidenziamento del prodotto al passaggio del mouse
-    $(function() {
+    $(document).ready(function(){
         $(".productElement").hover(function () {
             this.style.boxShadow="0 4px 8px 0 rgb(255 255 255 / 30%), 0 6px 20px 0 rgb(255 255 255 / 30%)";
         }).mouseleave(function (){
             this.style.boxShadow="none";
         });
 
+    });
+
+
+    $(document).ready(function(){
+        $(".productElement").hover(function() {
+            $(this).addClass('zoomProduct');
+
+        }, function() {
+            $(this).removeClass('zoomProduct');
+        });
+    });
+
+    $(document).ready(function(){
+        $(".genreButton").hover(function() {
+            $(this).addClass('zoomGenre');
+
+        }, function() {
+            $(this).removeClass('zoomGenre');
+        });
     });
 

@@ -86,15 +86,42 @@ public class InsertProductServlet extends HttpServlet {
 				/*Viene presa la copertina e inserita sul server*/
 
 				//Metto in un InputStream l'immagine
-			    Part filePart = request.getPart("copertina"); 
-			    String fileName = FilePart.getSubmittedFileName(filePart);
-			    InputStream fileContent = filePart.getInputStream();
+			    Part copertina = request.getPart("copertina");
+			    String copertinaFileName = FilePart.getSubmittedFileName(copertina);
+			    InputStream copertinafileContent = copertina.getInputStream();
+
+				Part screen1 = request.getPart("screenshot1");
+				String screen1FileName = FilePart.getSubmittedFileName(screen1);
+				InputStream screen1fileContent = screen1.getInputStream();
+				Part screen2 = request.getPart("screenshot2");
+				String screen2FileName = FilePart.getSubmittedFileName(screen2);
+				InputStream screen2fileContent = screen2.getInputStream();
+				Part screen3 = request.getPart("screenshot3");
+				String screen3FileName = FilePart.getSubmittedFileName(screen3);
+				InputStream screen3fileContent = screen3.getInputStream();
+				Part screen4 = request.getPart("screenshot4");
+				String screen4FileName = FilePart.getSubmittedFileName(screen4);
+				InputStream screen4fileContent = screen4.getInputStream();
+
+				Part background = request.getPart("background");
+				String backgroundFileName = FilePart.getSubmittedFileName(background);
+				InputStream backgroundfileContent = background.getInputStream();
+
+				Part header = request.getPart("header");
+				String headerFileName = FilePart.getSubmittedFileName(header);
+				InputStream headerfileContent = header.getInputStream();
 			    
 			    //Ne ricavo l'estensione per creare correttamente il FileOutputStream
-			    String extension=fileName.substring(fileName.lastIndexOf("."));
+			    String extension1=copertinaFileName.substring(copertinaFileName.lastIndexOf("."));
+				String extension2=screen1FileName.substring(screen1FileName.lastIndexOf("."));
+				String extension3=screen2FileName.substring(screen2FileName.lastIndexOf("."));
+				String extension4=screen3FileName.substring(screen3FileName.lastIndexOf("."));
+				String extension5=screen4FileName.substring(screen4FileName.lastIndexOf("."));
+				String extension6=backgroundFileName.substring(backgroundFileName.lastIndexOf("."));
+				String extension7=headerFileName.substring(headerFileName.lastIndexOf("."));
 			    
 			    //Creo la cartella in cui verrà inserita l'immagine nel server
-			    final String imagesPath="C:\\Users\\Giuseppe\\git\\repository\\GameNyx\\WebContent\\images";
+			    final String imagesPath="C:\\Users\\Claudio\\Dropbox\\Università\\Semestre attuale\\TecnologieWeb\\WebApps\\Repository\\GameNyx\\WebContent\\images";
 				/*Non si può caricare un file sul server specificando l'URL, bisogna specificare il path vero e proprio.
 				 * Quando ci lavoriamo, mettiamo la precedente stringa tra commenti e cambiamo il path*/
 			    
@@ -102,10 +129,38 @@ public class InsertProductServlet extends HttpServlet {
 			    new File(folderName).mkdirs();//crea una nuova cartella
 			    
 			    //Creo il nuovo file in cui copiare l'immagine
-			     String outputName=folderName+"\\copertina"+extension;
-			     OutputStream output=new FileOutputStream(outputName);
-			     fileContent.transferTo(output);
-			     output.close();
+			     String outCopertina=folderName+"\\copertina"+extension1;
+			     String outScreen1=folderName+"\\1"+extension2;
+				 String outScreen2=folderName+"\\2"+extension3;
+				 String outScreen3=folderName+"\\3"+extension4;
+				 String outScreen4=folderName+"\\4"+extension5;
+				 String outBackground=folderName+"\\background"+extension6;
+			     String outHeader=folderName+"\\header"+extension7;
+
+			     OutputStream outputCopertina=new FileOutputStream(outCopertina);
+				 OutputStream outputScreen1=new FileOutputStream(outScreen1);
+				 OutputStream outputScreen2=new FileOutputStream(outScreen2);
+				 OutputStream outputScreen3=new FileOutputStream(outScreen3);
+				 OutputStream outputScreen4=new FileOutputStream(outScreen4);
+				 OutputStream outputBackground=new FileOutputStream(outBackground);
+				 OutputStream outputHeader=new FileOutputStream(outHeader);
+
+			     copertinafileContent.transferTo(outputCopertina);
+				 screen1fileContent.transferTo(outputScreen1);
+				 screen2fileContent.transferTo(outputScreen2);
+				 screen3fileContent.transferTo(outputScreen3);
+				 screen4fileContent.transferTo(outputScreen4);
+				 backgroundfileContent.transferTo(outputBackground);
+				 headerfileContent.transferTo(outputHeader);
+
+			     outputCopertina.close();
+				 outputScreen1.close();
+				 outputScreen2.close();
+				 outputScreen3.close();
+				 outputScreen4.close();
+				 outputBackground.close();
+				 outputHeader.close();
+
 			}
 			catch(Exception e)
 			{

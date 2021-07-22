@@ -77,7 +77,8 @@
 
 				<input type="hidden" name="productID" value="<%= product.getId() %>">
 				<input class="aggiornaButton" type="submit" name="sendQuantity" value="&#x21bb">
-				<input style="width:35px;text-align: center" type="number" name="setQuantity" value="<%=product.getCartQuantity()%>">
+				<input id="quantitaAcquistabile" style="width:35px;text-align: center" type="number" max="<%=product.getQuantitaNegozio()%>" name="setQuantity"
+					 onkeyup="checkQuantity(<%=product.getQuantitaNegozio()%>)" value="<%=product.getCartQuantity()%>">
 				<input class="removeButton" type="submit" name="remove" value="&#x2716">
 			</p></td>
 			<td><p><%=product.getPrezzoTotale()*product.getCartQuantity()%> euro</p></td>
@@ -187,6 +188,7 @@
 <script src="${pageContext.request.contextPath}/scripts/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/scripts/CartScripts.js"></script>
 <%@ include file="fragments/footer.jsp"%>
+<script src="${pageContext.request.contextPath}/scripts/CartScripts.js"></script>
 </body>
 
 </html>
