@@ -82,5 +82,6 @@
 
 	<script src="${pageContext.request.contextPath}/scripts/jquery.js"></script>
 	<script src="${pageContext.request.contextPath}/scripts/RegistrazioneScripts.js"></script>
+	<%@ include file="fragments/footer.jsp"%>
 </body>
 </html>

@@ -39,13 +39,14 @@
         </div>
     </div>
 </div>
-<div class="centralDiv">
 
+<div class="centralDiv">
     <div class="profileButtons">
-        <a href="Profile.jsp?informazioni">Informazioni</a>
-        <a href="GetOrdersServlet">Ordini</a>
-        <a>Recensioni</a>
+        <a href="Profile.jsp?informazioni">Profilo</a>
+        <a href="index.jsp#upBar">Catalogo</a>
+        <a href="GetOrdersServlet">Tutti gli ordini</a>
     </div>
+
     <div class="centralDivContainer">
 
         <% if(request.getAttribute("ordini")!=null && request.getParameter("informazioni")==null)

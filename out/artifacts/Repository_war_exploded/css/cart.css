@@ -143,3 +143,12 @@ td:last-child
     margin: auto;
     margin-top: 50px;
 }
+
+.inputFormCart
+{
+    border-radius: 10px;
+    border: none;
+    height: 18px;
+    text-indent: 10px;
+    width: 35%;
+}

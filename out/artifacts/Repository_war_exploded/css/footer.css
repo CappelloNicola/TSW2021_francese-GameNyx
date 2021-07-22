@@ -5,12 +5,84 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: #3a416a; /*#525c8e;*/
-    height: 60%;
+    /*height: 60%;*/
+    padding-bottom:5px;
     color:white;
 }
 
+
+
+#footerIcons
+{
+	
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	
+	
+}
+
+#chiSiamoDiv
+{
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	display:none;
+}
+
+#contattaciDiv
+{
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;	
+	display:none;
+}
+
+#footerHeaders
+{
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#footerHeaders ul
+{
+	margin-left:auto;
+	margin-right:auto;
+	list-style-type: none;	
+	text-align:center;
+}
+
+#footerHeaders ul li
+{
+	display:inline;
+	padding:5px;
+}
+
+#footerIcons img
+{
+	width:40px;
+	height:auto;
+}
+
+#footerIcons ul
+{
+	margin-left:auto;
+	margin-right:auto;
+	list-style-type: none;	
+	text-align:center;
+}
+
+#footerIcons ul li
+{
+	display:inline;
+	padding:5px;
+}
+
 #informazioniFooter {
-    background: #3a416a;
+  /*  background: #3a416a;*/
     height: 50px;
     width:80%;
     border-style:none;
@@ -73,6 +145,15 @@ td img
     
 
     
+}
+
+
+@media screen and (max-width: 523px) {
+	#footerIcons img
+	{
+		width:30px;
+		height:auto;
+	}
 }
 
 @media screen and (max-width: 600px) {
